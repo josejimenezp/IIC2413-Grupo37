@@ -1,44 +1,44 @@
-puid;nombre_puerto;ciudad_puerto;puid
-1;Taltal;Taltal;1
-2;Arica;Arica;2
-3;Cabo Negro;Primavera;3
-4;Quintero;Quintero;4
-5;Caleta Patillos;Iquique;5
-6;Caleta Coloso;Antofagasta;6
-7;Puerto Angamos;Mejillones;7
-8;Caldera;Caldera;8
-9;Antofagasta;Antofagasta;9
-10;Cruz Grande;La Higuera;10
-11;Lota;Lota;11
-12;Calderilla;Caldera;12
-13;Corral;Corral;13
-14;Guayacan;Coquimbo;14
-15;Tocopilla;Tocopilla;15
-16;Lirquen;Penco;16
-17;Chacabuco;Aysen;17
-18;La Serena;La Serena;18
-19;Quellon;Quellon;19
-20;Mejillones;Mejillones;20
-21;Barquito;Chañaral;21
-22;Puerto Montt;Puerto Montt;22
-23;Ancud;Ancud;23
-24;San Antonio;San Antonio;24
-25;Valdivia;Valdivia;25
-26;Coronel;Coronel;26
-27;Talcahuano;Talcahuano;27
-28;Port Williams;Puerto Williams;28
-29;Isla Guarello;Isla Guarello;29
-30;Puerto Natales;Puerto Natales;30
-31;Castro;Castro;31
-32;Penco;Penco;32
-33;Huasco;Huasco;33
-34;Puerto Chacabuco;Aysen;34
-35;Isla de Pascua;Hanga Roa;35
-36;Punta Arenas;Punta Arenas;36
-37;Valparaiso;Valparaiso;37
-38;Coquimbo;Coquimbo;38
-39;Punta Patache;Iquique;39
-40;San Vicente;San Vicente;40
-41;Quemchi;Quemchi;41
-42;Balmaceda;Cisnes;42
-43;Iquique;Iquique;43
+puid;nombre_puerto;ciudad_puerto
+1;Taltal;Taltal
+2;Arica;Arica
+3;Cabo Negro;Primavera
+4;Quintero;Quintero
+5;Caleta Patillos;Iquique
+6;Caleta Coloso;Antofagasta
+7;Puerto Angamos;Mejillones
+8;Caldera;Caldera
+9;Antofagasta;Antofagasta
+10;Cruz Grande;La Higuera
+11;Lota;Lota
+12;Calderilla;Caldera
+13;Corral;Corral
+14;Guayacan;Coquimbo
+15;Tocopilla;Tocopilla
+16;Lirquen;Penco
+17;Chacabuco;Aysen
+18;La Serena;La Serena
+19;Quellon;Quellon
+20;Mejillones;Mejillones
+21;Barquito;Chañaral
+22;Puerto Montt;Puerto Montt
+23;Ancud;Ancud
+24;San Antonio;San Antonio
+25;Valdivia;Valdivia
+26;Coronel;Coronel
+27;Talcahuano;Talcahuano
+28;Port Williams;Puerto Williams
+29;Isla Guarello;Isla Guarello
+30;Puerto Natales;Puerto Natales
+31;Castro;Castro
+32;Penco;Penco
+33;Huasco;Huasco
+34;Puerto Chacabuco;Aysen
+35;Isla de Pascua;Hanga Roa
+36;Punta Arenas;Punta Arenas
+37;Valparaiso;Valparaiso
+38;Coquimbo;Coquimbo
+39;Punta Patache;Iquique
+40;San Vicente;San Vicente
+41;Quemchi;Quemchi
+42;Balmaceda;Cisnes
+43;Iquique;Iquique
