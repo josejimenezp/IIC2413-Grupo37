@@ -29,7 +29,7 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres conocer los Pokemones más altos que: ?</h3>
+  <h3 align="center"> ¿Quieres conocer todos los puertos con al menos un astillero?</h3>
 
   <form align="center" action="consultas/consulta3.php" method="post">
     <input type="submit" value="Buscar">
