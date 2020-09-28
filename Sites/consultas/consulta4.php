@@ -6,7 +6,7 @@
   require("../config/conexion.php");
 
   $puerto_elegido = $_POST["puerto_elegido"];
-  $barco_elegido = $_POST["barco_elegido"]
+  $barco_elegido = $_POST["barco_elegido"];
 
   $consulta = "SELECT barcos.nombre, permisos.fecha_atraque FROM instalaciones, puertos,
     permisos, barcos WHERE instalaciones.puid = puertos.puid AND puertos.nombre = $puerto_elegido AND 
