@@ -38,6 +38,21 @@
   <br>
   <br>
 
+  <h3 align="center"> ¿Quieres ver todos los atraques de un barco en un puerto?</h3>
+
+<form align="center" action="consultas/consulta4.php" method="post">
+  Barco:
+  <input type="text" name="barco_elegido">
+  <br/><br/>
+  Puerto:
+  <input type="text" name="puerto_elegido">
+  <br/><br/>
+  <input type="submit" value="Buscar">
+</form>
+<br>
+<br>
+<br>
+
   <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
 
   <?php
