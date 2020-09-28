@@ -19,12 +19,12 @@
 
 	<table>
     <tr>
-      <th>Nombre</th>
-    <tr>
+      <th>Nombre</th>  
       <th>Fecha atraque</th>
+    <tr>
   <?php
 	foreach ($puerto as $jefe) {
-      echo "<tr><td>$jefe[0] <td>$jefe[1]<td>";
+      echo "<tr><td>$jefe[0]</td> <td>$jefe[1]</td>";
 	}
   ?>
 	</table>
