@@ -7,7 +7,7 @@
   require("../config/conexion.php");
 
 
- 	$query = "SELECT nombre, ciudad FROM puertos';";
+ 	$query = "SELECT nombre, ciudad FROM puertos;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$pokemones = $result -> fetchAll();
