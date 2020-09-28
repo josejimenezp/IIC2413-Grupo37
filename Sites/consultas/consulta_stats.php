@@ -18,7 +18,6 @@
 	<table>
     <tr>
       <th>Nombre</th>
-    </tr>
   <?php
 	foreach ($pokemones as $pokemon) {
   		echo "<tr><td>$pokemon[0]";
