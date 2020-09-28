@@ -16,7 +16,8 @@
 
 	<table>
     <tr>
-      <th>Nombre</th>
+      <th>Nombre del puerto</th>
+      <th>Edad promedio</th>
     </tr>
   <?php
 	foreach ($puertos as $puerto) {

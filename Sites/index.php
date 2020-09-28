@@ -73,6 +73,23 @@
   $dataCollected = $result -> fetchAll();
   ?>
 
+  
+<h3 align="center"> ¿Quieres ver el puerto que recibió más barcos en un mes y año?</h3>
+
+<form align="center" action="consultas/consulta6.php" method="post">
+  Mes:
+  <input type="text" name="mes_elegido">
+  <br/><br/>
+  Año:
+  <input type="text" name="año_elegido">
+  <br/><br/>
+  <input type="submit" value="Buscar">
+</form>
+<br>
+<br>
+<br>
+
+
   <form align="center" action="consultas/consulta_tipo.php" method="post">
     Seleccinar un tipo:
     <select name="tipo">
