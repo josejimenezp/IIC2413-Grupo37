@@ -53,6 +53,16 @@
 <br>
 <br>
 
+<h3 align="center"> ¿Quieres ver la edad promedio de los trabajadores en cada puerto?</h3>
+
+<form align="center" action="consultas/consulta5.php" method="post">
+  <input type="submit" value="Buscar">
+</form>
+<br>
+<br>
+<br>
+
+
   <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
 
   <?php
