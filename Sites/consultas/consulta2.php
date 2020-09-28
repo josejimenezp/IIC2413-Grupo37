@@ -12,7 +12,7 @@
    personal.rut = instalaciones.jefe_id;";
 	$resultado = $db -> prepare($consulta);
 	$resultado -> execute();
-	$puerto = $resultados -> fetchAll();
+	$puerto = $resultado -> fetchAll();
   ?>
 
 	<table>
