@@ -8,7 +8,7 @@
   $puerto_elegido = $_POST["puerto_elegido"];
 
  	$consulta = "SELECT personal.nombre FROM personal, puertos, instalaciones WHERE
-   instalaciones.puid = puertos.puid AND LOWER(puertos.nombre) = LOWER('%$puerto_elegido%') AND
+   instalaciones.puid = puertos.puid AND LOWER(puertos.nombre) LIKE LOWER('%$puerto_elegido%') AND
    personal.rut = instalaciones.jefe_id;";
 	$resultado = $db -> prepare($consulta);
 	$resultado -> execute();
