@@ -8,7 +8,7 @@
   $puerto_elegido = $_POST["puerto_elegido"];
 
  	$query = "SELECT personal.nombre FROM personal, puertos, instalaciones WHERE
-   instalaciones.puid = puertos.puid AND puertos.nombre = %'$puerto_elegido'% AND
+   instalaciones.puid = puertos.puid AND puertos.nombre = '$puerto_elegido' AND
    personal.rut = instalaciones.jefe_id;";
 	$result = $db -> prepare($query);
 	$result -> execute();
