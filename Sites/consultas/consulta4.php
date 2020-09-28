@@ -14,7 +14,7 @@
     barcos.patente = permisos.patente;";
   $resultado = $db -> prepare($consulta);
   $resultado -> execute();
-  $puerto = $resultados -> fetchAll();
+  $puerto = $resultado -> fetchAll();
   ?>
 
 	<table>
