@@ -6,6 +6,16 @@
 
   <br>
 
+  <h3 align="center"> ¿Quieres ver todos los puertos junto a la ciudad que pertenecen?</h3>
+
+  <form align="center" action="consultas/consulta_tipo_nombre.php" method="post">
+    <input type="submit" value="Buscar">
+  </form>
+  
+  <br>
+  <br>
+  <br>
+
   <h3 align="center"> ¿Quieres buscar un los jefes de las instalaciones por su puerto?</h3>
 
   <form align="center" action="consultas/consulta_stats.php" method="post">
@@ -14,20 +24,7 @@
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
-  
-  <br>
-  <br>
-  <br>
 
-  <h3 align="center"> ¿Quieres buscar un Pokemón por su ID?</h3>
-
-  <form align="center" action="consultas/consulta_stats.php" method="post">
-    Id:
-    <input type="text" name="id_elegido">
-    <br/><br/>
-    <input type="submit" value="Buscar">
-  </form>
-  
   <br>
   <br>
   <br>
