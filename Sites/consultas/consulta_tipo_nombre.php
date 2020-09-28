@@ -20,7 +20,7 @@
     </tr>
   <?php
 	foreach ($pokemones as $pokemon) {
-  		echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td>;
+  		echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td>";
 	}
   ?>
 	</table>
