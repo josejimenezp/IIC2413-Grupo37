@@ -6,9 +6,12 @@
 
   <br>
 
-  <h3 align="center"> ¿Quieres ver todos los puertos junto a la ciudad que pertenecen?</h3>
+  <h3 align="center"> ¿Quieres buscar un los jefes de las instalaciones por su puerto?</h3>
 
-  <form align="center" action="consultas/consulta_tipo_nombre.php" method="post">
+  <form align="center" action="consultas/consulta_stats.php" method="post">
+    Puerto:
+    <input type="text" name="puerto_elegido">
+    <br/><br/>
     <input type="submit" value="Buscar">
   </form>
   

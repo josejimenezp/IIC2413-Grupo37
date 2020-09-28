@@ -5,9 +5,11 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $id_nuevo = $_POST["id_elegido"];
+  $puerto_elegido = $_POST["puerto_elegido"];
 
- 	$query = "SELECT * FROM pokemones where pid = $id_nuevo;";
+ 	$query = "SELECT personal.nombre FROM personal, puertos, instalaciones WHERE
+   instalaciones.puid = puertos.puid AND puertos.nombre = $puerto_elegido AND
+   personal.rut = instalaciones.jefe_id;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$pokemones = $result -> fetchAll();
@@ -15,16 +17,11 @@
 
 	<table>
     <tr>
-      <th>ID</th>
       <th>Nombre</th>
-      <th>Altura</th>
-      <th>Peso</th>
-      <th>Experiencia Base</th>
-      <th>Tipo</th>
     </tr>
   <?php
 	foreach ($pokemones as $pokemon) {
-  		echo "<tr><td>$pokemon[0]</td><td>$pokemon[1]</td><td>$pokemon[2]</td><td>$pokemon[3]</td><td>$pokemon[4]</td><td>$pokemon[5]</td></tr>";
+  		echo "<tr><td>$pokemon[0]";
 	}
   ?>
 	</table>
