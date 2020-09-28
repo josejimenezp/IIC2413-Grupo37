@@ -15,13 +15,12 @@
 
 	<table>
     <tr>
-      <th>ID</th>
       <th>Nombre</th>
-      <th>Tipo</th>
+      <th>Ciudad</th>
     </tr>
   <?php
 	foreach ($pokemones as $pokemon) {
-  		echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td> </tr>";
+  		echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td>;
 	}
   ?>
 	</table>
