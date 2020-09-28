@@ -21,7 +21,6 @@
   <?php
 	foreach ($pokemones as $pokemon) {
       echo "<tr><td>$pokemon[0]";
-      echo "$puerto_elegido";
 	}
   ?>
 	</table>
