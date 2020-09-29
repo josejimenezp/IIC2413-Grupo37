@@ -2,7 +2,7 @@
 
 <body>
   <h1 align="center">Biblioteca Portuaria </h1>
-  <p style="text-align:center;">Aquí podrás encontrar información sobre barcos.</p>
+  <p style="text-align:center;">Aquí podrás encontrar información sobre barcos, puertos, atraques, salidas, personal portuario, instalaciones y más.</p>
 
   <br>
 
