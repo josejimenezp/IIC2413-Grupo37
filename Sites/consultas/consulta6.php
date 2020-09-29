@@ -26,7 +26,7 @@
   $consulta = "SELECT puertos.nombre, COUNT(permisos.patente) FROM permisos, puertos,
   barcos, instalaciones WHERE permisos.patente = barcos.patente AND
   puertos.puid = instalaciones.puid AND permisos.iid = instalaciones.iid AND
-  EXTRACT(MONTH FROM permisos.fecha_atraque) = '$mes_elegido' AND EXTRACT(YEAR
+  EXTRACT(MONTH FROM permisos.fecha_atraque) = $mes_elegido AND EXTRACT(YEAR
   FROM permisos.fecha_atraque) = '$año_elegido' GROUP BY puertos.nombre ORDER BY
   COUNT(permisos.patente) DESC FETCH FIRST ROW ONLY;";
 
