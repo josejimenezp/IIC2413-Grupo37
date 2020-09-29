@@ -20,8 +20,8 @@
       <th>Edad promedio</th>
     </tr>
   <?php
-	foreach ($puertos as $puerto) {
-  		echo "<tr> <td>$puerto[0]</td> <td>$puerto[1]</td>";
+	foreach ($puertos as $trabajador) {
+  		echo "<tr> <td>$trabajador[0]</td> <td>$trabajador[1]</td>";
 	}
   ?>
 	</table>

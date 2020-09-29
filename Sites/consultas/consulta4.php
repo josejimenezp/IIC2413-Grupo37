@@ -23,8 +23,8 @@
       <th>Fecha atraque</th>
     <tr>
   <?php
-	foreach ($puerto as $jefe) {
-      echo "<tr><td>$jefe[0]</td> <td>$jefe[1]</td>";
+	foreach ($puerto as $barco) {
+      echo "<tr><td>$barco[0]</td> <td>$barco[1]</td>";
 	}
   ?>
 	</table>

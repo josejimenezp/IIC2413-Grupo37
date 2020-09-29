@@ -5,7 +5,6 @@
 <?php
   require("../config/conexion.php");
 
-
  	$consulta = "SELECT DISTINCT puertos.nombre FROM puertos, instalaciones WHERE
      instalaciones.tipo = 'astillero' AND puertos.puid = instalaciones.puid;";
 	$resultado = $db -> prepare($consulta);
@@ -18,8 +17,8 @@
       <th>Nombre</th>
     </tr>
   <?php
-	foreach ($puertos as $puerto) {
-  		echo "<tr> <td>$puerto[0]</td>";
+	foreach ($puertos as $astillero) {
+  		echo "<tr> <td>$astillero[0]</td>";
 	}
   ?>
 	</table>
