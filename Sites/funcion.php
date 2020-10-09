@@ -4,13 +4,11 @@ $consulta = 'select nombre, edad, sexo, rut from personal, instalaciones where i
 $resultado = $db -> prepare($consulta);
 $resultado -> execute();
 $jefes = $resultado -> fetchAll();
-$largo = count($jefes);
-echo $largo;
-for($i=0;$i<=$largo;$i++){$contraseña = generatePassword();
-    $nombre = $jefes[$i][0];
-    $edad = $jefes[$i][1];
-    $sexo = $jefes[$i][2];
-    $pasaporte = $jefes[$i][3];
+for each($jefes as $jefe){$contraseña = generatePassword();
+    $nombre = $jefe[0];
+    $edad = $jefe[1];
+    $sexo = $jefe[2];
+    $pasaporte = $jefe[3];
     $nacionalidad = 'chilena';
     $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$contraseña');";
         $resultado = $db -> prepare($agregar);
