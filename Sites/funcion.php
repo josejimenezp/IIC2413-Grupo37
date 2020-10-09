@@ -12,7 +12,7 @@ foreach($jefes as $jefe){$contraseña = generatePassword();
     $nacionalidad = 'chilena';
     $agregar = "INSERT INTO usuarios VALUES (':nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$contraseña');";
         $resultado = $db -> prepare($agregar);
-        $resultado -> execute('nombre'=>$nombre);
+        $resultado -> execute(['nombre'=>$nombre]);
         $resultados = $resultado -> fetchAll();
 }
 }
