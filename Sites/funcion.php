@@ -4,7 +4,7 @@ $consulta = 'select nombre, edad, sexo, rut from personal, instalaciones where i
 $resultado = $db -> prepare($consulta);
 $resultado -> execute();
 $jefes = $resultado -> fetchAll();
-for each($jefes as $jefe){$contraseña = generatePassword();
+foreach($jefes as $jefe){$contraseña = generatePassword();
     $nombre = $jefe[0];
     $edad = $jefe[1];
     $sexo = $jefe[2];
