@@ -6,7 +6,7 @@
 ?>
 
 <head>
-	<title>Login V6</title>
+	<title>Cochrane Ports</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -39,7 +39,7 @@
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<form class="login100-form validate-form" action="consultas/validacion.php" method="POST">
 					<span class="login100-form-title p-b-70">
-						Biblioteca Portuaria
+						Cochrane Ports
 					</span>
 					<span class="login100-form-avatar">
 						<img src="images/comando.jpg" alt="AVATAR">
