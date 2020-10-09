@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php @session_start(); ?>
 <html lang="en">
 <head>
 	<title>Login V6</title>
@@ -29,6 +28,7 @@
 <!--===============================================================================================-->
 </head>
 <?php
+session_start(); 
 ?>
 <body>
 	<div class="limiter">

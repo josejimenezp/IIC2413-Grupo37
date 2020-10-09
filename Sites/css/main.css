@@ -7,22 +7,22 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  src: url('Local_V6/fonts/poppins/Poppins-Regular.ttf')format('truetype'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  src: url('Local_V6/fonts/poppins/Poppins-Medium.ttf')format('truetype'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  src: url('Local_V6/fonts/poppins/Poppins-Bold.ttf')format('truetype'); 
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+  src: url('..fonts/poppins/Poppins-SemiBold.ttf')format('truetype'); 
 }
 
 
@@ -108,10 +108,10 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #adadad;}
-input:-moz-placeholder { color: #adadad;}
-input::-moz-placeholder { color: #adadad;}
-input:-ms-input-placeholder { color: #adadad;}
+input::-webkit-input-placeholder { color: #cdcdcd;}
+input:-moz-placeholder { color: #ccddcc;}
+input::-moz-placeholder { color: #cdcdcd;}
+input:-ms-input-placeholder { color: #cdcdcd;}
 
 textarea::-webkit-input-placeholder { color: #adadad;}
 textarea:-moz-placeholder { color: #adadad;}
@@ -220,10 +220,10 @@ iframe {
 .input100 {
   font-family: Poppins-SemiBold;
   font-size: 18px;
-  color: #555555;
+  color: #d9d9d9;
   line-height: 1.2;
 
-  /*display: block;*/
+  display: block;
   width: 100%;
   height: 52px;
   background: transparent;
@@ -259,7 +259,7 @@ iframe {
 /*---------------------------------------------*/ 
 .focus-input100 {
   position: absolute;
-  /*display: block;*/
+  display: block;
   width: 100%;
   height: 100%;
   top: 0;
@@ -269,7 +269,7 @@ iframe {
 
 .focus-input100::before {
   content: "";
-  /*display: block;*/
+  display: block;
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -290,8 +290,8 @@ iframe {
   color: #999999;
   line-height: 1.2;
 
-  /*content: attr(data-placeholder);*/
-  /*display: block;*/
+  content: attr(data-placeholder);
+  display: block;
   width: 100%;
   position: absolute;
   top: 15px;
