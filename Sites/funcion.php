@@ -4,7 +4,7 @@ $consulta = 'select nombre, edad, sexo, rut from personal, instalaciones where i
 $resultado = $db -> prepare($consulta);
 $resultado -> execute();
 $jefes = $resultado -> fetchAll();
-$largo = pg_num_rows($jefes);
+$largo = pg_num_rows($resultado);
 for($i=1;$i<=$largo;$i++){$contraseña = generatePassword();
     $nombre = $jefes[$i][0];
     $edad = $jefes[$i][1];
