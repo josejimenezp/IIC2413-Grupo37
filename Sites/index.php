@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-session_start(); 
+<?php session_start(); ?>
 <html lang="en">
 <head>
 	<title>Login V6</title>
