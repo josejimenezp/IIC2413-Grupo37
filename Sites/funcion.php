@@ -5,7 +5,7 @@ $resultado = $db -> prepare($consulta);
 $resultado -> execute();
 $jefes = $resultado -> fetchAll();
 $largo = pg_num_rows($jefes);
-for($i=1;i<=$largo;i++$i){$contraseña = generatePassword();
+for($i=1;$i<=$largo;$i++){$contraseña = generatePassword();
     $nombre = $jefes[$i][0];
     $edad = $jefes[$i][1];
     $sexo = $jefes[$i][2];
