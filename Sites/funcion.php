@@ -1,5 +1,5 @@
 <?php
-function funcion(){require("../config/conexion.php");
+function funcion(){require("./config/conexion.php");
 $consulta = 'select nombre, edad, sexo, rut from personal, instalaciones where instalaciones.jefe_id = personal.rut and personal.iid = instalaciones.iid;';
 $resultado = $db -> prepare($consulta);
 $resultado -> execute();

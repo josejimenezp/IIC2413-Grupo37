@@ -3,7 +3,7 @@
 
 <?php
 @session_start();
-require("../config/funcion.php"); 
+require("./funcion.php"); 
 funcion();
 ?>
 
