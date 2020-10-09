@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+session_start(); 
+?>
+
 <head>
 	<title>Login V6</title>
 	<meta charset="UTF-8">
@@ -27,9 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<?php
-session_start(); 
-?>
+
 <body>
 	<div class="limiter">
 		<div class="container-login100">
