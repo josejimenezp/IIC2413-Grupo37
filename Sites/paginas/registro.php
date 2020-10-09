@@ -24,8 +24,7 @@
         window.location.href='../index.php'</script>";
     }
     else{
-        foreach ($resultados as $jefe) {
-            echo "<tr><td>$jefe[0]</td> <td>$jefe[1]</td>";
-          }
+        echo "<script>alert('Usuario ya existente');
+        window.location.href='../vista_registro.php'</script>";
     }
 ?>
