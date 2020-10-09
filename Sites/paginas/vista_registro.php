@@ -83,23 +83,13 @@
 					</div>
 
 					<ul class="login-more p-t-190">
-						<li class="m-b-8">
-							<span class="txt1">
-								Forgotewn
-							</span>
-
-							<a href="#" class="txt2">
-								Username / Password?
-							</a>
-						</li>
-
 						<li>
 							<span class="txt1">
-								Don’t have an account?
+								¿Ya tienes una cuenta?
 							</span>
 
 							<a class="txt2" href="registro.php">
-								Sign up
+								Iniciar sesión
 							</a>
 						</li>
 					</ul>

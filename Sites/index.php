@@ -70,7 +70,7 @@ funcion();
 					<ul class="login-more p-t-190">
 						<li>
 							<span class="txt1">
-								No tienes una cuenta?
+								¿No tienes una cuenta?
 							</span>
 
 							<a class="txt2" href="paginas/vista_registro.php">
