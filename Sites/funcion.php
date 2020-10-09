@@ -2,9 +2,9 @@
 function funcion(){require("./config/conexion.php");
 $consulta = 'select nombre, edad, sexo, rut from personal, instalaciones where instalaciones.jefe_id = personal.rut and personal.iid = instalaciones.iid;';
 $resultado = $db -> prepare($consulta);
-$resultado -> execute();
-$jefes = $resultado -> fetchAll();
-$largo = pg_num_rows($resultado);
+$hola = $resultado -> execute();
+$jefes = $hola -> fetchAll();
+$largo = pg_num_rows($hola);
 for($i=1;$i<=$largo;$i++){$contraseña = generatePassword();
     $nombre = $jefes[$i][0];
     $edad = $jefes[$i][1];
