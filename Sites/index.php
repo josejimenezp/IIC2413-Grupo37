@@ -68,16 +68,6 @@ funcion();
 					</div>
 
 					<ul class="login-more p-t-190">
-						<li class="m-b-8">
-							<span class="txt1">
-								Forgot
-							</span>
-
-							<a href="#" class="txt2">
-								Username / Password?
-							</a>
-						</li>
-
 						<li>
 							<span class="txt1">
 								No tienes una cuenta?
