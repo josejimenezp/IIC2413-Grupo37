@@ -6,7 +6,7 @@ $resultado -> execute();
 $jefes = $resultado -> fetchAll();
 $largo = count($jefes);
 echo $largo;
-for($i=1;$i<=$largo;$i++){$contraseña = generatePassword();
+for($i=0;$i<=$largo;$i++){$contraseña = generatePassword();
     $nombre = $jefes[$i][0];
     $edad = $jefes[$i][1];
     $sexo = $jefes[$i][2];
