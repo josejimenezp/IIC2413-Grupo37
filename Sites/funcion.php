@@ -11,7 +11,7 @@ for($i=1;$i<=$largo;$i++){$contraseña = generatePassword();
     $sexo = $jefes[$i][2];
     $pasaporte = $jefes[$i][3];
     $nacionalidad = 'chilena';
-    $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$password');";
+    $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$contraseña');";
         $resultado = $db -> prepare($agregar);
         $resultado -> execute();
         $resultados = $resultado -> fetchAll();
