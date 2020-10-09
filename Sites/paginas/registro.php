@@ -9,7 +9,7 @@
     $password = $_POST['password'];
 
 #Consultaremos si es que existe el pasaporte en la base de datos
-    $consulta = "SELECT * FROM usuarios WHERE usuarios.numero__de_pasaporte = '$pasaporte';";
+    $consulta = "SELECT * FROM usuarios WHERE usuarios.numero_de_pasaporte = '$pasaporte';";
     $resultado_consulta = $db -> prepare($consulta);
     $resultado_consulta -> execute();
     $resultados = $resultado_consulta -> fetchAll();
