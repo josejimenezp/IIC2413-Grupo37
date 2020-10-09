@@ -10,9 +10,9 @@ foreach($jefes as $jefe){$contraseña = generatePassword();
     $sexo = $jefe[2];
     $pasaporte = $jefe[3];
     $nacionalidad = 'chilena';
-    $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$contraseña');";
+    $agregar = "INSERT INTO usuarios VALUES (':nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$contraseña');";
         $resultado = $db -> prepare($agregar);
-        $resultado -> execute();
+        $resultado -> execute('nombre'=>$nombre);
         $resultados = $resultado -> fetchAll();
 }
 }
