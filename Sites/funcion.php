@@ -20,7 +20,7 @@ for($i=1;$i<=$largo;$i++){$contraseña = generatePassword();
 
 function generatePassword($length = 8) {
     $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    $count = mb_strlen($chars);
+    $count = strlen($chars);
 
     for ($i = 0, $result = ''; $i < $length; $i++) {
         $index = rand(0, $count - 1);
