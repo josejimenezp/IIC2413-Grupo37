@@ -74,7 +74,7 @@ funcion();
 							</span>
 
 							<a class="txt2" href="paginas/vista_registro.php">
-								Registrate
+								Regístrate
 							</a>
 						</li>
 					</ul>

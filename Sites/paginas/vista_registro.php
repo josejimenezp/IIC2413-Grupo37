@@ -89,7 +89,7 @@
 							</span>
 
 							<a class="txt2" href="../index.php">
-								Iniciar sesión
+								Inicia sesión
 							</a>
 						</li>
 					</ul>
