@@ -7,22 +7,22 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('Local_V6/fonts/poppins/Poppins-Regular.ttf')format('truetype'); 
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('Local_V6/fonts/poppins/Poppins-Medium.ttf')format('truetype'); 
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('Local_V6/fonts/poppins/Poppins-Bold.ttf')format('truetype'); 
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('..fonts/poppins/Poppins-SemiBold.ttf')format('truetype'); 
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
 }
 
 
@@ -108,10 +108,10 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #cdcdcd;}
-input:-moz-placeholder { color: #ccddcc;}
-input::-moz-placeholder { color: #cdcdcd;}
-input:-ms-input-placeholder { color: #cdcdcd;}
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
 
 textarea::-webkit-input-placeholder { color: #adadad;}
 textarea:-moz-placeholder { color: #adadad;}
@@ -220,7 +220,7 @@ iframe {
 .input100 {
   font-family: Poppins-SemiBold;
   font-size: 18px;
-  color: #d9d9d9;
+  color: #555555;
   line-height: 1.2;
 
   display: block;
@@ -228,32 +228,6 @@ iframe {
   height: 52px;
   background: transparent;
   padding: 0 5px;
-}
-/*---------------------------------------------*/
-.options100 {
-  display:none;
-  position:absolute;
-  top:100%;
-  right:0;
-  left:0;
-  z-index:999;
-  margin:0 0;
-  padding:0 0;
-  list-style:none;
-  border:1px solid #ccc;
-  background-color:white;
-  -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.select {
-  cursor:pointer;
-  display:inline-block;
-  position:relative;
-  font:normal 50px/72px Arial, Sans-Serif;
-  color:black;
-  border:100px solid #ccc;
 }
 
 /*---------------------------------------------*/ 
