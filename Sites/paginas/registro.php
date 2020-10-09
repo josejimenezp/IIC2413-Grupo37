@@ -25,6 +25,6 @@
     }
     else{
         echo "<script>alert('Usuario ya existente');
-        window.location.href='../vista_registro.php'</script>";
+        window.location.href='vista_registro.php'</script>";
     }
 ?>
