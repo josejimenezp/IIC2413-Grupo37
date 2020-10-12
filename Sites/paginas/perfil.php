@@ -15,10 +15,23 @@ if (isset($_SESSION['username'])) { // No se si esta bien
     $nombre = $_SESSION['username'];
     $query = "SELECT * FROM usuarios WHERE nombre = '$nombre';";
 
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $resultado = $result -> fetchAll();
-
+    // Si es capitán
+    if ($_SESSION['tipo'] == 'Capitan'){
+        $result_buques = $db_buques -> prepare($query);
+        $result_buques -> execute();
+        $resultado_buques = $result_buques -> fetchAll();
+        $resultado = $result_buques;
+    }
+    // Si es jefe
+    else if ($_SESSION['tipo'] == 'Jefe') {
+        $result_puertos = $db_puertos -> prepare($query);
+        $result_puertos -> execute();
+        $resultado_puertos = $result_puertos -> fetchAll();
+        $resultado = $resultado_puertos;
+    }
+    else {
+        header("location: home.php");
+    };
 ?>
 
 

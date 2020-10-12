@@ -6,20 +6,32 @@ $password = $_POST["password"];
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $password;
  
-#Consulta
+// Busco si está en la BDD de buques y navieras
 $consulta = "SELECT * FROM usuarios where usuarios.nombre = '$username' and usuarios.password= '$password';";
-$resultado = $db -> prepare($consulta);
-$resultado -> execute();
-$usuarios = $resultado -> fetchAll();
+$result_buques = $db_buques -> prepare($consulta);
+$result_buques -> execute();
+$resultado_buques = $result_buques -> fetchAll();
+$usuarios_buques = $result_buques;
+$_SESSION['tipo'] = 'Capitan';
 
-if (empty($usuarios)){
+// Busco si está en la BDD de puertos
+if (empty($usuarios_buques)){
+    $result_puertos = $db_puertos -> prepare($consulta);
+    $result_puertos -> execute();
+    $resultado_puertos = $result_puertos -> fetchAll();
+    $usuarios_puertos = $resultado_puertos;
+    $_SESSION['tipo'] = 'Jefe';
+};
+// Error al iniciar sesión
+if (empty($usuarios_puertos)) {
     echo "Error en contraseña o usuario";
-    $_SESSION['password'] = 'poto';
+    // $_SESSION['password'] = 'poto';
     header("location: ../index.php");
+    $_SESSION['tipo'] = '';
 }
 else {
     echo "Iniciado correctamente";
     header("location: ../paginas/perfil.php");
-}
+};
 
 ?>
