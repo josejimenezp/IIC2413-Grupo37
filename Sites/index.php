@@ -35,6 +35,12 @@ funcion();
 <!--===============================================================================================-->
 </head>
 
+<?php
+if (isset($_SESSION['username'])) {
+	header("home.php");
+}
+?>
+
 <body>
 	<div class="limiter">
 		<div class="container-login100">

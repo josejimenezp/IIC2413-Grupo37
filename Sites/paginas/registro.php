@@ -21,7 +21,7 @@
         $resultado -> execute();
         $resultados = $resultado -> fetchAll();
         echo "<script>alert('Registro exitoso');
-        window.location.href='../index.php'</script>";
+        window.location.href='../paginas/home.php'</script>";
     }
     else{
         echo "<script>alert('Usuario ya existente');
