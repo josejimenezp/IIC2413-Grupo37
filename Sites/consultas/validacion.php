@@ -7,7 +7,7 @@ $_SESSION['username'] = $username;
 $_SESSION['password'] = $password;
  
 // Busco si está en la BDD de buques y navieras
-$consulta = "SELECT * FROM usuarios where usuarios.nombre = '$username' and usuarios.password= '$password';";
+$consulta = "SELECT * FROM usuarios where usuarios.username = '$username' and usuarios.password = '$password';";
 $result_buques = $db_buques -> prepare($consulta);
 $result_buques -> execute();
 $resultado_buques = $result_buques -> fetchAll();

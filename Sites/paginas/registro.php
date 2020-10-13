@@ -1,6 +1,7 @@
 <?php
     require("../config/conexion.php");
 
+    // Verificar si usamos username o nombre o ambos
     $nombre = $_POST['nombre'];
     $edad = $_POST['edad'];
     $sexo = $_POST['sexo'];
