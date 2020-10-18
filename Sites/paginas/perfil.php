@@ -13,31 +13,14 @@ if (isset($_SESSION['username'])) { // No se si esta bien
     require("../config/conexion.php");
 
     $nombre = $_SESSION['username'];
-    $query = "SELECT * FROM usuarios WHERE nombre = '$nombre';";
+    $query = "SELECT nombre, pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
-    // Si es capitán
-    if ($_SESSION['tipo'] == 'Capitan'){
-        $result_buques = $db_buques -> prepare($query);
-        $result_buques -> execute();
-        $resultado_buques = $result_buques -> fetchAll();
-        $resultado = $result_buques;
-    }
-    // Si es jefe
-    else if ($_SESSION['tipo'] == 'Jefe') {
-        $result_puertos = $db_puertos -> prepare($query);
-        $result_puertos -> execute();
-        $resultado_puertos = $result_puertos -> fetchAll();
-        $resultado = $resultado_puertos;
-    }
-    else {
-        header("location: home.php");
-    };
+    $result = $db_buques -> prepare($query);
+    $result -> execute();
+    $resultado = $result -> fetchAll();
+    
+    $pasaporte = $resultado[0][1];
 ?>
-
-
-<script>
-  console.log(<?= $resultado[0][0] ?>)
-</script>
 
 
 
@@ -54,19 +37,37 @@ if (isset($_SESSION['username'])) { // No se si esta bien
                     <h5>Información</h5>
                     <br>
                     <ul class="list-inline">
-                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;<?= $resultado[0][1] . " años"?></li>
-                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-address-card"></i>&nbsp;&nbsp;<?= $resultado[0][3]?></li>
-                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $resultado[0][4]?></li>
-                        <li class="list-group-item" style="display: inline-block;"><?= $resultado[0][2]?></li>
+                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;<?= $resultado[0][2] . " años"?></li>
+                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-address-card"></i>&nbsp;&nbsp;<?= $resultado[0][1]?></li>
+                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $resultado[0][3]?></li>
+                        <li class="list-group-item" style="display: inline-block;"><?= $resultado[0][4]?></li>
                     </ul>
 
                     <br>
-                    <h5>Otras cosas</h5>
+                    <?php 
+                    if ($resultado[0][5] == 'Capitan') {
+                        echo '<h5>Labor</h5>';
+                        echo '<p> Capitan </p>';
+                    }
+                    
+                    if ($resultado[0][5] == 'Jefe') {
+                        echo '<h5>Labor</h5>';
+                        echo '<p> Jefe </p>';
+                    }              
+                    ?>
+
                     <br>
-                    <p>...</p>
                 </div>
             </div>
         </div>
     </div>
-
+    <br>
+    <?php
+    if ($resultado[0][5] == 'Capitan') {
+        require('info_capitan.php');
+    }
+    if ($resultado[0][5] == 'Jefe') {
+        require('info_jefe.php');
+    }
+    ?>
 </div>
