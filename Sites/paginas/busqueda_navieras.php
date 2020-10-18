@@ -10,10 +10,8 @@ if (isset($_SESSION['username'])) {
 
 <?php
     require("..\config\conexion.php");
-    // require("..\paginas\busqueda_navieras.php")
-    $nombre_nav = $_GET["nombre_nav"]
 
-    $query = "SELECT * FROM navieras WHERE navieras.nombre LIKE LOWER(%$nombre_nav%)"; // nid, nombre, pais, descripcion
+    $query = "SELECT * FROM navieras"; // nid, nombre, pais, descripcion
 
     $result = $db -> prepare($query);
     $result -> execute();
@@ -28,6 +26,23 @@ if (isset($_SESSION['username'])) {
 
     <h2>Navieras</h2>
     <br>
+    
+    <form action="navieras.php" class="wrap-input100 validate-input m-b-50" method="get">
+        Nombre de la naviera: <input class="input100" type="text" name="nombre_nav" value="<?php echo $nombre_nav;?>">
+        <button type="submit" class="login100-form-btn">
+        <span class="focus-input100" data-placeholder="Busqueda"></span>
+    </form>
+
+    <?php
+    require("..\config\conexion.php");
+
+    $query = "SELECT * FROM navieras"; // nid, nombre, pais, descripcion
+
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $resultados = $result -> fetchAll();
+
+    ?>
 
     <?php foreach ($resultados as $resultado): ?>
 

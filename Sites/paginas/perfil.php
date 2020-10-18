@@ -49,11 +49,10 @@ if (isset($_SESSION['username'])) { // No se si esta bien
                         echo '<h5>Labor</h5>';
                         echo '<p> Capitan </p>';
                     }
-                    
-                    if ($resultado[0][5] == 'Jefe') {
+                    else if ($resultado[0][5] == 'Jefe') {
                         echo '<h5>Labor</h5>';
                         echo '<p> Jefe </p>';
-                    }              
+                    };
                     ?>
 
                     <br>
@@ -66,8 +65,8 @@ if (isset($_SESSION['username'])) { // No se si esta bien
     if ($resultado[0][5] == 'Capitan') {
         require('info_capitan.php');
     }
-    if ($resultado[0][5] == 'Jefe') {
+    else if ($resultado[0][5] == 'Jefe') {
         require('info_jefe.php');
-    }
+    };
     ?>
 </div>
