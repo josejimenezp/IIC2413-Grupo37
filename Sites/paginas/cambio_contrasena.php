@@ -56,8 +56,8 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                     ?>
                 <br>
                 <form action="validacion_password.php" method="post"> 
-                <input type='text' name='contrasena_antigua' placeholder='Contraseña antigua'><br><br> 
-                <input type='text' name='contrasena_nueva' placeholder='Contraseña nueva'><br><br> 
+                <input type='password' name='contrasena_antigua' placeholder='Contraseña antigua'><br><br> 
+                <input type='password' name='contrasena_nueva' placeholder='Contraseña nueva'><br><br> 
                 <button class="myButton" type="submit" value="Cambiar contraseña">
 							Cambiar contraseña
 						</button>
