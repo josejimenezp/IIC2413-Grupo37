@@ -48,7 +48,6 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                     if ($resultado[0][5] == 'Capitan') {
                         echo '<h5>Labor</h5>';
                         echo '<p> Capitan </p>';
-                        echo $_SESSION['password'];
                     }
                     else if ($resultado[0][5] == 'Jefe') {
                         echo '<h5>Labor</h5>';
@@ -56,9 +55,9 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                     };
                     ?>
                 <br>
-                <form action="cambio_contrasena.php" method="post"> 
-                <input type='text'  id='contrasena_antigua' name='contrasena_antigua' placeholder='Contraseña antigua'><br><br> 
-                <input type='text'  id='contrasena_nueva' name='contrasena_nueva' placeholder='Contraseña nueva'><br><br> 
+                <form action="validacion_password.php" method="post"> 
+                <input type='text' name='contrasena_antigua' placeholder='Contraseña antigua'><br><br> 
+                <input type='text' name='contrasena_nueva' placeholder='Contraseña nueva'><br><br> 
                 <button class="myButton" type="submit" value="Cambiar contraseña">
 							Cambiar contraseña
 						</button>

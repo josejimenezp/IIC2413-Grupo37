@@ -20,6 +20,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     $resultado = $result -> fetchAll();
     
     $pasaporte = $resultado[0][1];
+    $_SESSION['n_pasaporte'] = $pasaporte;
 ?>
 
 
