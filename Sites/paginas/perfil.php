@@ -53,21 +53,13 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                         echo '<h5>Labor</h5>';
                         echo '<p> Jefe de instalación</p>';
                     };
-
-                    if (isset($_POST["boton"])){
-                        echo "APRETÉ EL BOTON";
-                        echo "<form action="perfil.php" method="post">    
-                        <button class="myButton" type="submit" id='boton2' value="Cambiar contraseña">
-                                    Cambiala
-                                </button>";
-                    else{
-                        echo "                <br>
-                        <form action="perfil.php" method="post">    
-                        <button class="myButton" type="submit" id='boton' value="Cambiar contraseña">
-                                    Cambiar contraseña
-                                </button>
-                        </form>";}
                     ?>
+                <br>
+                <form action="cambio_contrasena.php" method="post">    
+                <button class="myButton" type="submit" value="Cambiar contraseña">
+							Cambiar contraseña
+						</button>
+                </form>
                     <br>
                 </div>
             </div>
