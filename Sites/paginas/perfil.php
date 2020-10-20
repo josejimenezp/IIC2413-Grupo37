@@ -13,7 +13,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     require("../config/conexion.php");
 
     $nombre = $_SESSION['username'];
-    $query = "SELECT nombre, rut, edad, nacionalidad, sexo FROM usuarios WHERE nombre = '$nombre';";
+    $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_puertos -> prepare($query);
     $result -> execute();
