@@ -72,10 +72,10 @@ if (isset($_SESSION['nombre'])) {
                 <h3 > <?=$resultado[2]?> </h3>
             </div>
             <div class='card-text'>
-                <p> Patente:<?=$resultado[1]?> </p>
+                <p> Patente: <?=$resultado[1]?> </p>
             </div>
             <div class='card-text'>
-                <p> Tipo:<?=$resultado[4]?> </p>
+                <p> Tipo: <?=$resultado[4]?> </p>
             </div>
 
         </div>
