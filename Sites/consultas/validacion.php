@@ -16,7 +16,7 @@ $usuarios = $result;
 // Error al iniciar sesión
 if (empty($usuarios)) {
     echo "Error en contraseña o usuario";
-    // $_SESSION['password'] = 'poto';
+    $_SESSION['password'] = 'error';
     header("location: ../index.php");
     $_SESSION['tipo'] = '';
 }
