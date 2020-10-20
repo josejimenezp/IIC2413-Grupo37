@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <?php
 @session_start();
 if (isset($_SESSION['nombre'])) { // No se si esta bien
@@ -75,3 +77,4 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     };
     ?>
 </div>
+</html>
