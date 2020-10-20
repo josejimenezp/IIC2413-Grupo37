@@ -16,7 +16,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_puertos -> prepare($query);
-    $result -> execute();
+    $result = $result -> execute();
     $resultado = $result -> fetchAll();
     
     $pasaporte = $resultado[0][1];
