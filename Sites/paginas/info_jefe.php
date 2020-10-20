@@ -1,16 +1,16 @@
 
 <?php
-    $nombre = $_SESSION['username'];
+    $nombre = $_SESSION['nombre'];
     $query = "SELECT nombre, pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
-    $result = $db_buques -> prepare($query);
+    $result = $db_puertos -> prepare($query);
     $result -> execute();
     $resultado = $result -> fetchAll();
 
     $pasaporte = $resultado[0][1];
 
-    $query = "SELECT puertos.nombre_puerto, puertos.ciudad_puerto, instalaciones.tipo_instalacion FROM instalaciones, puertos
-    WHERE instalaciones.puid = puertos.puid AND instalaciones.rut_jefe = '$pasaporte'";
+    $query = "SELECT puertos.nombre, puertos.ciudad, instalaciones.tipo FROM instalaciones, puertos
+    WHERE instalaciones.puid = puertos.puid AND instalaciones.jefe_id = '$pasaporte'";
 
     $result = $db_puertos -> prepare($query);
     $result -> execute();
