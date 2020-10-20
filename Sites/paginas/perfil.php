@@ -54,7 +54,10 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                         echo '<p> Jefe de instalación</p>';
                     };
                     ?>
-                <button type="submit">WENA</button>
+                <br>
+                <form action="cambio_constrasena.php" method="post">    
+                    <input type="submit" value="Cambiar contraseña">
+                </form>
                     <br>
                 </div>
             </div>
