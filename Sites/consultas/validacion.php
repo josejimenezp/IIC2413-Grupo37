@@ -21,7 +21,6 @@ if (empty($usuarios)) {
     $_SESSION['tipo'] = '';
 }
 else {
-    echo "Iniciado correctamente";
     header("location: ../paginas/perfil.php");
 };
 
