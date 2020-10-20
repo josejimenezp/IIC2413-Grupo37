@@ -61,8 +61,8 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                 <button class="myButton" type="submit" id='boton2' value="Cambiar contraseña">
 							Cambiala
 						</button>
-                    <?php}
-                    else{
+                    <?php} ?>
+                    <?php else{
                     ?>
                 <br>
                 <form action="perfil.php" method="post">    
