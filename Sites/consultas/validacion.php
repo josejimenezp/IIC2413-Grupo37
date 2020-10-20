@@ -11,16 +11,15 @@ $consulta = "SELECT * FROM usuarios where usuarios.nombre = '$nombre' and usuari
 $result = $db_puertos -> prepare($consulta);
 $result -> execute();
 $resultado = $result-> fetchAll();
-$usuarios = $result;
-echo $usuarios;
+
 // Error al iniciar sesión
-//if (empty($usuarios)) {
-//    $_SESSION['password'] = 'error';
-//    header("location: ../index.php");
-//    $_SESSION['tipo'] = '';
-//}
-//else {
-//    header("location: ../paginas/perfil.php");
-//};
+if (empty($resultado)) {
+    $_SESSION['password'] = 'error';
+    header("location: ../index.php");
+    $_SESSION['tipo'] = '';
+}
+else {
+    header("location: ../paginas/perfil.php");
+};
 
 ?>
