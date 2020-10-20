@@ -54,7 +54,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                         echo '<p> Jefe de instalación</p>';
                     };
                     ?>
-
+                <button type="submit">WENA</button>
                     <br>
                 </div>
             </div>
