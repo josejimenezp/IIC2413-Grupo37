@@ -20,6 +20,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     $resultado = $result -> fetchAll();
     
     $pasaporte = $resultado[0][1];
+    echo $resultado
 ?>
 
 
@@ -28,7 +29,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div class="card-title"><h1><?=$_SESSION['username']?></h1></div>
+            <div class="card-title"><h1><?=$_SESSION['nombre']?></h1></div>
             <div class="row">
                 <div class="col-3">
                     <div class="card" style="background: lightgrey; height: 250px"></div>
