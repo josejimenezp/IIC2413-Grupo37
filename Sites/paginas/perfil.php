@@ -13,7 +13,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     require("../config/conexion.php");
 
     $nombre = $_SESSION['nombre'];
-    $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo FROM usuarios WHERE nombre = '$nombre';";
+    $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_puertos -> prepare($query);
     $result -> execute();
@@ -45,13 +45,13 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
 
                     <br>
                     <?php // Hay que cambiar ese 1 por 5
-                    if ($resultado[0][1] == 'Capitan') {
+                    if ($resultado[0][5] == 'Capitan') {
                         echo '<h5>Labor</h5>';
                         echo '<p> Capitan </p>';
                     }
-                    else if ($resultado[0][1] == 'Jefe') {
+                    else if ($resultado[0][5] == 'Jefe') {
                         echo '<h5>Labor</h5>';
-                        echo '<p> Jefe </p>';
+                        echo '<p> Jefe de instalación</p>';
                     };
                     ?>
 

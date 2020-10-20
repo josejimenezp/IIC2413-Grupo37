@@ -18,7 +18,7 @@
 #Si existe emitiremos un error, si no existe lo agregaremos
     if (empty($resultados)){
     
-        $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$nacionalidad','$password', '$tipo');";
+        $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$tipo','$nacionalidad','$password');";
         $resultado = $db -> prepare($agregar);
         $resultado -> execute();
         $resultados = $resultado -> fetchAll();
