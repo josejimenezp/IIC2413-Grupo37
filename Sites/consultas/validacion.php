@@ -12,16 +12,15 @@ $result = $db_puertos -> prepare($consulta);
 $result -> execute();
 $resultado = $result-> fetchAll();
 $usuarios = $result;
-
+echo $usuarios;
 // Error al iniciar sesión
-if (empty($usuarios)) {
-    echo "Error en contraseña o usuario";
-    $_SESSION['password'] = 'error';
-    header("location: ../index.php");
-    $_SESSION['tipo'] = '';
-}
-else {
-    header("location: ../paginas/perfil.php");
-};
+//if (empty($usuarios)) {
+//    $_SESSION['password'] = 'error';
+//    header("location: ../index.php");
+//    $_SESSION['tipo'] = '';
+//}
+//else {
+//    header("location: ../paginas/perfil.php");
+//};
 
 ?>
