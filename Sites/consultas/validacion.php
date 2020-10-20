@@ -15,8 +15,9 @@ $resultado = $result-> fetchAll();
 // Error al iniciar sesión
 if (empty($resultado)) {
     $_SESSION['password'] = 'error';
-    header("location: ../index.php");
-    $_SESSION['tipo'] = '';
+    echo "<script>alert('Credenciales inválidas');
+        window.location.href='../index.php'</script>";
+    //$_SESSION['tipo'] = '';
 }
 else {
     header("location: ../paginas/perfil.php");
