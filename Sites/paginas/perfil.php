@@ -12,7 +12,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     
     require("../config/conexion.php");
 
-    $nombre = $_SESSION['username'];
+    $nombre = $_SESSION['nombre'];
     $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_puertos -> prepare($query);
@@ -20,9 +20,6 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     $resultado = $result -> fetchAll();
     
     $pasaporte = $resultado[0][1];
-    echo $pasaporte;
-    echo 'DONDE ESTOY';
-    echo $nombre;
 ?>
 
 
