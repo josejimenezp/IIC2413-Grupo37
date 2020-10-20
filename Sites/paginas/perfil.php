@@ -1,6 +1,6 @@
 <?php
 @session_start();
-if (isset($_SESSION['username'])) { // No se si esta bien
+if (isset($_SESSION['nombre'])) { // No se si esta bien
     require("header_user.php");
 } else {
     header("location: home.php");
