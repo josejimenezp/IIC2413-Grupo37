@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <?php
 @session_start();
 if (isset($_SESSION['nombre'])) { // No se si esta bien
@@ -57,7 +55,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                     };
                     ?>
                 <br>
-                <form action="cambio_constrasena.php" method="post">    
+                <form action="cambio_contrasena.php" method="post">    
                 <button class="login100-form-btn" type="submit">
 							Cambiar contraseña
 						</button>
@@ -76,5 +74,3 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
         require('info_jefe.php');
     };
     ?>
-</div>
-</html>
