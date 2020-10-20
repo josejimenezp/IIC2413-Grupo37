@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <?php
-    require("..\config\conexion.php");
+    require("../config/conexion.php");
     // require("..\paginas\busqueda_navieras.php")
     $nombre_nav = $_GET["nombre_nav"];
 
