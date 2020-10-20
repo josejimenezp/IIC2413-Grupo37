@@ -16,10 +16,11 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_puertos -> prepare($query);
-    $result = $result -> execute();
+    $result -> execute();
     $resultado = $result -> fetchAll();
     
     $pasaporte = $resultado[0][1];
+    echo $pasaporte
 ?>
 
 
