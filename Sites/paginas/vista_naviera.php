@@ -74,6 +74,9 @@ if (isset($_SESSION['nombre'])) {
             <div class='card-text'>
                 <p> <?=$resultado[4]?> </p>
             </div>
+            <div class='card-text'>
+                <p> <?=$resultado[1]?> </p>
+            </div>
 
         </div>
         </div>
