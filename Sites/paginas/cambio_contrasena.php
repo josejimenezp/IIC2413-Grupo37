@@ -48,6 +48,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                     if ($resultado[0][5] == 'Capitan') {
                         echo '<h5>Labor</h5>';
                         echo '<p> Capitan </p>';
+                        echo $_SESSION['password'];
                     }
                     else if ($resultado[0][5] == 'Jefe') {
                         echo '<h5>Labor</h5>';
