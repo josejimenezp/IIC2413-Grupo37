@@ -7,7 +7,7 @@ $_SESSION['nombre'] = $nombre;
 $_SESSION['password'] = $password;
  
 // Busco si está en la tabla de usuarios
-$consulta = "SELECT * FROM usuarios where usuarios.nombre = '$nombre' and usuarios.contraseña = '$password';";
+$consulta = "SELECT * FROM usuarios where LOWER(usuarios.nombre) = LOWER('$nombre') and usuarios.contraseña = '$password';";
 $result = $db_puertos -> prepare($consulta);
 $result -> execute();
 $resultado = $result-> fetchAll();
