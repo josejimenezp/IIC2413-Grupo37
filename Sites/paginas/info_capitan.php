@@ -1,7 +1,7 @@
 
 <?php
-    $nombre = $_SESSION['username'];
-    $query = "SELECT nombre, pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
+    $nombre = $_SESSION['nombre'];
+    $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_buques -> prepare($query);
     $result -> execute();
