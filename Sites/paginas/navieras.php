@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
     // require("..\paginas\busqueda_navieras.php")
     $nombre_nav = $_GET["nombre_nav"]
 
-    $query = "SELECT * FROM navieras WHERE navieras.nombre LIKE LOWER(%$nombre_nav%)"; // nid, nombre, pais, descripcion
+    $query = "SELECT * FROM navieras WHERE navieras.nombre LIKE LOWER(%$nombre_nav%);"; // nid, nombre, pais, descripcion
 
     $result = $db -> prepare($query);
     $result -> execute();
