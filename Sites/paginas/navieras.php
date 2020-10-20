@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
     require("header.php");
@@ -11,9 +11,9 @@ if (isset($_SESSION['username'])) {
 <?php
     require("../config/conexion.php");
     // require("..\paginas\busqueda_navieras.php")
-    $nombre_nav = $_GET["nombre_nav"];
+    //$nombre_nav = $_GET["nombre_nav"];
 
-    $query = "SELECT * FROM navieras WHERE navieras.nombre LIKE LOWER(%$nombre_nav%);"; // nid, nombre, pais, descripcion
+    $query = "SELECT * FROM navieras;"; // nid, nombre, pais, descripcion
 
     $result = $db_buques -> prepare($query);
     $result -> execute();
