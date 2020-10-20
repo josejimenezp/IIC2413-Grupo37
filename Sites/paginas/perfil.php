@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 if (isset($_SESSION['username'])) { // No se si esta bien
     require("header_user.php");
 } else {
@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) { // No se si esta bien
     $nombre = $_SESSION['username'];
     $query = "SELECT nombre, pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
-    $result = $db_buques -> prepare($query);
+    $result = $db_puertos -> prepare($query);
     $result -> execute();
     $resultado = $result -> fetchAll();
     

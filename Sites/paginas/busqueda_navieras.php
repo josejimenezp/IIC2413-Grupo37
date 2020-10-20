@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
     require("header.php");
