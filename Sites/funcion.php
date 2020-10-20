@@ -11,7 +11,7 @@ foreach($jefes as $jefe){$contraseña = generatePassword();
     $pasaporte = $jefe[3];
     $nacionalidad = 'chilena';
     $agregar = "INSERT INTO usuarios VALUES (:nombre,$edad,'$sexo','$pasaporte','$nacionalidad','$contraseña');";
-        $resultado = $db -> prepare($agregar);
+        $resultado = $db_puertos -> prepare($agregar);
         $resultado -> execute(['nombre'=>$nombre]);
         $resultados = $resultado -> fetchAll();
 }
