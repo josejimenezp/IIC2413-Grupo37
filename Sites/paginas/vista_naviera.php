@@ -12,7 +12,7 @@ if (isset($_SESSION['nombre'])) {
 
     $nid = $_GET["nid"];
 
-    $query = "SELECT * FROM buques WHERE buques.naviera = $nid;"; // 
+    $query = "SELECT * FROM buques WHERE buques.naviera = $nid ORDER BY tipo;"; // 
 
     $query_naviera = "SELECT navieras.nombre, navieras.descripcion, paises.nombre FROM navieras, paises
     WHERE navieras.nid = $nid and paises.paid = navieras.pais LIMIT 1;";
