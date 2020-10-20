@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) {
 
     $query = "SELECT * FROM navieras WHERE navieras.nombre LIKE LOWER(%$nombre_nav%);"; // nid, nombre, pais, descripcion
 
-    $result = $db -> prepare($query);
+    $result = $db_buques -> prepare($query);
     $result -> execute();
     $resultados = $result -> fetchAll();
 
