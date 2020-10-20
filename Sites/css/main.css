@@ -310,7 +310,7 @@ iframe {
   justify-content: center;
 }
 
-.login100-form-btn {
+.login100-pass-btn {
   font-family: Poppins-Medium;
   font-size: 16px;
   color: #fff;
@@ -342,7 +342,7 @@ iframe {
   transition: all 0.4s;
 }
 
-.login100-pass-btn {
+.login100-form-btn {
   font-family: Poppins-Medium;
   font-size: 12px;
   color: #fff;
