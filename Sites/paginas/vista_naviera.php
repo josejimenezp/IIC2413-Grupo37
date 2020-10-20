@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
     require("header.php");
@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <?php
-    require("..\config\conexion.php");
+    require("../config/conexion.php");
 
     $nid = $_GET["nid"];
 
