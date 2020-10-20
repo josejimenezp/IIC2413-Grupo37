@@ -56,7 +56,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                     ?>
                 <br>
                 <form action="cambio_constrasena.php" method="post">    
-                    <button type="submit" value="Cambiar contraseña">
+                    <button type="submit"> value="Cambiar contraseña"</button>
                 </form>
                     <br>
                 </div>
