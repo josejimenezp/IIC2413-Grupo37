@@ -10,6 +10,7 @@ fecha RECORD;
 id_instalacion integer;
 fecha_atraque integer;
 BEGIN
+DROP TABLE aux;
 CREATE TEMP TABLE aux(fecha date);
 FOR instalacion IN (select * from instalaciones where instalaciones.iid = puerto)
 LOOP
@@ -23,6 +24,5 @@ id_instalacion = instalacion.iid;
 	END LOOP;
 RETURN QUERY (SELECT * FROM aux);
 END LOOP;
-DROP TABLE aux;
 END;
 $$ language plpgsql;
