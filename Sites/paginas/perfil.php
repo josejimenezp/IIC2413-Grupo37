@@ -33,9 +33,9 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
             <div class="row">
                 <div class="col-3">
                     <span>
-						<img src="images/perfil.jpg" alt="AVATAR">
+						<img src="../images/perfil.jpg" alt="AVATAR">
 					</span>
-                </div>
+                    </div>
                 <div class="col-9">
                     <h5>Información</h5>
                     <br>
