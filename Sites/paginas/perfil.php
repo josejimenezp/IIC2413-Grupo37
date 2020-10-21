@@ -33,7 +33,7 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
             <div class="row">
                 <div class="col-3">
                     <span>
-						<img src="../images/perfil.jpg" alt="AVATAR">
+						<img src="../images/perfil.jpg" alt="AVATAR" height=250px>
 					</span>
                     </div>
                 <div class="col-9">
