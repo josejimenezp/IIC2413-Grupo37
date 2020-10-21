@@ -10,8 +10,8 @@ fecha RECORD;
 id_instalacion integer;
 fecha_atraque integer;
 BEGIN
-DROP TABLE aux;
-CREATE TEMP TABLE aux(fecha date);
+CREATE TEMP TABLE IF NOT EXISTS aux(fecha date);
+DELETE FROM aux;
 FOR instalacion IN (select * from instalaciones where instalaciones.iid = puerto)
 LOOP
 capacidad = instalacion.capacidad;
