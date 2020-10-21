@@ -1,3 +1,28 @@
+CREATE OR REPLACE FUNCTION fechas(
+fecha_entrada date,
+fecha_salida date
+) RETURNS table(fecha date) as $$
+
+DECLARE
+fecha date;
+
+BEGIN
+
+CREATE TEMP TABLE IF NOT EXISTS fecha_table(fecha date); 
+DELETE FROM fecha_table;
+fecha = fecha_entrada;
+WHILE fecha != fecha_salida + 1
+LOOP
+INSERT INTO fecha_table VALUES (fecha);
+fecha = fecha + 1;
+END LOOP;
+RETURN QUERY (SELECT * FROM fecha_table);
+END;
+$$ language plpgsql;
+
+
+
+
 CREATE OR REPLACE FUNCTION capacidad_agotada(
 fecha_entrada date,
 fecha_salida date,
@@ -24,7 +49,7 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque);
 	END if;
 	END LOOP;
-RETURN QUERY (SELECT * FROM aux);
+RETURN QUERY SELECT * FROM fechas(fecha_entrada,fecha_salida) EXCEPT (SELECT * FROM aux);
 END LOOP;
 END;
 $$ language plpgsql;
