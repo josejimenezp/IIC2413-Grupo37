@@ -14,7 +14,7 @@ BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date);
 DELETE FROM aux;
 
-FOR instalacion IN (select instalaciones.idd, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
+FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
 capacidad = instalacion.capacidad;
 id_instalacion = instalacion.iid;
