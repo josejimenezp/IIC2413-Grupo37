@@ -21,7 +21,7 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque);
 	END if;
 	END LOOP;
-RETURN aux;
+RETURN QUERY EXECUTE (SELECT * FROM aux);
 END LOOP;
 END;
 $$ language plpgsql;
