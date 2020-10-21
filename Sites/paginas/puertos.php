@@ -10,8 +10,6 @@ if (isset($_SESSION['nombre'])) {
 
 <?php
     require("../config/conexion.php");
-    // require("..\paginas\busqueda_navieras.php")
-    //$nombre_nav = $_GET["nombre_nav"];
 
     $query = "SELECT * FROM puertos;"; // nid, nombre, pais, descripcion
 
@@ -26,7 +24,7 @@ if (isset($_SESSION['nombre'])) {
     <br><br>
     <div class="container">
 
-    <h2>Navieras</h2>
+    <h2>Puertos</h2>
     <br>
 
     <?php foreach ($resultados as $resultado): ?>
