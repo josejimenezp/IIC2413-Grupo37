@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION capacidad_agotada(
 fecha_entrada date,
 fecha_salida date,
-instalacion integer
+instalacion_in integer
 ) RETURNS table(fecha date) as $$
 DECLARE
 capacidad integer;
@@ -14,7 +14,7 @@ BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date);
 DELETE FROM aux;
 
-FOR instalacion IN (select * from instalaciones where instalaciones.iid = instalacion)
+FOR instalacion IN (select instalaciones.idd, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
 capacidad = instalacion.capacidad;
 id_instalacion = instalacion.iid;
