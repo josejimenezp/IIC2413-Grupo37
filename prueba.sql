@@ -14,9 +14,9 @@ FOR instalacion IN (select * from instalaciones where instalaciones.iid = puerto
 LOOP
 capacidad = instalacion.capacidad;
 id_instalacion = instalacion.iid;
-    FOR fecha IN (select fecha_atraque, count(fecha_atraque) from instalaciones, permisos WHERE instalaciones.iid = id_instalacion AND permisos.iid = instalaciones.iid GROUP BY fecha_atraque)
+    FOR fecha IN (select permisos.fecha_atraque, count(permisos.fecha_atraque) from instalaciones, permisos WHERE instalaciones.iid = id_instalacion AND permisos.iid = instalaciones.iid GROUP BY fecha_atraque)
         LOOP
-        fecha = fecha_atraque;
+        fecha_atraque = fecha;
 	END LOOP;
 RETURN instalacion.capacidad;
 END LOOP;
