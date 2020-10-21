@@ -15,6 +15,6 @@ LOOP
 INSERT INTO fecha_table VALUES (fecha);
 fecha = fecha + 1;
 END LOOP;
-RETURN QUERY (SELECT * FROM fecha_table)
+RETURN QUERY (SELECT * FROM fecha_table);
 END;
 $$ language plpgsql;
