@@ -9,8 +9,8 @@ instalacion RECORD;
 fecha RECORD;
 id_instalacion integer;
 fecha_atraque integer;
-aux table(fecha date);
 BEGIN
+CREATE TEMP TABLE aux(fecha date);
 FOR instalacion IN (select * from instalaciones where instalaciones.iid = puerto)
 LOOP
 capacidad = instalacion.capacidad;
