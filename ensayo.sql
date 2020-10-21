@@ -9,6 +9,7 @@ fecha date;
 BEGIN
 
 CREATE TEMP TABLE IF NOT EXISTS fecha_table(fecha date); 
+DELETE FROM fecha_table;
 fecha = fecha_entrada;
 WHILE fecha != fecha_salida + 1
 LOOP
