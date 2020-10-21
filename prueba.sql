@@ -9,7 +9,7 @@ instalacion RECORD;
 fecha RECORD;
 id_instalacion integer;
 fecha_atraque integer;
-aux table(fecha date)
+aux table(fecha date);
 BEGIN
 FOR instalacion IN (select * from instalaciones where instalaciones.iid = puerto)
 LOOP
