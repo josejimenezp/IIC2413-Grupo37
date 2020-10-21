@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION capacidad_agotada(
+CREATE OR REPLACE FUNCTION fechas(
 fecha_entrada date,
 fecha_salida date
 ) RETURNS table(fecha date) as $$
@@ -10,7 +10,7 @@ BEGIN
 
 CREATE TEMP TABLE IF NOT EXISTS fecha_table(fecha date); 
 fecha = fecha_entrada;
-WHILE fecha != fecha_salida
+WHILE fecha != fecha_salida + 1
 LOOP
 INSERT INTO fecha_table VALUES (fecha);
 fecha = fecha + 1;
