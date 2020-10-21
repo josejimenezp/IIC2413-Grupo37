@@ -49,7 +49,7 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque);
 	END if;
 	END LOOP;
-RETURN QUERY SELECT * FROM fechas(fecha_entrada,fecha_salida) EXCEPT (SELECT * FROM aux) ORDER fechas.fecha;
+RETURN QUERY SELECT * FROM fechas(fecha_entrada,fecha_salida) EXCEPT (SELECT * FROM aux) ORDER BY fechas.fecha;
 END LOOP;
 END;
 $$ language plpgsql;
