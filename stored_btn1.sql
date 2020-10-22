@@ -51,7 +51,11 @@ id_instalacion = instalacion.iid;
         if capacidad <= fecha.count THEN
 		porcentaje_capacidadvar = fecha.count/capacidad;
 		INSERT INTO aux VALUES(fecha.fecha_atraque, porcentaje_capacidadvar);
+	else
+		porcentaje_capacidadvar = 100;
 	END if;
+	ALTER TABLE fechas ADD COLUMN porcentaje_ocupacion real;
+	UPDATE fechas SET porcentaje_ocupacion = porcentaje_capacidadvar WHERE fechas.fecha = fecha.fecha_atraque;
 	END LOOP;
 RETURN QUERY SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT aux.fecha FROM aux)) as foo ORDER BY foo.fecha;
 END LOOP;
