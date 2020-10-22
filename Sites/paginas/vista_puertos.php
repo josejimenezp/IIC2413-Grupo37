@@ -47,6 +47,7 @@ if (isset($_SESSION['nombre'])) {
                     <form action='lalalalalal.php'>
                     <input type="date" class="redondeado" id="fecha_entrada" name="fecha_entrada">
                     <input type="date" class="redondeado" id="fecha_salida" name="fecha_salida"><br><br>
+                    </form>
                 </div>
             </div>
         </div>
