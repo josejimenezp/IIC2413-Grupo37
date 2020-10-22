@@ -43,7 +43,10 @@ if (isset($_SESSION['nombre'])) {
                     <ul class="list-inline">
                         <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $ciudad?></li>
                     </ul>
-                    <p>...</p>
+                    <p>Ingrese intervalo de fechas para saber si la capacidad de las instalaciones del puerto estaban agotadas</p>
+                    <form action='lalalalalal.php'>
+                    <input type="date" id="fecha_entrada" name="fecha_entrada">
+                    <input type="date" id="fecha_salida" name="fecha_salida"><br><br>
                 </div>
             </div>
         </div>
