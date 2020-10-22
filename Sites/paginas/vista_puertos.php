@@ -6,7 +6,7 @@ if (isset($_SESSION['nombre'])) {
     require("header.php");
 }
 ?>
-
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <?php
     require("../config/conexion.php");
 
