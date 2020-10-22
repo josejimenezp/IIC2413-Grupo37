@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION fechas(
 fecha_entrada date,
 fecha_salida date
-) RETURNS table(fecha date) as $$
+) as $$
 
 DECLARE
 fecha date;
