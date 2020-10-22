@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION fechas(
 fecha_entrada date,
 fecha_salida date
-) returns integer as $$
+) returns table(fecha date) as $$
 
 DECLARE
 fecha date;
@@ -16,6 +16,7 @@ LOOP
 INSERT INTO fecha_table VALUES (fecha);
 fecha = fecha + 1;
 END LOOP;
+RETURN QUERY SELECT * FROM fecha_table;
 END;
 $$ language plpgsql;
 
