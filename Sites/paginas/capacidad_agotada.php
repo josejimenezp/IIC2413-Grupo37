@@ -1,22 +1,23 @@
 <?php
 session_start();
-if (isset($_SESSION['nombre'])) {
-    require("header_user.php");
-} else {
-    require("header.php");
-}
-    require("../config/conexion.php");
-    $fecha_entrada = $_POST["fecha_entrada"];
-    $fecha_salida = $_POST["fecha_salida"];
+require("header_user.php");
+require("../config/conexion.php");
 
-    $query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; // 
-    
-    $result = $db_puertos -> prepare($query);
-    $result -> execute();
-    $resultados = $result -> fetchAll();  // Resultados de buques
+$fecha_entrada = $_POST["fecha_entrada"];
+$fecha_salida = $_POST["fecha_salida"];
 
-    foreach ($resultados as $resultado):
-        echo $resultado[0];
-        echo "<br><br>";
-    endforeach;
+$query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; // 
+
+$result = $db_puertos -> prepare($query);
+$result -> execute();
+$resultados = $result -> fetchAll();  // Resultados de buques
+
+foreach ($resultados as $resultado):
     ?>
+<div class='card'>
+    <p><?=$resultado[0]?></p>
+</div>
+<?php endforeach; ?>
+
+
+
