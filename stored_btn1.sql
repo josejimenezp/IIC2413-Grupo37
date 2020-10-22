@@ -40,7 +40,7 @@ BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
 
-SELECT fechas(fecha_entrada,fecha_salida);
+PERFORM fechas(fecha_entrada,fecha_salida);
 
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
