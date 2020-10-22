@@ -29,7 +29,7 @@ if (isset($_SESSION['nombre'])) {
 
     <?php foreach ($resultados as $resultado): ?>
 
-        <?php echo "<a href='vista_puerto.php?nid=$resultado[0]'>"; ?>
+        <?php echo "<a href='vista_puerto.php?puid=$resultado[0]'>"; ?>
             <div class='card'>
             <div class='card-body'>
                 <div class='card-title'>
