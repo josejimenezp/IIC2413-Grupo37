@@ -52,7 +52,7 @@ id_instalacion = instalacion.iid;
 	else
 		porcentaje_capacidadvar = 100 - fecha.count/capacidad;
 	END if;
-	UPDATE fecha_table SET porcentaje_ocupacion = porcentaje_capacidadvar WHERE fecha_table.fecha = fecha.fecha_atraque;
+	UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fecha = fecha.fecha_atraque;
 	END LOOP;
 RETURN QUERY SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fecha;
 END LOOP;
