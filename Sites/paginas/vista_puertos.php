@@ -42,41 +42,7 @@ if (isset($_SESSION['nombre'])) {
                     <br>
                     <ul class="list-inline">
                         <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $ciudad?></li>
-                    </ul>
-                    <p>Ingrese intervalo de fechas para saber si la capacidad de las instalaciones del puerto estaban agotadas</p>
-                    <form action='lalalalalal.php'>
-                    <input type="date" class="redondeado" id="fecha_entrada" name="fecha_entrada">
-                    <input type="date" class="redondeado" id="fecha_salida" name="fecha_salida"><br><br>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <br><br>
-    <h2>Buques de <?=$nombre?><h2>
-    <br>
-
-    <?php foreach ($resultados as $resultado): ?>
-
-    <div class='card'>
-        <div class='card-body'>
-            <div class='card-title'>
-                <h3 > <?=$resultado[2]?> </h3>
-            </div>
-            <div class='card-text'>
-                <p> Patente: <?=$resultado[1]?> </p>
-            </div>
-            <div class='card-text'>
-                <p> Tipo: <?=$resultado[4]?> </p>
-            </div>
-
-        </div>
-        </div>
-    <br>
-
-    <?php endforeach; ?>
-
-<br>
-</div>
