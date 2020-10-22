@@ -49,6 +49,10 @@ if (isset($_SESSION['nombre'])) {
 <br><br>
 <div class="container">
     <div class="card">
-        <div class="card-title"><h2>Capacidad agotada</h2></div>
+        <div class="card-title"><h3>Capacidad agotada</h3></div>
+        <form action="google.com">
+            <input class="redondeado" type="date" name="fecha_entrada">
+            <input class="redondeado" type="date" name="fecha_salida">
+        </form>
     </div>
 </div>
