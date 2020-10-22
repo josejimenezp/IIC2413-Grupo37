@@ -15,6 +15,7 @@ if (isset($_SESSION['nombre'])) {
     $result -> execute();
     $resultados = $result -> fetchAll();  // Resultados de buques
 
-    echo $resultados;
-
+    foreach ($resultados as $resultado):
+        echo $resultado[0];
+        echo "<br><br>";
     ?>
