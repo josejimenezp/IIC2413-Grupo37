@@ -53,7 +53,7 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque, porcentaje_capacidadvar);
 	END if;
 	END LOOP;
-RETURN QUERY SELECT * FROM (SELECT * FROM fechas EXCEPT (SELECT aux.fecha FROM aux)) as foo ORDER BY foo.fecha;
+RETURN QUERY SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT aux.fecha FROM aux)) as foo ORDER BY foo.fecha;
 END LOOP;
 END;
 $$ language plpgsql;
