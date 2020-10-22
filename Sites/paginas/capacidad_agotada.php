@@ -6,8 +6,8 @@ if (isset($_SESSION['nombre'])) {
     require("header.php");
 }
     require("../config/conexion.php");
-    $fecha_entrada = $_POST["fecha_entrada"]
-    $fecha_salida = $_POST["fecha_salida"]
+    $fecha_entrada = $_POST["fecha_entrada"];
+    $fecha_salida = $_POST["fecha_salida"];
 
     $query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; // 
     
@@ -15,6 +15,6 @@ if (isset($_SESSION['nombre'])) {
     $result -> execute();
     $resultados = $result -> fetchAll();  // Resultados de buques
 
-    echo $resultados
+    echo $resultados;
 
     ?>
