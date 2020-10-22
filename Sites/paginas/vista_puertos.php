@@ -50,7 +50,7 @@ if (isset($_SESSION['nombre'])) {
 <div class="container">
     <div class="card">
         <div class="card-title"><h3>Capacidad agotada</h3></div>
-        <form action="capacidad_agotada.php">
+        <form action="capacidad_agotada.php" method="POST">
             <input class="redondeado" type="date" name="fecha_entrada" required>
             <br><br>
             <input class="redondeado" type="date" name="fecha_salida" required>
