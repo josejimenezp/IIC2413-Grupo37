@@ -1,14 +1,14 @@
 CREATE OR REPLACE FUNCTION fechas(
 fecha_entrada date,
 fecha_salida date
-) returns table(fecha date, capacidad_porcentual real) as $$
+) returns table(fechaxd date, capacidad_porcentual real) as $$
 
 DECLARE
 fecha date;
 
 BEGIN
 
-CREATE TEMP TABLE IF NOT EXISTS fecha_table(fecha date, capacidad_porcentual real); 
+CREATE TEMP TABLE IF NOT EXISTS fecha_table(fechaxd date, capacidad_porcentual real); 
 DELETE FROM fecha_table;
 fecha = fecha_entrada;
 WHILE fecha != fecha_salida + 1
@@ -52,11 +52,11 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque, 0);
 	else
 		porcentaje_capacidadvar = 100 - fecha.count/capacidad;
-		UPDATE fecha_table SET capacidad_porcentual = 12.3 WHERE fecha_table.fecha = '2019-05-20';
+		UPDATE fecha_table SET capacidad_porcentual = 12.3 WHERE fecha_table.fechaxd = '2019-05-20';
 	END if;
-	UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fecha = fecha.fecha_atraque;
+	UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fechaxd = fecha.fecha_atraque;
 	END LOOP;
-RETURN QUERY SELECT * FROM fecha_table ORDER BY fecha_table.fecha;
+RETURN QUERY SELECT * FROM fecha_table ORDER BY fecha_table.fechaxd;
 END LOOP;
 END;
 $$ language plpgsql;
