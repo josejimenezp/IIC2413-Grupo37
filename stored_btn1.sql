@@ -39,7 +39,7 @@ porcentaje_capacidadvar real;
 BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
-
+fechas(fecha_entrada,fecha_salida);
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
 capacidad = instalacion.capacidad;
@@ -51,7 +51,7 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque, porcentaje_capacidadvar);
 	END if;
 	END LOOP;
-RETURN QUERY SELECT foo.fecha, aux.porcentaje_capacidad FROM (SELECT * FROM fechas(fecha_entrada,fecha_salida) EXCEPT (SELECT aux.fecha FROM aux)) as foo, fechas WHERE foo.fecha = fechas(fecha_entrada,fecha_salida).fecha ORDER BY foo.fecha;
+RETURN QUERY SELECT * FROM (SELECT * FROM fechas EXCEPT (SELECT aux.fecha FROM aux)) as foo ORDER BY foo.fecha;
 END LOOP;
 END;
 $$ language plpgsql;
