@@ -60,3 +60,9 @@ RETURN QUERY SELECT * FROM fecha_table ORDER BY fecha_table.fechaxd;
 END LOOP;
 END;
 $$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION hola(num integer) RETURNS table(fecha date, porcentaje real) as $$
+BEGIN
+UPDATE fecha_table SET capacidad_porcentual = 12.3 WHERE fecha_table.fechaxd = '2019-05-20'; 
+RETURN QUERY SELECT * FROM fecha_table;  
+END
