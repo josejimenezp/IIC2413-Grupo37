@@ -18,4 +18,5 @@ if (isset($_SESSION['nombre'])) {
     foreach ($resultados as $resultado):
         echo $resultado[0];
         echo "<br><br>";
+    endforeach;
     ?>
