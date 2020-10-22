@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION fechas(
 fecha_entrada date,
 fecha_salida date
-) as $$
+) returns integer as $$
 
 DECLARE
 fecha date;
@@ -39,7 +39,7 @@ BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
 
-fechas(fecha_entrada,fecha_salida);
+SELECT fechas(fecha_entrada,fecha_salida);
 
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
