@@ -41,7 +41,7 @@ CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
 
 PERFORM fechas(fecha_entrada,fecha_salida);
-
+ALTER TABLE fecha_table ADD COLUMN porcentaje_ocupacion real;
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
 capacidad = instalacion.capacidad;
@@ -54,7 +54,6 @@ id_instalacion = instalacion.iid;
 	else
 		porcentaje_capacidadvar = 100;
 	END if;
-	ALTER TABLE fecha_table ADD COLUMN porcentaje_ocupacion real;
 	UPDATE fecha_table SET porcentaje_ocupacion = porcentaje_capacidadvar WHERE fecha_table.fecha = fecha.fecha_atraque;
 	END LOOP;
 RETURN QUERY SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fecha;
