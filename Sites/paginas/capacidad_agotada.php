@@ -43,6 +43,7 @@ $resultados = $result -> fetchAll(); ?>
     ?>
 <div class='card'>
     <p><?=$resultado[0]?></p>
+    <p><?=$resultadoo[1]?></p>
 </div>
 <?php endforeach; ?>
 
