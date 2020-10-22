@@ -16,7 +16,6 @@ LOOP
 INSERT INTO fecha_table VALUES (fecha);
 fecha = fecha + 1;
 END LOOP;
-RETURN QUERY (SELECT * FROM fecha_table);
 END;
 $$ language plpgsql;
 
@@ -39,7 +38,9 @@ porcentaje_capacidadvar real;
 BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
+
 fechas(fecha_entrada,fecha_salida);
+
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
 capacidad = instalacion.capacidad;
