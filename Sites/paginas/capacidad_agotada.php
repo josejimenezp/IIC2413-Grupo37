@@ -6,8 +6,8 @@ if (isset($_SESSION['nombre'])) {
     require("header.php");
 }
     require("../config/conexion.php");
-    $fecha_entrada = $_POST["fecha_entrada"]
-    $fecha_salida = $_POST["fecha_salida"]
+    $fecha_entrada = $_POST["fecha_entrada"];
+    $fecha_salida = $_POST["fecha_salida"];
 
 
     echo $fecha_entrada;
