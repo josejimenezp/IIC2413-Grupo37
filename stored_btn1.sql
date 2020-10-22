@@ -27,7 +27,7 @@ CREATE OR REPLACE FUNCTION capacidad_agotada(
 fecha_entrada date,
 fecha_salida date,
 instalacion_in integer
-) RETURNS table(fecha date) as $$
+) RETURNS table(fecha date, porcentaje real) as $$
 DECLARE
 capacidad integer;
 instalacion RECORD;
