@@ -45,8 +45,8 @@ if (isset($_SESSION['nombre'])) {
                     </ul>
                     <p>Ingrese intervalo de fechas para saber si la capacidad de las instalaciones del puerto estaban agotadas</p>
                     <form action='lalalalalal.php'>
-                    <input type="date" class='redondeado' id="fecha_entrada" name="fecha_entrada">
-                    <input type="date" class='redondeado' id="fecha_salida" name="fecha_salida"><br><br>
+                    <input type="date" class="redondeado" id="fecha_entrada" name="fecha_entrada">
+                    <input type="date" class="redondeado" id="fecha_salida" name="fecha_salida"><br><br>
                 </div>
             </div>
         </div>
