@@ -46,3 +46,9 @@ if (isset($_SESSION['nombre'])) {
             </div>
         </div>
     </div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-title"><h1><?Capacidad agotada?></h1></div>
+    </div>
+</div>
