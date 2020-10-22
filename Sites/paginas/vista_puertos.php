@@ -54,7 +54,8 @@ if (isset($_SESSION['nombre'])) {
             <input class="redondeado" type="date" name="fecha_entrada">
             <br><br>
             <input class="redondeado" type="date" name="fecha_salida">
-            <button class="myButton" type="submit" placeholder="Buscar">
+            <br><br>
+            <button class="myButton" type="submit" placeholder="Buscar">Buscar</button>
         </form>
     </div>
 </div>
