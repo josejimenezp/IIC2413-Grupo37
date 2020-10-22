@@ -39,8 +39,8 @@ porcentaje_capacidadvar real;
 BEGIN
 CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
-
 PERFORM fechas(fecha_entrada,fecha_salida);
+
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
 LOOP
 capacidad = instalacion.capacidad;
@@ -52,9 +52,9 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque, 0);
 	else
 		porcentaje_capacidadvar = 100 - fecha.count/capacidad;
+		UPDATE fecha_table SET capacidad_porcentual = 12.3 WHERE fecha_table.fecha = '2019-05-20';
 	END if;
 	UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fecha = fecha.fecha_atraque;
-	UPDATE fecha_table SET capacidad_porcentual = 12 WHERE fecha_table.fecha = '2019-05-20';
 	END LOOP;
 RETURN QUERY SELECT * FROM fecha_table ORDER BY fecha_table.fecha;
 END LOOP;
