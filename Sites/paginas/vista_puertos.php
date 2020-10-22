@@ -17,7 +17,7 @@ if (isset($_SESSION['nombre'])) {
     $query_naviera = "SELECT navieras.nombre, navieras.descripcion, paises.nombre FROM navieras, paises
     WHERE navieras.nid = $nid and paises.paid = navieras.pais LIMIT 1;";
     
-    $result = $db_buques -> prepare($query);
+    $result = $db_puertos -> prepare($query);
     $result -> execute();
     $resultados = $result -> fetchAll();  // Resultados de buques
 
