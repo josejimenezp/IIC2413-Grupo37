@@ -10,7 +10,7 @@ $query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; //
 
 $result = $db_puertos -> prepare($query);
 $result -> execute();
-$resultados = $result -> fetchAll(); ?> // Resultados de buques
+$resultados = $result -> fetchAll(); ?>
 <br>
 
 <div class="container">
