@@ -34,10 +34,10 @@ instalacion RECORD;
 fecha RECORD;
 id_instalacion integer;
 fecha_atraque integer;
-porcentaje_capacidad real;
+porcentaje_capacidadvar real;
 
 BEGIN
-CREATE TEMP TABLE IF NOT EXISTS aux(fecha date);
+CREATE TEMP TABLE IF NOT EXISTS aux(fecha date, porcentaje_capacidad real);
 DELETE FROM aux;
 
 FOR instalacion IN (select instalaciones.iid, instalaciones.capacidad from instalaciones where instalaciones.iid = instalacion_in)
@@ -47,8 +47,8 @@ id_instalacion = instalacion.iid;
     FOR fecha IN (select permisos.fecha_atraque, count(permisos.fecha_atraque) from instalaciones, permisos WHERE instalaciones.iid = id_instalacion AND permisos.iid = instalaciones.iid and permisos.fecha_atraque >= fecha_entrada and permisos.fecha_atraque <= fecha_salida GROUP BY permisos.fecha_atraque)
         LOOP
         if capacidad <= fecha.count THEN
-		porcentaje_capacidad = fecha.count/capacidad;
-		INSERT INTO aux VALUES(fecha.fecha_atraque, porcentaje_capacidad);
+		porcentaje_capacidadvar = fecha.count/capacidad;
+		INSERT INTO aux VALUES(fecha.fecha_atraque, porcentaje_capacidadvar);
 	END if;
 	END LOOP;
 RETURN QUERY SELECT * FROM (SELECT * FROM fechas(fecha_entrada,fecha_salida) EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fecha;
