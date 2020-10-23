@@ -66,7 +66,7 @@ CREATE OR REPLACE FUNCTION porcentaje_prom(num integer) RETURNS real as $$
 DECLARE
 promedio RECORD;
 BEGIN
-FOR promedio in SELECT AVG(prueba.capacidad_porcentual) as promedio FROM SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as prueba
+FOR promedio in SELECT AVG(prueba.capacidad_porcentual) as promedio FROM (SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as hola) as prueba
 LOOP
 RETURN prueba.promedio;
 END LOOP;
