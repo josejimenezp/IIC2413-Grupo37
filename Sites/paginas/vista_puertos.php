@@ -12,7 +12,7 @@ if (isset($_SESSION['nombre'])) {
 
     $puid = $_GET["puid"];
 
-    $query = "SELECT * FROM puertos WHERE puertos.puid = $puid;"; // 
+    $query = "SELECT puertos.puid,puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE puertos.puid = $puid AND ciuddes.cid = puertos.cid;"; // 
 
     $query_naviera = "SELECT navieras.nombre, navieras.descripcion, paises.nombre FROM navieras, paises
     WHERE navieras.nid = $nid and paises.paid = navieras.pais LIMIT 1;";
