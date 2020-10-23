@@ -52,7 +52,6 @@ id_instalacion = instalacion.iid;
 		INSERT INTO aux VALUES(fecha.fecha_atraque, 0);
 	else
 		porcentaje_capacidadvar = 100-100*(CAST( fecha.count as decimal) / cast(capacidad as decimal));
-		INSERT INTO aux VALUES(fecha.fecha_atraque, porcentaje_capacidadvar);
 		UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fechaxd = fecha.fecha_atraque;
 	END if;
 	UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fechaxd = fecha.fecha_atraque;
