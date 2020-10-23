@@ -42,23 +42,8 @@ foreach ($instalaciones as $instalacion){
     $tipo = $instalacion[1];
     $capacidad = $instalacion[2];
 
-    $query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',$iid);";
-    $porcentaje = "SELECT porcentaje_prom();";
-
-    $result = $db_puertos -> prepare($query);
-    $result -> execute();
-    $resultados = $result -> fetchAll();
-
-    $resultados_porcentaje = $db_puertos -> prepare($porcentaje);
-    $resultados_porcentaje -> execute();
-    $resultados_porcentaje = $resultados_porcentaje -> fetchAll();
-
-    foreach ($resultados as $resultado){ ?>
-        <div class='card'>
-        <br>
-        <h6>   Fecha: <?=$resultado[0]?></h6>
-        <br>
-        </div>
-    <?php }
+    echo $iid;
+    echo $capacidad;
+    echo $tipo;
     
 } ?>
