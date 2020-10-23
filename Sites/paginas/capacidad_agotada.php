@@ -6,7 +6,7 @@ require("../config/conexion.php");
 $fecha_entrada = $_POST["fecha_entrada"];
 $fecha_salida = $_POST["fecha_salida"];
 $puid = $_SESSION['puid'];
-$nombre_puerto = $_SESSION['nombre_puerto'];
+$nombre_puerto = $_SESSION['nombre'];
 $query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid;";
 $result = $db_puertos -> prepare($query_instalaciones);
 $result -> execute();
@@ -16,7 +16,6 @@ $instalaciones = $result -> fetchAll();?>
     <div class="card">
         <b>Puerto <?=$nombre_puerto?></b>
     </div>
-</div>
 
 <?php 
 foreach ($instalaciones as $instalacion){
@@ -49,3 +48,4 @@ foreach ($instalaciones as $instalacion){
     <br>
 <?php    
 } ?>
+</div>
