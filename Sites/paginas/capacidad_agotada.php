@@ -38,13 +38,14 @@ foreach ($instalaciones as $instalacion){
     Instalación: N°<?= $iid?><br>
     Tipo: <?= $tipo?><br>
     Capacidad: <?= $capacidad?><br>
+    Porcentaje ocupado: <?=$resultados_porcentaje[0][0]?><br>
     </div>
     <div class='card'>
     <?php foreach ($resultados as $resultado){ ?>
         <p>   Fecha: <?=$resultado[0]?></p>
     <?php } ?>
     </div>
-    Porcentaje ocupado: <?=$resultado_porcentaje[0][0]?>
+    <br>
 <?php    
 } ?>
 </div>
