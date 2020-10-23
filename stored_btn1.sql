@@ -49,7 +49,7 @@ id_instalacion = instalacion.iid;
         LOOP
         if capacidad <= fecha.count THEN
 		porcentaje_capacidadvar = 100;
-		INSERT INTO aux VALUES(fecha.fecha_atraque, 0);
+		INSERT INTO aux VALUES(fecha.fecha_atraque, 100);
 	else
 		porcentaje_capacidadvar = 100*(CAST( fecha.count as decimal) / cast(capacidad as decimal));
 		UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fechaxd = fecha.fecha_atraque;
