@@ -42,10 +42,9 @@ foreach ($instalaciones as $instalacion){
     <div class='card'>
     <?php foreach ($resultados as $resultado){ ?>
         <p>   Fecha: <?=$resultado[0]?></p>
-        <br>
     <?php } ?>
     </div>
-    <br>
+    Porcentaje ocupado: <?=$resultado_porcentaje[0][0]?>
 <?php    
 } ?>
 </div>
