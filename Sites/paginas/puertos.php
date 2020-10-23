@@ -11,7 +11,7 @@ if (isset($_SESSION['nombre'])) {
 <?php
     require("../config/conexion.php");
 
-    $query = "SELECT * FROM puertos;"; // nid, nombre, pais, descripcion
+    $query = "SELECT puertos.puid, puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE ciudades.cid = puertos.cid;"; // nid, nombre, pais, descripcion
 
     $result = $db_puertos -> prepare($query);
     $result -> execute();
