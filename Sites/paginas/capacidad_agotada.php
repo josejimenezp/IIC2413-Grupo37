@@ -61,5 +61,6 @@ foreach ($instalaciones as $instalacion){
         <br>
     <?php } ?>
     </div>
+    <br>
 <?php    
 } ?>
