@@ -64,7 +64,7 @@ $$ language plpgsql;
 
 CREATE OR REPLACE FUNCTION porcentaje_prom(num integer) RETURNS real as $$
 BEGIN
-FOR promedio in SELECT AVG(foo.capacidad_porcentual) FROM (SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fechaxd)
+FOR promedio in SELECT AVG(foo.capacidad_porcentual) FROM ((SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fechaxd)) as prueba;
 LOOP
 RETURN promedio;
 END LOOP;
