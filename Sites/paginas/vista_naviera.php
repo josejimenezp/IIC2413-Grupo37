@@ -40,7 +40,9 @@ if (isset($_SESSION['nombre'])) {
             <div class="card-title"><h1><?=$nombre?></h1></div>
             <div class="row">
                 <div class="col-3">
-                    <div class="card" style="background: lightgrey; height: 250px"></div>
+                <span>
+					<img src="../images/naviera.jpg" alt="AVATAR" height=250px>
+				</span>
                 </div>
                 <div class="col-9">
                     <h5>Información</h5>
