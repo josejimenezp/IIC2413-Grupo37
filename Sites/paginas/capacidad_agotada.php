@@ -9,7 +9,7 @@ $puid = $_SESSION['puid'];
 $pais = 'Chile';
 $descrip = 'JAJAJAJAJ';
 $query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid;";
-$result = $db_puertos -> prepare($query);
+$result = $db_puertos -> prepare($query_instalaciones);
 $result -> execute();
 $instalaciones = $result -> fetchAll();?>
 
