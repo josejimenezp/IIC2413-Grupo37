@@ -6,11 +6,16 @@ require("../config/conexion.php");
 $fecha_entrada = $_POST["fecha_entrada"];
 $fecha_salida = $_POST["fecha_salida"];
 
-$query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; // 
+$query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; // FALTA HACER EL FOR DE AFUERA
+$porcentaje = "SELECT porcentaje_prom();";
 
 $result = $db_puertos -> prepare($query);
 $result -> execute();
-$resultados = $result -> fetchAll(); ?>
+$resultados = $result -> fetchAll();
+
+$resultados_porcentaje = $db_puertos -> prepare($query)
+$resultados_porcentaje -> execute()
+$resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>
 <br>
 
 <div class="container">
@@ -43,7 +48,8 @@ $resultados = $result -> fetchAll(); ?>
     ?>
 <div class='card'>
     <p><?=$resultado[0]?></p>
-    <p><?=$resultadoo[1]?></p>
+    <p><?=$resultado[1]?></p>
+    <p><?=$resultados_porcentaje[0]?></p>
 </div>
 <?php endforeach; ?>
 
