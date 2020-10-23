@@ -49,7 +49,7 @@ $resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
 <div class='card'>
     <p><?=$resultado[0]?></p>
     <p><?=$resultado[1]?></p>
-    <p><?=$resultados_porcentaje[0]?></p>
+    <p><?=$resultados_porcentaje[0][0]?></p>
 </div>
 <?php endforeach; ?>
 
