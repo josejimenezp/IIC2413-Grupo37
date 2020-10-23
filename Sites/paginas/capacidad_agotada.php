@@ -36,7 +36,7 @@ $resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
                     </ul>
 
                     <br>
-                    <h5>Ocupacion promedio<?=$resultados_porcentaje[0]?></h5>
+                    <h5>Ocupacion promedio<?=$resultados_porcentaje[0][0]?></h5>
                     <br>
                 </div>
             </div>
