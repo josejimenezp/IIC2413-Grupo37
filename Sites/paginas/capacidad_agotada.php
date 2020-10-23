@@ -36,9 +36,8 @@ $resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
                     </ul>
 
                     <br>
-                    <h5>Otras cosas</h5>
+                    <h5>Ocupacion promedio<?=$resultados_porcentaje[0]?></h5>
                     <br>
-                    <p>...</p>
                 </div>
             </div>
         </div>
@@ -48,7 +47,6 @@ $resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
     ?>
 <div class='card'>
     <p>Fecha: <?=$resultado[0]?></p>
-    <p>Ocupación: <?=$resultados_porcentaje[0][0]?>%</p>
 </div>
 <?php endforeach; ?>
 
