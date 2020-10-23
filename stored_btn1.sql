@@ -62,7 +62,7 @@ END;
 $$ language plpgsql;
 
 
-CREATE OR REPLACE FUNCTION porcentaje_prom(num integer) RETURNS real as $$
+CREATE OR REPLACE FUNCTION porcentaje_prom() RETURNS real as $$
 DECLARE
 promedio RECORD;
 BEGIN
