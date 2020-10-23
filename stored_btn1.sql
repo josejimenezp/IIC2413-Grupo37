@@ -56,7 +56,7 @@ id_instalacion = instalacion.iid;
 	END if;
 	UPDATE fecha_table SET capacidad_porcentual = porcentaje_capacidadvar WHERE fecha_table.fechaxd = fecha.fecha_atraque;
 	END LOOP;
-RETURN QUERY SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fechaxd ;
+RETURN QUERY SELECT foo.fechaxd FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fechaxd ;
 END LOOP;
 END;
 $$ language plpgsql;
