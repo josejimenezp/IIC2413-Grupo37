@@ -61,14 +61,12 @@ END LOOP;
 END;
 $$ language plpgsql;
 
-CREATE OR REPLACE FUNCTION hola(num integer) RETURNS table(fecha date, porcentaje real) as $$
+
+CREATE OR REPLACE FUNCTION porcentaje_prom(num integer) RETURNS real as $$
 BEGIN
-if num = 1 THEN 
-UPDATE fecha_table SET capacidad_porcentual = 12.3 WHERE fecha_table.fechaxd = '2019-05-20'; 
-else 
-UPDATE fecha_table SET capacidad_porcentual = 12.5 WHERE fecha_table.fechaxd = '2019-05-20'; 
-end if;
-UPDATE fecha_table SET capacidad_porcentual = 12.5 WHERE fecha_table.fechaxd = '2019-05-21'; 
-RETURN QUERY SELECT * FROM fecha_table;  
+FOR promedio in SELECT AVG(foo.capacidad_porcentual) FROM (SELECT * FROM (SELECT * FROM fecha_table EXCEPT (SELECT * FROM aux)) as foo ORDER BY foo.fechaxd)
+LOOP
+RETURN promedio;
+END LOOP;
 END;
 $$ language plpgsql;
