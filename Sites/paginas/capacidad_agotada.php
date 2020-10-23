@@ -52,16 +52,18 @@ foreach ($instalaciones as $instalacion){
 
     $resultados_porcentaje = $db_puertos -> prepare($porcentaje);
     $resultados_porcentaje -> execute();
-    $resultados_porcentaje = $resultados_porcentaje -> fetchAll();
+    $resultados_porcentaje = $resultados_porcentaje -> fetchAll();?>
 
-    foreach ($resultados as $resultado){ ?>
+    <div class='card'>
+    
+
+    <?php foreach ($resultados as $resultado){ ?>
         <div class='card'>
         <br>
         <h6>   Fecha: <?=$resultado[0]?></h6>
         <br>
         </div>
-    <?php }
-    
-} ?>
-    
+    <?php } ?>
+    </div>
+<?php    
 } ?>
