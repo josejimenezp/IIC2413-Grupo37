@@ -6,32 +6,17 @@ require("../config/conexion.php");
 $fecha_entrada = $_POST["fecha_entrada"];
 $fecha_salida = $_POST["fecha_salida"];
 $puid = $_SESSION['puid'];
-$pais = 'Chile';
-$descrip = 'JAJAJAJAJ';
+$nombre_puerto = $_SESSION['nombre_puerto']
 $query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid;";
 $result = $db_puertos -> prepare($query_instalaciones);
 $result -> execute();
 $instalaciones = $result -> fetchAll();?>
 
 <div class="container">
-
     <div class="card">
-        <div class="card-body">
-            <div class="card-title"><h1><?=$nombre?></h1></div>
-            <div class="row">
-                <div class="col-3">
-                    <div class="card" style="background: lightgrey; height: 250px"></div>
-                </div>
-                <div class="col-9">
-                    <h5>Información</h5>
-                    <br>
-
-                    <br>
-                    <br>
-                </div>
-            </div>
-        </div>
+        <b>Puerto <?=$nombre_puerto?></b>
     </div>
+</div>
 
 <?php 
 foreach ($instalaciones as $instalacion){

@@ -23,6 +23,7 @@ if (isset($_SESSION['nombre'])) {
     $nombre = $resultados[0][1];
     $ciudad = $resultados[0][2];
     $_SESSION['puid'] = $puid;
+    $_SESSION['nombre_puerto'] = $nombre;
 
     ?>
 
