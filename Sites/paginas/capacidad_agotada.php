@@ -13,9 +13,9 @@ $result = $db_puertos -> prepare($query);
 $result -> execute();
 $resultados = $result -> fetchAll();
 
-$resultados_porcentaje = $db_puertos -> prepare($query)
-$resultados_porcentaje -> execute()
-$resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>
+$resultados_porcentaje = $db_puertos -> prepare($query);
+$resultados_porcentaje -> execute();
+$resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
 <br>
 
 <div class="container">
