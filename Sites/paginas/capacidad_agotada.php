@@ -25,10 +25,6 @@ $instalaciones = $result -> fetchAll();?>
                 <div class="col-9">
                     <h5>Información</h5>
                     <br>
-                    <ul class="list-inline">
-                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $pais?></li>
-                        <li class="list-group-item" style="display: inline-block;"><i class="fas fa-check"></i>&nbsp;&nbsp;<?= $descrip?></li>
-                    </ul>
 
                     <br>
                     <br>
@@ -55,12 +51,14 @@ foreach ($instalaciones as $instalacion){
     $resultados_porcentaje = $resultados_porcentaje -> fetchAll();?>
 
     <div class='card'>
-    
+    Instalación: N°<?= $iid?><br><br>
+    Tipo: <?= $tipo?><br><br>
+    Capacidad: <?= $capacidad?><br><br>
 
     <?php foreach ($resultados as $resultado){ ?>
         <div class='card'>
         <br>
-        <h6>   Fecha: <?=$resultado[0]?></h6>
+        <p>   Fecha: <?=$resultado[0]?></p>
         <br>
         </div>
     <?php } ?>
