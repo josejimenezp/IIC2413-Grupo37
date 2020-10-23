@@ -46,7 +46,9 @@ $resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
 <?php foreach ($resultados as $resultado):
     ?>
 <div class='card'>
-    <h5>Fecha: <?=$resultado[0]?></h5>
+    <br>
+    <h6>Fecha: <?=$resultado[0]?></h6>
+    <br>
 </div>
 <?php endforeach; ?>
 
