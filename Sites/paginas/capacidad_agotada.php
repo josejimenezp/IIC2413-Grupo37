@@ -54,6 +54,7 @@ foreach ($instalaciones as $instalacion){
     Instalación: N°<?= $iid?><br>
     Tipo: <?= $tipo?><br>
     Capacidad: <?= $capacidad?><br>
+    </div><br>
 
     <?php foreach ($resultados as $resultado){ ?>
         <div class='card'>
