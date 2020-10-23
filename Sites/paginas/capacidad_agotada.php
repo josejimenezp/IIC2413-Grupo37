@@ -13,9 +13,9 @@ $result -> execute();
 $instalaciones = $result -> fetchAll();?>
 
 <div class="container">
-        <h2>
+        <h3>
         <b>Puerto <?=$nombre_puerto?></b>
-        </h2>
+        </h3><br>
 <?php 
 foreach ($instalaciones as $instalacion){
     $iid = $instalacion[0];
