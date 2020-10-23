@@ -1,36 +1,36 @@
-ciudad_puerto;region_puerto
-Taltal;Antofagasta
-Arica;Arica y Parinacota
-Primavera;Magallanes y de la Antartica chilena
-Quintero;Valparaiso
-Iquique;Tarapaca
-Antofagasta;Antofagasta
-Mejillones;Antofagasta
-Caldera;Atacama
-La Higuera;Coquimbo
-Lota;Biobio
-Corral;Los Rios
-Coquimbo;Coquimbo
-Tocopilla;Antofagasta
-Penco;Biobio
-Aysen;Aysen del General Carlos Ibañez del Campo
-La Serena;Coquimbo
-Quellon;Los Lagos
-Chañaral;Atacama
-Puerto Montt;Los Lagos
-Ancud;Los Lagos
-San Antonio;Valparaiso
-Valdivia;Los Rios
-Coronel;Biobio
-Talcahuano;Biobio
-Puerto Williams;Magallanes y de la Antartica chilena
-Isla Guarello;Magallanes y de la Antartica chilena
-Puerto Natales;Magallanes y de la Antartica chilena
-Castro;Los Lagos
-Huasco;Atacama
-Hanga Roa;Valparaiso
-Punta Arenas;Magallanes y de la Antartica chilena
-Valparaiso;Valparaiso
-San Vicente;O'Higgins
-Quemchi;Los Lagos
-Cisnes;Aysen del General Carlos Ibañez del Campo
+ciudad_puerto;region_puerto;;CID;nombre ;RID
+Taltal;Antofagasta;;1;Taltal;1
+Arica;Arica y Parinacota;;2;Arica;2
+Primavera;Magallanes y de la Antartica chilena;;3;Primavera;3
+Quintero;Valparaiso;;4;Quintero;4
+Iquique;Tarapaca;;5;Iquique;5
+Antofagasta;Antofagasta;;6;Antofagasta;1
+Mejillones;Antofagasta;;7;Mejillones;1
+Caldera;Atacama;;8;Caldera;6
+La Higuera;Coquimbo;;9;La Higuera;7
+Lota;Biobio;;10;Lota;8
+Corral;Los Rios;;11;Corral;9
+Coquimbo;Coquimbo;;12;Coquimbo;7
+Tocopilla;Antofagasta;;13;Tocopilla;1
+Penco;Biobio;;14;Penco;8
+Aysen;Aysen del General Carlos Ibañez del Campo;;15;Aysen;10
+La Serena;Coquimbo;;16;La Serena;7
+Quellon;Los Lagos;;17;Quellon;11
+Chañaral;Atacama;;18;Chañaral;6
+Puerto Montt;Los Lagos;;19;Puerto Montt;11
+Ancud;Los Lagos;;20;Ancud;11
+San Antonio;Valparaiso;;21;San Antonio;4
+Valdivia;Los Rios;;22;Valdivia;9
+Coronel;Biobio;;23;Coronel;8
+Talcahuano;Biobio;;24;Talcahuano;8
+Puerto Williams;Magallanes y de la Antartica chilena;;25;Puerto Williams;3
+Isla Guarello;Magallanes y de la Antartica chilena;;26;Isla Guarello;3
+Puerto Natales;Magallanes y de la Antartica chilena;;27;Puerto Natales;3
+Castro;Los Lagos;;28;Castro;11
+Huasco;Atacama;;29;Huasco;6
+Hanga Roa;Valparaiso;;30;Hanga Roa;4
+Punta Arenas;Magallanes y de la Antartica chilena;;31;Punta Arenas;3
+Valparaiso;Valparaiso;;32;Valparaiso;4
+San Vicente;O'Higgins;;33;San Vicente;12
+Quemchi;Los Lagos;;34;Quemchi;11
+Cisnes;Aysen del General Carlos Ibañez del Campo;;35;Cisnes;10
