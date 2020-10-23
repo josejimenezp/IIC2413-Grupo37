@@ -14,8 +14,7 @@ if (isset($_SESSION['nombre'])) {
 
     $query = "SELECT puertos.puid,puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE puertos.puid = $puid AND ciudades.cid = puertos.cid;"; // 
 
-    $query_naviera = "SELECT navieras.nombre, navieras.descripcion, paises.nombre FROM navieras, paises
-    WHERE navieras.nid = $nid and paises.paid = navieras.pais LIMIT 1;";
+
     
     $result = $db_puertos -> prepare($query);
     $result -> execute();
@@ -23,6 +22,7 @@ if (isset($_SESSION['nombre'])) {
 
     $nombre = $resultados[0][1];
     $ciudad = $resultados[0][2];
+    $_SESSION['puid'] = $puid;
 
     ?>
 

@@ -5,18 +5,12 @@ require("../config/conexion.php");
 
 $fecha_entrada = $_POST["fecha_entrada"];
 $fecha_salida = $_POST["fecha_salida"];
+$puid = $_SESSION['puid'];
 
-$query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',1);"; // FALTA HACER EL FOR DE AFUERA
-$porcentaje = "SELECT porcentaje_prom();";
-
+$query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid;";
 $result = $db_puertos -> prepare($query);
 $result -> execute();
-$resultados = $result -> fetchAll();
-
-$resultados_porcentaje = $db_puertos -> prepare($porcentaje);
-$resultados_porcentaje -> execute();
-$resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
-<br>
+$instalaciones = $result -> fetchAll();?>
 
 <div class="container">
 
@@ -36,21 +30,35 @@ $resultados_porcentaje = $resultados_porcentaje -> fetchAll()?>;
                     </ul>
 
                     <br>
-                    <h5>Ocupacion promedio: <?=$resultados_porcentaje[0][0]?>%</h5>
                     <br>
                 </div>
             </div>
         </div>
     </div>
 
-<?php foreach ($resultados as $resultado):
-    ?>
-<div class='card'>
-    <br>
-    <h6>   Fecha: <?=$resultado[0]?></h6>
-    <br>
-</div>
-<?php endforeach; ?>
+<?php 
+foreach ($instalaciones as $instalacion){
+    $iid = $instalacion[0];
+    $tipo = $instalacion[1];
+    $capacidad = $instalacion[2];
 
+    $query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',$iid);";
+    $porcentaje = "SELECT porcentaje_prom();";
 
+    $result = $db_puertos -> prepare($query);
+    $result -> execute();
+    $resultados = $result -> fetchAll();
 
+    $resultados_porcentaje = $db_puertos -> prepare($porcentaje);
+    $resultados_porcentaje -> execute();
+    $resultados_porcentaje = $resultados_porcentaje -> fetchAll();
+
+    foreach ($resultados as $resultado){ ?>
+        <div class='card'>
+        <br>
+        <h6>   Fecha: <?=$resultado[0]?></h6>
+        <br>
+        </div>
+    <?php }
+    
+} ?>
