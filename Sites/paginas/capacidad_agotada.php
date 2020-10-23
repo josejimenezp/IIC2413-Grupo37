@@ -54,15 +54,13 @@ foreach ($instalaciones as $instalacion){
     Instalación: N°<?= $iid?><br>
     Tipo: <?= $tipo?><br>
     Capacidad: <?= $capacidad?><br>
-    </div><br>
-
+    </div>
+    <div class='card'>
     <?php foreach ($resultados as $resultado){ ?>
-        <div class='card'>
-        <br>
         <p>   Fecha: <?=$resultado[0]?></p>
         <br>
-        </div>
     <?php } ?>
+    </div>
     </div>
 <?php    
 } ?>
