@@ -51,9 +51,9 @@ foreach ($instalaciones as $instalacion){
     $resultados_porcentaje = $resultados_porcentaje -> fetchAll();?>
 
     <div class='card'>
-    Instalación: N°<?= $iid?><br><br>
-    Tipo: <?= $tipo?><br><br>
-    Capacidad: <?= $capacidad?><br><br>
+    Instalación: N°<?= $iid?><br>
+    Tipo: <?= $tipo?><br>
+    Capacidad: <?= $capacidad?><br>
 
     <?php foreach ($resultados as $resultado){ ?>
         <div class='card'>
