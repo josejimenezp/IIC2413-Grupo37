@@ -1,6 +1,6 @@
 <?php
 @session_start();
-if (isset($_SESSION['nombre'])) { // No se si esta bien
+if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
     header("location: ./home.php");
@@ -8,7 +8,6 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
 ?>
 
 <?php
-
     
     require("../config/conexion.php");
 
@@ -21,7 +20,6 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
     
     $pasaporte = $resultado[0][1];
 ?>
-
 
 
 <br>
@@ -42,7 +40,6 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                         <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $resultado[0][3]?></li>
                         <li class="list-group-item" style="display: inline-block;"><?= $resultado[0][4]?></li>
                     </ul>
-
                     <br>
                     <?php // Hay que cambiar ese 1 por 5
                     if ($resultado[0][5] == 'Capitan') {
@@ -54,25 +51,25 @@ if (isset($_SESSION['nombre'])) { // No se si esta bien
                         echo '<p> Jefe de instalación</p>';
                     };
                     ?>
-                <br>
-                <form action="validacion_password.php" method="post"> 
-                <input type='password' name='contrasena_antigua' placeholder='Contraseña antigua'><br><br> 
-                <input type='password' name='contrasena_nueva' placeholder='Contraseña nueva'><br><br> 
-                <button class="myButton" type="submit" value="Cambiar contraseña">
-							Cambiar contraseña
-						</button>
-                </form>
                     <br>
-                </div>
+                    <form action="validacion_password.php" method="post"> 
+                        <input type='password' name='contrasena_antigua' placeholder='Contraseña antigua'><br><br> 
+                        <input type='password' name='contrasena_nueva' placeholder='Contraseña nueva'><br><br> 
+                        <button class="myButton" type="submit" value="Cambiar contraseña">
+                        Cambiar contraseña
+					    </button>
+                    </form>
+                <br>
             </div>
         </div>
     </div>
-    <br>
-    <?php
-    if ($resultado[0][5] == 'Capitan') {
-        require('info_capitan.php');
-    }
-    else if ($resultado[0][5] == 'Jefe') {
-        require('info_jefe.php');
-    };
-    ?>
+</div>
+<br>
+<?php
+if ($resultado[0][5] == 'Capitan') {
+    require('info_capitan.php');
+}
+else if ($resultado[0][5] == 'Jefe') {
+    require('info_jefe.php');
+};
+?>

@@ -10,13 +10,15 @@ $nombre_puerto = $_SESSION['nombre_puerto'];
 $query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid;";
 $result = $db_puertos -> prepare($query_instalaciones);
 $result -> execute();
-$instalaciones = $result -> fetchAll();?>
+$instalaciones = $result -> fetchAll();
+?>
 
 <div class="container">
-        <h4>
-        <b>Puerto <?=$nombre_puerto?></b>
-        </h4><br>
-<?php 
+    <h4>
+    <b>Puerto <?=$nombre_puerto?></b>
+    </h4><br>
+<?php
+ 
 foreach ($instalaciones as $instalacion){
     $iid = $instalacion[0];
     $tipo = $instalacion[1];
@@ -46,5 +48,6 @@ foreach ($instalaciones as $instalacion){
     </div>
     <br>
 <?php    
-} ?>
+}
+?>
 </div>

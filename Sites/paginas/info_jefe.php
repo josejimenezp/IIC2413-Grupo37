@@ -15,7 +15,6 @@
     $result = $db_puertos -> prepare($query);
     $result -> execute();
     $puerto = $result -> fetchAll();
-
 ?>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">

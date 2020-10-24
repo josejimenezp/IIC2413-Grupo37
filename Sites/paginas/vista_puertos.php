@@ -12,7 +12,7 @@ if (isset($_SESSION['nombre'])) {
 
     $puid = $_GET["puid"];
 
-    $query = "SELECT puertos.puid,puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE puertos.puid = $puid AND ciudades.cid = puertos.cid;"; // 
+    $query = "SELECT puertos.puid,puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE puertos.puid = $puid AND ciudades.cid = puertos.cid;"; 
 
 
     
@@ -24,13 +24,10 @@ if (isset($_SESSION['nombre'])) {
     $ciudad = $resultados[0][2];
     $_SESSION['puid'] = $puid;
     $_SESSION['nombre_puerto'] = $nombre;
-
     ?>
-
 <br>
 
 <div class="container">
-
     <div class="card">
         <div class="card-body">
             <div class="card-title"><h1><?=$nombre?></h1></div>
@@ -53,12 +50,12 @@ if (isset($_SESSION['nombre'])) {
 <div class="container">
     <div class="card">
         <div class="card-title"><h3>Capacidad agotada</h3></div>
-        <form action="capacidad_agotada.php" method="POST">
-            <input class="redondeado" type="date" name="fecha_entrada" required>
-            <br><br>
-            <input class="redondeado" type="date" name="fecha_salida" required>
-            <br><br>
-            <button class="myButton" type="submit">Buscar</button>
-        </form>
+            <form action="capacidad_agotada.php" method="POST">
+                <input class="redondeado" type="date" name="fecha_entrada" required>
+                    <br><br>
+                <input class="redondeado" type="date" name="fecha_salida" required>
+                    <br><br>
+                <button class="myButton" type="submit">Buscar</button>
+            </form>
     </div>
 </div>

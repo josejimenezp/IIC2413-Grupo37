@@ -1,7 +1,7 @@
 <?php
 function funcion(){require("./config/conexion.php");
 $consulta_puertos = "select nombre, edad, sexo, rut from personal, instalaciones where instalaciones.jefe_id = personal.rut and personal.iid = instalaciones.iid;";
-$consulta_buques = "SELECT personas.nombre, edad, genero, pasaporte, nacionalidad FROM personas, buques WHERE buques.id_capitan = personas.pid and personas.buque = buques.bid;";
+$consulta_buques = "SELECT personas.nombre, edad, genero, pasaporte, nacionalidad FROM personas, buques WHERE buques.id_capitan = personas.pid AND personas.buque = buques.bid;";
 $resultado_puertos = $db_puertos -> prepare($consulta_puertos);
 $resultado_puertos -> execute();
 $jefes = $resultado_puertos -> fetchAll();
@@ -16,9 +16,9 @@ foreach($jefes as $jefe){$contraseña = generatePassword();
     $pasaporte = $jefe[3];
     $nacionalidad = 'CHILENA';
     $agregar = "INSERT INTO usuarios VALUES (:nombre,$edad,'$sexo','$pasaporte','Jefe','$nacionalidad','$contraseña');";
-        $resultado = $db_puertos -> prepare($agregar);
-        $resultado -> execute(['nombre'=>$nombre]);
-        $resultados = $resultado -> fetchAll();
+    $resultado = $db_puertos -> prepare($agregar);
+    $resultado -> execute(['nombre'=>$nombre]);
+    $resultados = $resultado -> fetchAll();
 }
 
 foreach($capitanes as $capitan){$contraseña = generatePassword();
@@ -28,9 +28,9 @@ foreach($capitanes as $capitan){$contraseña = generatePassword();
     $pasaporte = $capitan[3];
     $nacionalidad = $capitan[4];
     $agregar = "INSERT INTO usuarios VALUES (:nombre,$edad,'$sexo','$pasaporte','Capitan','$nacionalidad','$contraseña');";
-        $resultado = $db_puertos -> prepare($agregar);
-        $resultado -> execute(['nombre'=>$nombre]);
-        $resultados = $resultado -> fetchAll();
+    $resultado = $db_puertos -> prepare($agregar);
+    $resultado -> execute(['nombre'=>$nombre]);
+    $resultados = $resultado -> fetchAll();
 }
 }
 

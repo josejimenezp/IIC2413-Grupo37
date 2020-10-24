@@ -7,7 +7,7 @@ $_SESSION['nombre'] = $nombre;
 $_SESSION['password'] = $password;
  
 // Busco si está en la tabla de usuarios
-$consulta = "SELECT * FROM usuarios where LOWER(usuarios.nombre) = LOWER('$nombre') and usuarios.contraseña = '$password';";
+$consulta = "SELECT * FROM usuarios WHERE LOWER(usuarios.nombre) = LOWER('$nombre') AND usuarios.contraseña = '$password';";
 $result = $db_puertos -> prepare($consulta);
 $result -> execute();
 $resultado = $result-> fetchAll();
@@ -16,8 +16,7 @@ $resultado = $result-> fetchAll();
 if (empty($resultado)) {
     $_SESSION['password'] = 'error';
     echo "<script>alert('Credenciales inválidas');
-        window.location.href='../index.php'</script>";
-    //$_SESSION['tipo'] = '';
+    window.location.href='../index.php'</script>";
 }
 else {
     header("location: ../paginas/perfil.php");
