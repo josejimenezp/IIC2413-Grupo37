@@ -48,7 +48,7 @@ funcion();
 					</span>
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
 					<?php 
-						if (isset($_SESSION['password']) && $_SESSION['password']=='poto'){	
+						if (isset($_SESSION['password']) && $_SESSION['password']=='error'){	
 						echo "<script>alert('Contraseña o usuario inválido');</script>";
 						session_destroy();
 					} ?>

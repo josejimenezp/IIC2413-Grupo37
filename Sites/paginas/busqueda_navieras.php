@@ -1,32 +1,28 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['nombre'])) {
     require("header_user.php");
-} else {
+}
+else {
     require("header.php");
 }
-
 ?>
 
 <?php
     require("..\config\conexion.php");
 
-    $query = "SELECT * FROM navieras"; // nid, nombre, pais, descripcion
+    $query = "SELECT * FROM navieras";
 
     $result = $db -> prepare($query);
     $result -> execute();
     $resultados = $result -> fetchAll();
-
     ?>
 
-<body>
-        
+<body>  
     <br><br>
-    <div class="container">
-
-    <h2>Navieras</h2>
+    <div class="container"><h2>Navieras</h2>
     <br>
-    
+
     <form action="navieras.php" class="wrap-input100 validate-input m-b-50" method="get">
         Nombre de la naviera: <input class="input100" type="text" name="nombre_nav" value="<?php echo $nombre_nav;?>">
         <button type="submit" class="login100-form-btn">
@@ -36,17 +32,16 @@ if (isset($_SESSION['username'])) {
     <?php
     require("..\config\conexion.php");
 
-    $query = "SELECT * FROM navieras"; // nid, nombre, pais, descripcion
+    $query = "SELECT * FROM navieras";
 
     $result = $db -> prepare($query);
     $result -> execute();
     $resultados = $result -> fetchAll();
-
     ?>
 
     <?php foreach ($resultados as $resultado): ?>
 
-        <?php echo "<a href='vista_naviera.php?nid=$resultado[0]'>"; ?>
+        <?php echo "<a href='vista_naviera.php?nid=$resultado[0]'>";?>
             <div class='card'>
             <div class='card-body'>
                 <div class='card-title'>
@@ -61,7 +56,8 @@ if (isset($_SESSION['username'])) {
         </a>
         <br>
 
-    <?php endforeach; ?>
+    <?php endforeach;
+    ?>
     <br>
     </div>
 

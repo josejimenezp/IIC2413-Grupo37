@@ -1,21 +1,20 @@
 
 <?php
-    $nombre = $_SESSION['username'];
-    $query = "SELECT nombre, pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
+    $nombre = $_SESSION['nombre'];
+    $query_datos = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = :nombre;"; 
 
-    $result = $db_buques -> prepare($query);
-    $result -> execute();
-    $resultado = $result -> fetchAll();
+    $result = $db_puertos -> prepare($query_datos);
+    $result -> execute(['nombre'=>$nombre]);
+    $resultado_datos = $result -> fetchAll();
 
-    $pasaporte = $resultado[0][1];
+    $pasaporte = $resultado_datos[0][1];
 
-    $query = "SELECT puertos.nombre_puerto, puertos.ciudad_puerto, instalaciones.tipo_instalacion FROM instalaciones, puertos
-    WHERE instalaciones.puid = puertos.puid AND instalaciones.rut_jefe = '$pasaporte'";
+    $query = "SELECT puertos.nombre, ciudades.nombre , instalaciones.tipo FROM instalaciones, puertos, ciudades
+    WHERE instalaciones.puid = puertos.puid AND instalaciones.jefe_id = '$pasaporte' AND ciudades.cid = puertos.cid;";
 
     $result = $db_puertos -> prepare($query);
     $result -> execute();
     $puerto = $result -> fetchAll();
-
 ?>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -31,22 +30,18 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="card">
             <div class="card-body">
-                <h2><?=$puerto[0][0]?></h2>
+                <h2>Puerto <?=$puerto[0][0]?></h2>
                 <br>
                 <h5>Ciudad</h5>
                 <p><?=$puerto[0][1]?></p>
-                <br>
             </div>
         </div>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="card">
             <div class="card-body">
-                <h2>Instalación</h2>
-                <br>
                 <h5>Tipo</h5>
                 <p><?=$puerto[0][2]?></p>
-                <br>
             </div>
         </div>
     </div>
