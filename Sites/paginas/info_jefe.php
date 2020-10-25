@@ -9,7 +9,7 @@
 
     $pasaporte = $resultado_datos[0][1];
 
-    $query = "SELECT puertos.nombre, ciudades.nombre , instalaciones.tipo FROM instalaciones, puertos
+    $query = "SELECT puertos.nombre, ciudades.nombre , instalaciones.tipo FROM instalaciones, puertos, ciudades
     WHERE instalaciones.puid = puertos.puid AND instalaciones.jefe_id = '$pasaporte' AND ciudades.cid = puertos.cid;";
 
     $result = $db_puertos -> prepare($query);
