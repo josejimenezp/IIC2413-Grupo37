@@ -3,7 +3,7 @@
 if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
-    header("location: ./home.php");
+    header("location: ../index.php");
 }
 ?>
 
