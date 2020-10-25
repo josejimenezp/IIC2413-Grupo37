@@ -34,7 +34,6 @@
                 <br>
                 <h5>Ciudad</h5>
                 <p><?=$puerto[0][1]?></p>
-                <br>
             </div>
         </div>
     </div>
