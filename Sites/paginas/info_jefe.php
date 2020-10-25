@@ -30,7 +30,7 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="card">
             <div class="card-body">
-                <h2>Puerto: <?=$puerto[0][0]?></h2>
+                <h2>Puerto <?=$puerto[0][0]?></h2>
                 <br>
                 <h5>Ciudad</h5>
                 <p><?=$puerto[0][1]?></p>
