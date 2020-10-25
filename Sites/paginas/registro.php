@@ -11,7 +11,7 @@
     $tipo = 'usuario_normal';
 
 #Consultaremos si es que existe el pasaporte en la base de datos
-    $consulta = "SELECT * FROM usuarios WHERE usuarios.numero_de_pasaporte = '$pasaporte';";
+    $consulta = "SELECT * FROM usuarios WHERE usuarios.n_pasaporte = '$pasaporte';";
     $resultado_consulta = $db -> prepare($consulta);
     $resultado_consulta -> execute();
     $resultados = $resultado_consulta -> fetchAll();
