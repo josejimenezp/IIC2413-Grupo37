@@ -39,11 +39,11 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <!--===============================================================================================-->
-  <div>
+<div>
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="home.php">
+          <a class="navbar-brand" href="perfil.php">
             <span class="login100-form-title" style="font-size: 30px">
                 Cochrane Ports
             </span>
@@ -57,10 +57,16 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="home.php">Navieras <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../index.php">Login</a>
+                  <a class="nav-link" href="puertos.php">Puertos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="perfil.php">Mi perfil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="logout.php">Cerrar sesión</a>
                 </li>
               </ul>
             </div>
