@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
-    require("header.php");
+    require("../index.php");
 }
 ?>
 
