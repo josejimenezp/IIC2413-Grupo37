@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['nombre'])) {
+if (isset($_SESSION['username'])) {
     require("header_user.php");
 } else {
     header("location: ../index.php");
@@ -9,8 +9,9 @@ if (isset($_SESSION['nombre'])) {
 
 <?php
     require("../config/conexion.php");
+    $nombre_nav = $_GET["nombre_nav"]
 
-    $query = "SELECT * FROM navieras;"; // nid, nombre, pais, descripcion
+    $query = "SELECT * FROM navieras WHERE navieras.nombre LIKE LOWER(%$nombre_nav%)"; // nid, nombre, pais, descripcion
 
     $result = $db_buques -> prepare($query);
     $result -> execute();
