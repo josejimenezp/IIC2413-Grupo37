@@ -43,7 +43,6 @@
             <div class="card-body">
                 <h5>Tipo</h5>
                 <p><?=$puerto[0][2]?></p>
-                <br>
             </div>
         </div>
     </div>
