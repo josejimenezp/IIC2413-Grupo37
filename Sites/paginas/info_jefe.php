@@ -9,8 +9,8 @@
 
     $pasaporte = $resultado_datos[0][1];
 
-    $query = "SELECT puertos.nombre, puertos.cid, instalaciones.tipo FROM instalaciones, puertos
-    WHERE instalaciones.puid = puertos.puid AND instalaciones.jefe_id = '$pasaporte';";
+    $query = "SELECT puertos.nombre, ciudades.nombre , instalaciones.tipo FROM instalaciones, puertos
+    WHERE instalaciones.puid = puertos.puid AND instalaciones.jefe_id = '$pasaporte' AND ciudades.cid = puertos.cid;";
 
     $result = $db_puertos -> prepare($query);
     $result -> execute();
@@ -30,7 +30,7 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="card">
             <div class="card-body">
-                <h2><?=$puerto[0][0]?></h2>
+                <h2>Puerto: <?=$puerto[0][0]?></h2>
                 <br>
                 <h5>Ciudad</h5>
                 <p><?=$puerto[0][1]?></p>
@@ -41,8 +41,6 @@
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="card">
             <div class="card-body">
-                <h2>Instalación</h2>
-                <br>
                 <h5>Tipo</h5>
                 <p><?=$puerto[0][2]?></p>
                 <br>
