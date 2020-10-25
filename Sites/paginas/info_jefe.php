@@ -1,7 +1,7 @@
 
 <?php
-    $nombre = $_SESSION['nombre'];
-    $query_datos = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = :nombre;"; 
+    $nombre = $_SESSION['username'];
+    $query_datos = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = :nombre;";
 
     $result = $db_puertos -> prepare($query_datos);
     $result -> execute(['nombre'=>$nombre]);

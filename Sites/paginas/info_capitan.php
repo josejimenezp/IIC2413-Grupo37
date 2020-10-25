@@ -1,32 +1,32 @@
 <?php
-$nombre = $_SESSION['nombre'];
-$query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
+    $nombre = $_SESSION['username'];
+    $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
-$result = $db_puertos -> prepare($query);
-$result -> execute();
-$resultado = $result -> fetchAll();
+    $result = $db_puertos -> prepare($query);
+    $result -> execute();
+    $resultado = $result -> fetchAll();
 
-$pasaporte = $resultado[0][1];
+    $pasaporte = $resultado[0][1];
 
-$query = "SELECT buques.bid, buques.patente, buques.nombre, buques.tipo, buques.naviera, navieras.nombre FROM personas, buques, navieras 
-WHERE personas.pasaporte = '$pasaporte' AND buques.id_capitan = personas.pid AND navieras.nid = buques.naviera;";
+    $query = "SELECT buques.bid, buques.patente, buques.nombre, buques.tipo, buques.naviera, navieras.nombre FROM personas, buques, navieras 
+    WHERE personas.pasaporte = '$pasaporte' AND buques.id_capitan = personas.pid AND navieras.nid = buques.naviera;";
 
-$result = $db_buques -> prepare($query);
-$result -> execute();
-$buque = $result -> fetchAll();
-$buque_id = $buque[0][0];
+    $result = $db_buques -> prepare($query);
+    $result -> execute();
+    $buque = $result -> fetchAll();
+    $buque_id = $buque[0][0];
 
-$query = "SELECT fecha, id_puerto FROM proximo_itinerario WHERE proximo_itinerario.buque = $buque_id;";
+    $query = "SELECT fecha, id_puerto FROM proximo_itinerario WHERE proximo_itinerario.buque = $buque_id;";
 
-$result = $db_buques -> prepare($query);
-$result -> execute();
-$itinerario = $result -> fetchAll();
+    $result = $db_buques -> prepare($query);
+    $result -> execute();
+    $itinerario = $result -> fetchAll();
 
-$query = "SELECT DISTINCT fecha_atraque, id_puerto FROM atraques WHERE atraques.buque = $buque_id ORDER BY fecha_atraque DESC LIMIT 5;";
+    $query = "SELECT DISTINCT fecha_atraque, id_puerto FROM atraques WHERE atraques.buque = $buque_id ORDER BY fecha_atraque DESC LIMIT 5;";
 
-$result = $db_buques -> prepare($query);
-$result -> execute();
-$atraques = $result -> fetchAll();
+    $result = $db_buques -> prepare($query);
+    $result -> execute();
+    $atraques = $result -> fetchAll();
 ?>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -55,35 +55,35 @@ $atraques = $result -> fetchAll();
             </div>
         </div>
     </div>
-<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-    <div class="card">
-        <div class="card-body">
-            <h5>Últimos atraques</h5>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="card">
+            <div class="card-body">
+                <h5>Últimos atraques</h5>
+                    <br>
+                    <table class="table">
+                        <tbody>
+                            <?php foreach ($atraques as $atraque): ?>
+                                <tr>
+                                <td style="width: 20%"><p><?=$atraque[0]?></p></td>
+                                <td><p><?=$atraque[1]?></p></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <br>
+                <h5>Próximo itinerario</h5>
                 <br>
                 <table class="table">
                     <tbody>
-                        <?php foreach ($atraques as $atraque): ?>
-                            <tr>
-                            <td style="width: 20%"><p><?=$atraque[0]?></p></td>
-                            <td><p><?=$atraque[1]?></p></td>
-                            </tr>
-                        <?php endforeach; ?>
+                        <tr>
+                        <td style="width: 20%"><p><?=$itinerario[0][0]?></p></td>
+                        <td><p><?=$itinerario[0][1]?></p></td>
+                        </tr>
                     </tbody>
                 </table>
-                <br>
-            <h5>Próximo itinerario</h5>
-            <br>
-            <table class="table">
-                <tbody>
-                    <tr>
-                    <td style="width: 20%"><p><?=$itinerario[0][0]?></p></td>
-                    <td><p><?=$itinerario[0][1]?></p></td>
-                    </tr>
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
-</div>
-
-<br><br>
+    <br>
+    <br>
 </div>

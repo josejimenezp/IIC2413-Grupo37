@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['nombre'])) {
+if (isset($_SESSION['username'])) {
     require("header_user.php");
 } else {
     require("header.php");
@@ -8,26 +8,26 @@ if (isset($_SESSION['nombre'])) {
 ?>
 
 <?php
-require("../config/conexion.php");
+    require("../config/conexion.php");
 
-$nid = $_GET["nid"];
+    $nid = $_GET["nid"];
 
-$query = "SELECT * FROM buques WHERE buques.naviera = $nid ORDER BY tipo;"; 
+    $query = "SELECT * FROM buques WHERE buques.naviera = $nid ORDER BY tipo;"; 
 
-$query_naviera = "SELECT navieras.nombre, navieras.descripcion, paises.nombre FROM navieras, paises
-WHERE navieras.nid = $nid AND paises.paid = navieras.pais LIMIT 1;";
+    $query_naviera = "SELECT navieras.nombre, navieras.descripcion, paises.nombre FROM navieras, paises
+    WHERE navieras.nid = $nid AND paises.paid = navieras.pais LIMIT 1;";
 
-$result = $db_buques -> prepare($query);
-$result -> execute();
-$resultados = $result -> fetchAll();  // Resultados de buques
+    $result = $db_buques -> prepare($query);
+    $result -> execute();
+    $resultados = $result -> fetchAll();  // Resultados de buques
 
-$naviera = $db_buques -> prepare($query_naviera);
-$naviera -> execute();
-$naviera = $naviera -> fetchAll();  // Información de la naviera
+    $naviera = $db_buques -> prepare($query_naviera);
+    $naviera -> execute();
+    $naviera = $naviera -> fetchAll();  // Información de la naviera
 
-$nombre = $naviera[0][0];
-$descrip = $naviera[0][1];
-$pais = $naviera[0][2];
+    $nombre = $naviera[0][0];
+    $descrip = $naviera[0][1];
+    $pais = $naviera[0][2];
 ?>
 
 <br>
@@ -37,9 +37,9 @@ $pais = $naviera[0][2];
             <div class="card-title"><h1><?=$nombre?></h1></div>
             <div class="row">
                 <div class="col-3">
-                <span>
-					<img src="../images/naviera.jpg" alt="AVATAR" height=250px>
-				</span>
+                    <span>
+                        <img src="../images/naviera.jpg" alt="AVATAR" height=250px>
+                    </span>
                 </div>
                 <div class="col-9">
                     <h5>Información</h5>
@@ -64,13 +64,13 @@ $pais = $naviera[0][2];
     <div class='card'>
         <div class='card-body'>
             <div class='card-title'>
-                <h3 > <?=$resultado[2]?> </h3>
+                <h3><?=$resultado[2]?></h3>
             </div>
             <div class='card-text'>
-                <p> Patente: <?=$resultado[1]?> </p>
+                <p>Patente: <?=$resultado[1]?></p>
             </div>
             <div class='card-text'>
-                <p> Tipo: <?=$resultado[4]?> </p>
+                <p>Tipo: <?=$resultado[4]?></p>
             </div>
         </div>
     </div>
