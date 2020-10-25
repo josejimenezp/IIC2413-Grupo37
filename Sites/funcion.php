@@ -1,6 +1,6 @@
 <?php
 function funcion(){require("./config/conexion.php");
-$consulta_puertos = "select nombre, edad, sexo, rut from personal, instalaciones where instalaciones.jefe_id = personal.rut and personal.iid = instalaciones.iid;";
+$consulta_puertos = "SELECT nombre, edad, sexo, rut FROM personal, instalaciones WHERE instalaciones.jefe_id = personal.rut AND personal.iid = instalaciones.iid;";
 $consulta_buques = "SELECT personas.nombre, edad, genero, pasaporte, nacionalidad FROM personas, buques WHERE buques.id_capitan = personas.pid AND personas.buque = buques.bid;";
 $resultado_puertos = $db_puertos -> prepare($consulta_puertos);
 $resultado_puertos -> execute();

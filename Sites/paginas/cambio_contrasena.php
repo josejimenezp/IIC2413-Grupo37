@@ -3,7 +3,7 @@
 if (isset($_SESSION['nombre'])) {
     require("header_user.php");
 } else {
-    header("location: ./home.php");
+    header("location: ../index.php");
 }
 ?>
 
@@ -29,7 +29,9 @@ if (isset($_SESSION['nombre'])) {
             <div class="card-title"><h1><?=$_SESSION['nombre']?></h1></div>
             <div class="row">
                 <div class="col-3">
-                    <div class="card" style="background: lightgrey; height: 250px"></div>
+                <span>
+					<img src="../images/perfil.jpg" alt="AVATAR" height=250px>
+				</span>
                 </div>
                 <div class="col-9">
                     <h5>Información</h5>
