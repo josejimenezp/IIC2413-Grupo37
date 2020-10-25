@@ -8,7 +8,7 @@
     $nacionalidad = $_POST['nacionalidad'];
     $pasaporte = $_POST['n_pasaporte'];
     $password = $_POST['password'];
-    $tipo = 'usuario_normal'
+    $tipo = 'usuario_normal';
 
 #Consultaremos si es que existe el pasaporte en la base de datos
     $consulta = "SELECT * FROM usuarios WHERE usuarios.numero_de_pasaporte = '$pasaporte';";
