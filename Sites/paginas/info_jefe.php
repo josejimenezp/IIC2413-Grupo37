@@ -1,15 +1,15 @@
 
 <?php
     $nombre = $_SESSION['nombre'];
-    $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
+    $query_datos = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = :nombre;"; 
 
-    $result = $db_puertos -> prepare($query);
-    $result -> execute();
-    $resultado = $result -> fetchAll();
+    $result = $db_puertos -> prepare($query_datos);
+    $result -> execute(['nombre'=>$nombre]);
+    $resultado_datos = $result -> fetchAll();
 
-    $pasaporte = $resultado[0][1];
+    $pasaporte = $resultado_datos[0][1];
 
-    $query = "SELECT puertos.nombre, puertos.ciudad, instalaciones.tipo FROM instalaciones, puertos
+    $query = "SELECT puertos.nombre, puertos.cid, instalaciones.tipo FROM instalaciones, puertos
     WHERE instalaciones.puid = puertos.puid AND instalaciones.jefe_id = '$pasaporte';";
 
     $result = $db_puertos -> prepare($query);
