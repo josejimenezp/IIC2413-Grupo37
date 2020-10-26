@@ -25,6 +25,7 @@ if (isset($_SESSION['username'])) {
     $_SESSION['puid'] = $puid;
     $_SESSION['nombre_puerto'] = $nombre;
 
+
     
     ?>
 <br>

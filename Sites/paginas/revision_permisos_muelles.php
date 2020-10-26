@@ -7,7 +7,9 @@ if (isset($_SESSION['username'])) {
 }
 
 $fecha = $_POST['fecha_muelle'];
+$_SESSION['fecha'] = $fecha;
 $patente = $_POST['patente'];
+$_SESSION['patente'] = $patente;
 
 require("../config/conexion.php");
 
