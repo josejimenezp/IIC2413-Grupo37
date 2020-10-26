@@ -71,7 +71,7 @@ foreach ($instalaciones as $instalacion){
         <div class='card'>
         Instalación: N°<?= $iid?><br>
         Tipo: <?= $tipo?><br>
-        <form action="reserva_muelle?iid=<?= $iid?>.php" method ="GET">
+        <form action="reserva_muelle.php?iid=<?= $iid?>" method ="GET">
             <button class="myButton" type="submit" value="Cambiar contraseña">
                 Reservar
             </button>
