@@ -12,14 +12,14 @@
 
 #Consultaremos si es que existe el pasaporte en la base de datos
     $consulta = "SELECT * FROM usuarios WHERE usuarios.n_pasaporte = '$pasaporte';";
-    $resultado_consulta = $db -> prepare($consulta);
+    $resultado_consulta = $db_puertos -> prepare($consulta);
     $resultado_consulta -> execute();
     $resultados = $resultado_consulta -> fetchAll();
 #Si existe emitiremos un error, si no existe lo agregaremos
     if (empty($resultados)){
     
         $agregar = "INSERT INTO usuarios VALUES ('$nombre',$edad,'$sexo','$pasaporte','$tipo','$nacionalidad','$password');";
-        $resultado = $db -> prepare($agregar);
+        $resultado = $db_puertos -> prepare($agregar);
         $resultado -> execute();
         $resultados = $resultado -> fetchAll();
         echo "<script>alert('Registro exitoso');
