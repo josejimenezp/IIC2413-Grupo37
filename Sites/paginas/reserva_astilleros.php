@@ -25,5 +25,5 @@ $insert = $db_puertos -> prepare($query_insert);
 $insert -> execute();
 $insert = $insert -> fetchAll();
 echo "<script>alert('Reserva existosa');
-    window.location.href='vista_puertos.php'</script>";
+    window.location.href='perfil.php'</script>";
 ?>
