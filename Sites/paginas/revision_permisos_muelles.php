@@ -74,7 +74,7 @@ foreach ($instalaciones as $instalacion){
         <form action="reserva_muelle.php" method ="POST">
             <button class="myButton" type="submit" value="Cambiar contraseña">
                 Reservar
-            </button><
+            </button>
         </form>
         </div>
     <?php }}
