@@ -49,7 +49,17 @@ if (isset($_SESSION['username'])) {
 <br><br>
 <div class="container">
     <div class="card">
-        <div class="card-title"><h3>Capacidad agotada</h3></div>
+        <div class="card-title"><h3>Revisar capacidad</h3></div>
+            <form action="capacidad_agotada.php" method="POST">
+                <input class="redondeado" type="date" name="fecha_entrada" required>
+                    <br><br>
+                <input class="redondeado" type="date" name="fecha_salida" required>
+                    <br><br>
+                <button class="myButton" type="submit">Buscar</button>
+            </form>
+    </div>
+    <div class="card">
+        <div class="card-title"><h3>Revisar disponibilidad</h3></div>
             <form action="capacidad_agotada.php" method="POST">
                 <input class="redondeado" type="date" name="fecha_entrada" required>
                     <br><br>
