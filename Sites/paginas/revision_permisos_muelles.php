@@ -72,7 +72,5 @@ foreach ($instalaciones as $instalacion){
         Instalación: N°<?= $iid?><br>
         Tipo: <?= $tipo?><br>
         </div>
-    <?php }
-
-endforeach;
+    <?php }}
 ?>
