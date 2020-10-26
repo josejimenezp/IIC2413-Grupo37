@@ -62,7 +62,7 @@ foreach ($instalaciones as $instalacion){
     $tipo = $instalacion[1];
     $capacidad = $instalacion[2];
 
-    $query = "SELECT capacidad_agotada('$fecha_entrada','$fecha_salida',$iid);";
+    $query = "SELECT capacidad_agotada('$fecha','$fecha',$iid);";
     $result = $db_puertos -> prepare($query);
     $result -> execute();
     $resultados = $result -> fetchAll();
