@@ -1,6 +1,6 @@
 <?php
 @session_start();
-if (isset($_SESSION['nombre'])) {
+if (isset($_SESSION['username'])) {
     require("header_user.php");
 } else {
     header("location: ../index.php");
