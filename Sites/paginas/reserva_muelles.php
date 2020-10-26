@@ -19,5 +19,6 @@ $query_insert = "INSERT INTO permisos VALUES ($pid, $iid, '$patente', '$fecha_at
 $insert = $db_puertos -> prepare($query_insert);
 $insert -> execute();
 $insert = $insert -> fetchAll();
-
+echo "<script>alert('Reserva existosa');
+    window.location.href='vista_puertos.php'</script>";
 ?>
