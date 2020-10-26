@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("header_user.php");
+require("header.php");
 require("../config/conexion.php");
 
 $fecha_entrada = $_POST["fecha_entrada"];

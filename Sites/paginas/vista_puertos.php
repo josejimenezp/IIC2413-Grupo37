@@ -1,9 +1,10 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    require("header_user.php");
-} else {
     require("header.php");
+} else {
+    header("location: ../index.php");
+}
 }
 ?>
 <link rel="stylesheet" type="text/css" href="css/main.css">
