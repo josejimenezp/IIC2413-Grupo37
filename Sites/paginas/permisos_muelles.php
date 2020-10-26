@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
 <?php
     require("../config/conexion.php");
 
-    $puid = $_GET["puid"];
+    $puid = $_SESSION["puid"];
 
     $query = "SELECT puertos.puid,puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE puertos.puid = $puid AND ciudades.cid = puertos.cid;"; 
 
