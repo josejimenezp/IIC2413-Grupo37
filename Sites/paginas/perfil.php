@@ -19,6 +19,7 @@ if (isset($_SESSION['username'])) {
     
     $pasaporte = $resultado[0][1];
     $_SESSION['n_pasaporte'] = $pasaporte;
+    $_SESSION['username'] = $resultado[0][0];
 ?>
 
 <br>
