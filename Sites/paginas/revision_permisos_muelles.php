@@ -52,7 +52,7 @@ $_SESSION['nombre_puerto'] = $nombre;
 
 <?php 
 
-$query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid AND instalaciones.tipo = 'muelle;";
+$query_instalaciones = "SELECT iid,tipo, capacidad FROM instalaciones, puertos WHERE puertos.puid = instalaciones.puid AND instalaciones.puid = $puid AND instalaciones.tipo = 'muelle';";
 $result = $db_puertos -> prepare($query_instalaciones);
 $result -> execute();
 $instalaciones = $result -> fetchAll();
