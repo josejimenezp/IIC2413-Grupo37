@@ -61,7 +61,7 @@ if (isset($_SESSION['username'])) {
     <div class="card">
         <div class="card-title"><h3>Revisar disponibilidad</h3></div>
             <br>
-            <form action="revision_permisos.php" method="POST">
+            <form action="revision_permisos_astilleros.php" method="POST">
             Patente barco
             <br>
             <input type= "text" placeholder="Patente" name="patente" required>
@@ -69,12 +69,12 @@ if (isset($_SESSION['username'])) {
             <br>
             Fechas
             <br>
-            <input class="redondeado" type="date" name="fecha_muelle" required>
+            <input class="redondeado" type="date" name="fecha_astillero_entrada" required>
             <br>
-            <input class="redondeado" type="date" name="fecha_muelle" required>
+            <input class="redondeado" type="date" name="fecha_astillero_salida" required>
             <br>
             <br>
-            <button class="myButton" type="submit" value="Cambiar contraseña">
+            <button class="myButton" type="submit">
                 Buscar
             </button>
             </form>
