@@ -66,7 +66,7 @@ if (isset($_SESSION['username'])) {
                 Muelles
             </button>
             </form>
-
+            <br>
             <form action="permisos_astilleros.php" method="POST">
             <button class="myButton" type="submit" value="Cambiar contraseña">
                 Astilleros
