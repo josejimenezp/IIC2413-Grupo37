@@ -60,6 +60,7 @@ if (isset($_SESSION['username'])) {
     </div>
     <div class="card">
         <div class="card-title"><h3>Revisar disponibilidad</h3></div>
+            <br>
             <form action="capacidad_agotada.php" method="POST">
             <button class="myButton" type="submit" value="Cambiar contraseña">
                 Muelles
@@ -67,6 +68,7 @@ if (isset($_SESSION['username'])) {
             <button class="myButton" type="submit" value="Cambiar contraseña">
                 Astilleros
             </button>
+            <br>
             </form>
     </div>
 </div>
