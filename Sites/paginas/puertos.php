@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['nombre'])) {
+if (isset($_SESSION['username'])) {
     require("header_user.php");
 } else {
     header("location: ../index.php");
@@ -22,6 +22,19 @@ if (isset($_SESSION['nombre'])) {
     <div class="container">
         <h2>Puertos</h2>
         <br>
+        <div class="container">
+            <form action="busqueda.php" method="post">
+                <div class="row">
+                    <div class="col-11 wrap-input100 validate-input m-b-50">
+                        <input class="input100" type="nombre_nav" name="busqueda">
+                        <span class="focus-input100" data-placeholder="Buscar"></span>
+                    </div>
+                    <div class="col-1 mt-2">
+                    <button type="submit" style="vertical-align:middle;"><i class="fas fa-search fs-30"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
         <?php foreach ($resultados as $resultado): ?>
         <?php echo "<a href='vista_puertos.php?puid=$resultado[0]'>"; ?>
         <div class='card'>
