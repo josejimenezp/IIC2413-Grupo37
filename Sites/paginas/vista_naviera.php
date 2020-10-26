@@ -48,10 +48,6 @@ if (isset($_SESSION['username'])) {
                         <li class="list-group-item" style="display: inline-block;"><i class="fas fa-map-marker"></i>&nbsp;&nbsp;<?= $pais?></li>
                         <li class="list-group-item" style="display: inline-block;"><i class="fas fa-check"></i>&nbsp;&nbsp;<?= $descrip?></li>
                     </ul>
-                    <br>
-                    <h5>Otras cosas</h5>
-                    <br>
-                    <p>...</p>
                 </div>
             </div>
         </div>
