@@ -68,7 +68,7 @@ if (isset($_SESSION['username'])) {
             <button class="myButton" type="submit" value="Cambiar contraseña">
                 Astilleros
             </button>
-            <br>
             </form>
+            <br>
     </div>
 </div>
