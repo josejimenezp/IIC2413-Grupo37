@@ -71,6 +71,11 @@ foreach ($instalaciones as $instalacion){
         <div class='card'>
         Instalación: N°<?= $iid?><br>
         Tipo: <?= $tipo?><br>
+        <form action="reserva_muelle.php" method ="POST">
+            <button class="myButton" type="submit" value="Cambiar contraseña">
+                Reservar
+            </button><
+        </form>
         </div>
     <?php }}
 ?>
