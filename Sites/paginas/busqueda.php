@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])) {
     $query = "SELECT puertos.puid, puertos.nombre, ciudades.nombre FROM puertos, ciudades WHERE ciudades.cid = puertos.cid
     AND LOWER(puertos.nombre) LIKE LOWER('%$busqueda%');";
 
-    $result = $db_buques -> prepare($query);
+    $result = $db_puertos -> prepare($query);
     $result -> execute();
     $puertos = $result -> fetchAll();
 ?>
