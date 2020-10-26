@@ -11,7 +11,7 @@ if (isset($_SESSION['username'])) {
     
     require("../config/conexion.php");
 
-    $nombre = $_SESSION['nombre'];
+    $nombre = $_SESSION['username'];
     $query = "SELECT nombre, n_pasaporte, edad, nacionalidad, sexo, tipo FROM usuarios WHERE nombre = '$nombre';";
 
     $result = $db_puertos -> prepare($query);
@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])) {
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div class="card-title"><h1><?=$_SESSION['nombre']?></h1></div>
+            <div class="card-title"><h1><?=$_SESSION['username']?></h1></div>
             <div class="row">
                 <div class="col-3">
                 <span>
