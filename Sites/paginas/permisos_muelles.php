@@ -63,10 +63,11 @@ if (isset($_SESSION['username'])) {
             <br>
             <form action="revision_permisos.php" method="POST">
             Patente barco
-            <br><br>
-            Fecha
             <br>
             <input type= "text" placeholder="Patente" name="patente" required>
+            <br>
+            <br>
+            Fecha
             <br>
             <input class="redondeado" type="date" name="fecha_muelle" required>
             <br>
