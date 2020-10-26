@@ -12,7 +12,7 @@ if (isset($_SESSION['username'])) {
     $busqueda = $_POST["busqueda"];
 
     // Navieras
-    $query = "SELECT nid, nombre, pais, descripcion FROM navieras WHERE LOWER(navieras.nombre) LIKE LOWER('%$busqueda%')"; // nid, nombre, pais, descripcion
+    $query = "SELECT nid, nombre, pais, descripcion FROM navieras WHERE LOWER(navieras.nombre) LIKE LOWER('%$busqueda%');"; // nid, nombre, pais, descripcion
 
     $result = $db_buques -> prepare($query);
     $result -> execute();
@@ -30,7 +30,7 @@ if (isset($_SESSION['username'])) {
 <body>        
     <br>
     <div class="container">
-        <div><a type="button" class="btn" href="busqueda_navieras.php"><i class="fa fa-angle-left"></i>&nbsp;Volver</a></div>
+        <div><a type="button" class="btn" href="navieras.php"><i class="fa fa-angle-left"></i>&nbsp;Volver</a></div>
         <br>
         <h4>Resultados para "<?= $busqueda?>"</h4>
         <br>

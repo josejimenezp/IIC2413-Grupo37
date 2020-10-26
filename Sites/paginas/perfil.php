@@ -63,7 +63,6 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-</div>
 <br>
 <?php
 if ($resultado[0][5] == 'Capitan') {
@@ -73,3 +72,4 @@ else if ($resultado[0][5] == 'Jefe') {
     require('info_jefe.php');
 };
 ?>
+</div>
