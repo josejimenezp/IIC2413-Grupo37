@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("../config/conexion.php");
 $query_cantidad = "SELECT MAX(permisos.pid) FROM permisos;";
 
 $id_max = $db_puertos -> prepare($query_cantidad);
@@ -14,6 +15,9 @@ $tipo = 'muelle';
 $patente = $_SESSION['patente'];
 $fecha_atraque = $_SESSION['fecha'];
 
-$query_insert = "INSERT INTO permisos VALUES ($pid, $iid, '$patente', '$fecha_atraque')";
+$query_insert = "INSERT INTO permisos VALUES ($pid, $iid, '$patente', '$fecha_atraque');";
+$insert = $db_puertos -> prepare($query_insert);
+$insert -> execute();
+$insert = $insert -> fetchAll();
 
 ?>
