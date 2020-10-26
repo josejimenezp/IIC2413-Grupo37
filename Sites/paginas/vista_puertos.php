@@ -61,11 +61,12 @@ if (isset($_SESSION['username'])) {
     <div class="card">
         <div class="card-title"><h3>Revisar disponibilidad</h3></div>
             <form action="capacidad_agotada.php" method="POST">
-                <input class="redondeado" type="date" name="fecha_entrada" required>
-                    <br><br>
-                <input class="redondeado" type="date" name="fecha_salida" required>
-                    <br><br>
-                <button class="myButton" type="submit">Buscar</button>
+            <button class="myButton" type="submit" value="Cambiar contraseña">
+                Muelles
+            </button>
+            <button class="myButton" type="submit" value="Cambiar contraseña">
+                Astilleros
+            </button>
             </form>
     </div>
 </div>
