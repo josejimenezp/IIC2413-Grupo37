@@ -5,7 +5,6 @@ if (isset($_SESSION['username'])) {
 } else {
     header("location: ../index.php");
 }
-}
 ?>
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <?php
