@@ -68,14 +68,14 @@ foreach ($instalaciones as $instalacion){
     $capacidad = $instalacion[2];
 
     $query_entrada = "SELECT capacidad_agotada('$fecha_entrada','$fecha_entrada',$iid);";
-    $result = $db_puertos -> prepare($query_entrada);
-    $result -> execute();
-    $resultados_entrada = $result -> fetchAll();
+    $result_entrada = $db_puertos -> prepare($query_entrada);
+    $result_entrada -> execute();
+    $resultados_entrada = $result_entrada -> fetchAll();
 
     $query_salida = "SELECT capacidad_agotada('$fecha_salida','$fecha_salida',$iid);";
-    $result = $db_puertos -> prepare($query_salida);
-    $result -> execute();
-    $resultados_salida = $result -> fetchAll();
+    $resultados_salida = $db_puertos -> prepare($query_salida);
+    $resultados_salida -> execute();
+    $resultados_salida = $resultados_salida -> fetchAll();
 
     if (!empty($resultados_entrada) && !empty($resultados_salida)) {?>
         <div class='card'>
