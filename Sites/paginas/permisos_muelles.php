@@ -24,6 +24,8 @@ if (isset($_SESSION['username'])) {
     $ciudad = $resultados[0][2];
     $_SESSION['puid'] = $puid;
     $_SESSION['nombre_puerto'] = $nombre;
+
+    
     ?>
 <br>
 
@@ -61,7 +63,7 @@ if (isset($_SESSION['username'])) {
     <div class="card">
         <div class="card-title"><h3>Revisar disponibilidad</h3></div>
             <br>
-            <form action="revision_permisos.php" method="POST">
+            <form action="revision_permisos_muelles.php" method="POST">
             Patente barco
             <br>
             <input type= "text" placeholder="Patente" name="patente" required>
