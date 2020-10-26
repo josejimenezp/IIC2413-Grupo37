@@ -20,7 +20,7 @@ $insert = $db_puertos -> prepare($query_insert);
 $insert -> execute();
 $insert = $insert -> fetchAll();
 
-$query_insert = "INSERT INTO permisos_astillero VALUES ($pid,'$fecha_salida');";
+$query_insert = "INSERT INTO permisos_astilleros VALUES ($pid,'$fecha_salida');";
 $insert = $db_puertos -> prepare($query_insert);
 $insert -> execute();
 $insert = $insert -> fetchAll();
