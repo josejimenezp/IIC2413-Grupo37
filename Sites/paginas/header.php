@@ -66,6 +66,9 @@
                   <a class="nav-link" href="perfil.php">Mi perfil</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="recibidos.php">Mensajes</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="logout.php">Cerrar sesión</a>
                 </li>
               </ul>
