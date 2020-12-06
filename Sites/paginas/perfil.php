@@ -62,7 +62,7 @@ if (isset($_SESSION['username'])) {
                     <br>
                     <form action="pdi.php" method="post">    
                         <button class="myButton" type="submit" value="PDI">
-                        Cambiar contraseña
+                        PDI
                         </button>
                     </form>
                 </div>

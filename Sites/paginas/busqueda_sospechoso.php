@@ -12,7 +12,7 @@ if (isset($_SESSION['username'])) {
 $id_usuario = $_POST['id'];
 $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
-$palabras_clave = $_POST['palabras_clave']
+$palabras_clave = $_POST['palabras_clave'];
 
 
 $tipo = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
