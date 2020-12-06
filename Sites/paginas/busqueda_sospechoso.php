@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 
-<?php>
+<?php
 $id_usuario = $_POST['id'];
 $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
