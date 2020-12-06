@@ -19,7 +19,6 @@ $result = $db_puertos -> prepare($query);
 $result -> execute();
 $resultado = $result-> fetchAll();
 $tipo = $resultado[0][0];
-echo $resultado;
 
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
