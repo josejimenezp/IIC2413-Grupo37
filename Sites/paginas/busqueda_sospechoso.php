@@ -16,6 +16,9 @@ $palabras_clave = $_POST['palabras_clave'];
 
 
 $tipo = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
+$result = $db_puertos -> prepare($tipo);
+$result -> execute();
+$resultado = $result-> fetchAll();
 
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
