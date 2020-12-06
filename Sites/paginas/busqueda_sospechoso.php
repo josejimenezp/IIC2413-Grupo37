@@ -45,7 +45,7 @@ if ($tipo == 'Capitan') {
     echo $puerto
 }
 
-elif ($tipo == 'Jefe') {
+elseif ($tipo == 'Jefe') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
