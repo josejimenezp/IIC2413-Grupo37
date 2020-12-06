@@ -42,7 +42,7 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
 
     $puertos = $resultado[0][0];
-    echo $puerto;
+    echo $tipo;
 }
 
 elseif ($tipo == 'Jefe') {
@@ -58,7 +58,7 @@ elseif ($tipo == 'Jefe') {
     $resultado = $result-> fetchAll();
 
     $puerto = $resultado[0][0];
-    echo $puerto;
+    echo $tipo;
 };
 
 ?>
