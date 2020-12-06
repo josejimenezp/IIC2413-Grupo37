@@ -43,7 +43,7 @@ if ($tipo == 'Capitan') {
 
     $puertos = $resultado[0][0];
     echo $puerto
-};
+}
 
 elif ($tipo == 'Jefe') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
@@ -59,6 +59,6 @@ elif ($tipo == 'Jefe') {
 
     $puerto = $resultado[0][0];
     echo $puerto;
-}
+};
 
 ?>
