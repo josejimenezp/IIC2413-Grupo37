@@ -25,7 +25,6 @@ if ($tipo == 'Capitan') {
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $resultado;
     
     $pasaporte = $resultado[0][0];
     $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
@@ -33,6 +32,7 @@ if ($tipo == 'Capitan') {
     $result -> execute();
     $resultado = $result-> fetchAll();
     echo $pasaporte;
+    echo ' ';
 
 
     $id_nuevo = $resultado[0][0];
