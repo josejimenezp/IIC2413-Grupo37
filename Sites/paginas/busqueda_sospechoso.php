@@ -34,7 +34,7 @@ if ($tipo == 'Capitan') {
 
     $id_nuevo = $resultado[0][0];
     $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;";
-    $result = $db_buques -> prepare($id_nuevo);
+    $result = $db_buques -> prepare($obtener_barcos);
     $result -> execute();
     $resultado = $result-> fetchAll();
 
