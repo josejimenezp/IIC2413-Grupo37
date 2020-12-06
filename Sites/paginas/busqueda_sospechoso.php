@@ -32,7 +32,7 @@ if ($tipo == 'Capitan') {
     $result = $db_buques -> prepare($obtener_id);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $resultado;
+    echo $pasaporte;
 
 
     $id_nuevo = $resultado[0][0];
@@ -40,7 +40,7 @@ if ($tipo == 'Capitan') {
     $result = $db_buques -> prepare($id_nuevo);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $resultado;
+    echo $id_nuevo;
 
 
     $id_buque = $resultado[0][0];
@@ -48,7 +48,7 @@ if ($tipo == 'Capitan') {
     $result = $db_buques -> prepare($id_puerto);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $resultado;
+    echo $id_buque;
 
 
     $puertos = $resultado[0][0];
