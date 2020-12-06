@@ -27,7 +27,7 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
     
     $pasaporte = $resultado[0][0];
-    $obtener_id = "SELECT pid FROM personas WHERE pasaporte = $pasaporte;";
+    $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
     $result = $db_buques -> prepare($obtener_id);
     $result -> execute();
     $resultado = $result-> fetchAll();
@@ -39,13 +39,13 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
 
     $id_buque = $resultado[0][0];
-    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $buque AND fecha_atraque >= $fecha_1 AND fecha_atraque <= $fecha_2;";
+    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $buque AND fecha_atraque >= '$fecha_1' AND fecha_atraque <= '$fecha_2';";
     $result = $db_buques -> prepare($id_puerto);
     $result -> execute();
     $resultado = $result-> fetchAll();
 
     $puertos = $resultado[0][0];
-    echo $puerto;
+    echo $puertos;
 }
 
 elseif ($tipo == 'Jefe') {
@@ -55,13 +55,13 @@ elseif ($tipo == 'Jefe') {
     $resultado = $result-> fetchAll();
     
     $pasaporte = $resultado[0][0];
-    $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = $pasaporte;";
+    $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = '$pasaporte';";
     $result = $db_puertos -> prepare($es_jefe);
     $result -> execute();
     $resultado = $result-> fetchAll();
 
-    $puerto = $resultado[0][0];
-    echo $puerto;
+    $puertos = $resultado[0][0];
+    echo $puertos;
 };
 
 ?>
