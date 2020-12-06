@@ -43,9 +43,16 @@ if ($tipo == 'Capitan') {
     $result = $db_buques -> prepare($id_puerto);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $id_buque;
 
     $puertos = $resultado[0][0];
+    echo $puertos;
+    $puertos = $resultado[1][0];
+    echo $puertos;
+    $puertos = $resultado[2][0];
+    echo $puertos;
+    $puertos = $resultado[3][0];
+    echo $puertos;
+    $puertos = $resultado[4][0];
     echo $puertos;
 }
 
