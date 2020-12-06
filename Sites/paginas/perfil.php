@@ -60,8 +60,8 @@ if (isset($_SESSION['username'])) {
                         </button>
                     </form>
                     <br>
-                    <form action="cambio_contrasena.php" method="post">    
-                        <button class="myButton" type="submit" value="Cambiar contraseña">
+                    <form action="pdi.php" method="post">    
+                        <button class="myButton" type="submit" value="PDI">
                         Cambiar contraseña
                         </button>
                     </form>
