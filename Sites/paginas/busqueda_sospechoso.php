@@ -14,7 +14,7 @@ $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
 $palabras_clave = $_POST['palabras_clave'];
 
-$query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
+$query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuario;";
 $result = $db_puertos -> prepare($query);
 $result -> execute();
 $resultado = $result-> fetchAll();
