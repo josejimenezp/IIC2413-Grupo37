@@ -19,7 +19,7 @@ $query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
 $result = $db_puertos -> prepare($query);
 $result -> execute();
 $resultado = $result-> fetchAll();
-$tipo = $resultado[0][0]
+$tipo = $resultado[0][0];
 echo $tipo;
 
 if ($tipo == 'Capitan') {
