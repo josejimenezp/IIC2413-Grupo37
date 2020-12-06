@@ -15,28 +15,28 @@ $fecha_2 = $_POST['fecha2'];
 $palabras_clave = $_POST['palabras_clave']
 
 
-$tipo = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;"
+$tipo = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
 
 if ($tipo == 'Capitan') {
-    $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;"
+    $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
     
     $pasaporte = $resultado[0][0]
-    $obtener_id = "SELECT pid FROM personas WHERE pasaporte = $pasaporte;"
+    $obtener_id = "SELECT pid FROM personas WHERE pasaporte = $pasaporte;";
     $result = $db_buques -> prepare($obtener_id);
     $result -> execute();
     $resultado = $result-> fetchAll();
 
     $id_nuevo = $resultado[0][0]
-    $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;"
+    $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;";
     $result = $db_buques -> prepare($id_nuevo);
     $result -> execute();
     $resultado = $result-> fetchAll();
 
     $id_buque = $resultado[0][0]
-    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $buque AND fecha_atraque >= $fecha_1 AND fecha_atraque <= $fecha_2;"
+    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $buque AND fecha_atraque >= $fecha_1 AND fecha_atraque <= $fecha_2;";
     $result = $db_buques -> prepare($id_puerto);
     $result -> execute();
     $resultado = $result-> fetchAll();
@@ -46,13 +46,13 @@ if ($tipo == 'Capitan') {
 };
 
 elif ($tipo == 'Jefe') {
-    $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;"
+    $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
     
     $pasaporte = $resultado[0][0]
-    $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = $pasaporte;"
+    $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = $pasaporte;";
     $result = $db_puertos -> prepare($es_jefe);
     $result -> execute();
     $resultado = $result-> fetchAll();
