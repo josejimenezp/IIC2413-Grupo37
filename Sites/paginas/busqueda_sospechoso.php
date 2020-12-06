@@ -44,16 +44,9 @@ if ($tipo == 'Capitan') {
     $result -> execute();
     $resultado = $result-> fetchAll();
 
-    $puertos = $resultado[0][0];
-    echo $puertos;
-    $puertos = $resultado[1][0];
-    echo $puertos;
-    $puertos = $resultado[2][0];
-    echo $puertos;
-    $puertos = $resultado[3][0];
-    echo $puertos;
-    $puertos = $resultado[4][0];
-    echo $puertos;
+    foreach ($resultado as $resultado) {
+        echo $resultado[0];
+    }
 }
 
 elseif ($tipo == 'Jefe') {
