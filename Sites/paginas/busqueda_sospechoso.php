@@ -44,7 +44,7 @@ if ($tipo == 'Capitan') {
     $result -> execute();
     $resultado = $result-> fetchAll();
 
-    $puertos = $resultado[0];
+    $puertos = $resultado[0][1];
     echo $puertos;
 }
 
