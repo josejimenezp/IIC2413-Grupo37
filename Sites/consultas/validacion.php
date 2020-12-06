@@ -19,6 +19,8 @@ if (empty($resultado)) {
     window.location.href='../index.php'</script>";
 }
 else {
+    $UID = $resultado[0][7];
+    $_SESSION['uid'] = $UID;
     header("location: ../paginas/perfil.php");
 };
 

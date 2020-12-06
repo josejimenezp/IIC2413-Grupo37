@@ -40,6 +40,26 @@ def getUsers():
 
 # ---------------------- Fin Users -------------------------------
 
+# ------------------- Get User By Data ---------------------------
+@app.route("/_info-users")
+def getUsersByData():
+    try:
+        content = json.loads(request.data)
+    except:
+        content = {}
+
+    nombre = content.get('nombre')
+    edad = content.get('edad')
+
+    resultados = list(db.usuarios.find({"name": nombre, "age": edad}, {"_id": 0}))
+
+
+    if resultados == []:
+        return 'No existe este usuario :('
+
+    return json.jsonify(resultados)
+# ----------------- Fin Get User By Data -------------------------
+
 # ----------------------- Get User -------------------------------
 @app.route("/users/<int:uid>")
 def getUser(uid):
