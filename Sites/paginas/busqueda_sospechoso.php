@@ -31,25 +31,19 @@ if ($tipo == 'Capitan') {
     $result = $db_buques -> prepare($obtener_id);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $pasaporte;
-    echo ' ';
-
 
     $id_nuevo = $resultado[0][0];
     $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;";
     $result = $db_buques -> prepare($id_nuevo);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo $id_nuevo;
-
 
     $id_buque = $resultado[0][0];
-    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $buque AND fecha_atraque >= '$fecha_1' AND fecha_atraque <= '$fecha_2';";
+    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $id_buque AND fecha_atraque >= '$fecha_1' AND fecha_atraque <= '$fecha_2';";
     $result = $db_buques -> prepare($id_puerto);
     $result -> execute();
     $resultado = $result-> fetchAll();
     echo $id_buque;
-
 
     $puertos = $resultado[0][0];
     echo $puertos;
