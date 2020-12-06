@@ -15,10 +15,12 @@ $fecha_2 = $_POST['fecha2'];
 $palabras_clave = $_POST['palabras_clave'];
 
 
-$tipo = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
-$result = $db_puertos -> prepare($tipo);
+$query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuarios;";
+$result = $db_puertos -> prepare($query);
 $result -> execute();
 $resultado = $result-> fetchAll();
+$tipo = $resultado[0][0]
+echo $tipo;
 
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
