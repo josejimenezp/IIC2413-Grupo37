@@ -82,7 +82,6 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec ($curl);
 
 $data = json_decode(trim($result), TRUE);
-echo $data[0]['lat'];
 ?>
 <body>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
@@ -96,7 +95,6 @@ echo $data[0]['lat'];
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(mymap);
             <?php foreach ($data as $punto) {
-                echo 
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
                 echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
