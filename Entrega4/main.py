@@ -5,22 +5,22 @@ from pymongo import MongoClient
 # Local  ###  localhost:5000/
 app = Flask(__name__)
 
-# MONGODATABASE = "test"
-# MONGOSERVER = "localhost"
-# MONGOPORT = 27017
-# client = MongoClient(MONGOSERVER, MONGOPORT)
+MONGODATABASE = "test"
+MONGOSERVER = "localhost"
+MONGOPORT = 27017
+client = MongoClient(MONGOSERVER, MONGOPORT)
 
-# db = client[MONGODATABASE]
+db = client[MONGODATABASE]
 
-USER = 'grupo37'
-PASS = 'grupo37'
-DATABASE = 'grupo37'
+#USER = 'grupo37'
+#PASS = 'grupo37'
+#DATABASE = 'grupo37'
 
-URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}?authSource=admin"
-client = MongoClient(URL)
+#URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}?authSource=admin"
+#client = MongoClient(URL)
 
 # Nombre BD
-db = client["grupo37"]
+#db = client["grupo37"]
 
 # ---------------------- HOME -------------------------------
 @app.route("/")
@@ -83,18 +83,19 @@ def get_messages():
 # ---------------------- Fin Get Messages -------------------------------
 
 # ------------------------ Get Message ----------------------------------
-@app.route("/messages/")
+@app.route("/messages/user")
 def get_messages1():
     name = request.args.get('name')
-
     if not (name is None):
-        id_mongo = list(db.usuarios.find({'name':name},{'_id':0,'uid':1}))
-        return json.jsonify(id_mongo)
-        #mensajes_recibidos = list(db.usuarios.find({'name':name},{'_id':0}))
+        id_mongo = int(list(db.usuarios.find({'name':name},{'_id':0,'uid':1}))[0]['uid'])
+        mensajes_recibidos = list(db.mensajes.find({'receptant':id_mongo},{'_id':0, 'lat':1, 'long':1}))
+        mensajes_emitidos = list(db.mensajes.find({'sender':id_mongo},{'_id':0, 'lat':1,'long':1}))
+
+        mensajes = json.jsonify(mensajes_recibidos + mensajes_emitidos)
+        return mensajes
 
 
-
-
+@app.route("/messages/")
 def get_message(id1):
 
 	mensajes = list(db.mensajes.find({"mid": int(id1)}, {"_id": 0}))
@@ -106,7 +107,7 @@ def get_message(id1):
 # ---------------------- Fin Get Message -------------------------------
 
 # ---------------------- Get Message -----------------------------------
-@app.route("/messages/")
+
 
 user_keys_msg = ['message','sender','receptant','lat','long','date']
 

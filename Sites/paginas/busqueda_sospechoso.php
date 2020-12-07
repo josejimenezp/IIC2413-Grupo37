@@ -20,6 +20,14 @@ $result -> execute();
 $resultado = $result-> fetchAll();
 $tipo = $resultado[0][0];
 
+
+
+$result = file_get_contents( 'https://miApi.herokuapp.com/messages/user?1', false);
+$response = json_decode($result, true);
+
+echo $response;
+
+
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
