@@ -46,8 +46,9 @@ if ($tipo == 'Capitan') {
     $result -> execute();
     $resultado = $result-> fetchAll();
 
-    foreach ($resultado as $resultado) {
+    foreach ($resultado) {
         echo $resultado;
+        echo "Hola";
         //$query_puerto = "SELECT latidud, longitud FROM coordenadas_puertos WHERE coordenadas_puertos.puerto = '$resultado';";
         //$result = $db_puertos -> prepare($query_puerto);
         //$result -> execute();
