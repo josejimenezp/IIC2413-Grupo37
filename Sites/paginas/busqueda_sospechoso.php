@@ -56,7 +56,7 @@ elseif ($tipo == 'Jefe') {
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    echo "http://young-ocean-30844.herokuapp.com/messages/user?name='$lista_nombre'";
+    echo "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre";
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
     $pasaporte = $resultado[0][0];
@@ -76,7 +76,7 @@ elseif ($tipo == 'Jefe') {
 <?php
 
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name='$lista_nombre'");
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre");
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
