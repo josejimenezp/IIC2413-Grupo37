@@ -28,6 +28,7 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
+
     $pasaporte = $resultado[0][0];
     $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
     $result = $db_buques -> prepare($obtener_id);
@@ -55,6 +56,7 @@ elseif ($tipo == 'Jefe') {
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
+    
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
     $pasaporte = $resultado[0][0];
@@ -74,18 +76,19 @@ elseif ($tipo == 'Jefe') {
 <?php
 
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=Garin%20Hills");
+curl_setopt ($curl, CURLOPT_URL, 'http://young-ocean-30844.herokuapp.com/messages/user?name=Veer%20Cameron');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
 
 $data = json_decode(trim($result), TRUE);
+
 ?>
 <body>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-    <div id="mapid" style="height: 400px">
+    <div id="mapid" style="height: 600px">
 
         <script> 
             var mymap = L.map('mapid').setView([-33.499572, -70.615472], 10);
