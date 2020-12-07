@@ -507,3 +507,13 @@ iframe {
 .redondeado {
   border-radius: 5px;
 }
+
+/* messages sidebar */
+#msg_sidebar_sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
