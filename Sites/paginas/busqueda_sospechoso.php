@@ -7,6 +7,61 @@ if (isset($_SESSION['username'])) {
     header("location: ../index.php");
 }
 ?>
+<?php
+if ($tipo == 'Capitan') {
+    $obtener_rut = "SELECT n_pasaporte, nombre FROM usuarios WHERE usuarios.uid = $id_usuario;";
+    $result = $db_puertos -> prepare($obtener_rut);
+    $result -> execute();
+    $resultado = $result-> fetchAll();
+
+    $nombre = $resultado[1][0];
+    $lista_nombre = split(' ', $nombre)
+
+    $nombre = $lista_nombre[0];
+    $apellido = $lista_nombre[1];
+    $pasaporte = $resultado[0][0];
+    $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
+    $result = $db_buques -> prepare($obtener_id);
+    $result -> execute();
+    $resultado = $result-> fetchAll();
+
+    $id_nuevo = $resultado[0][0];
+    $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;";
+    $result = $db_buques -> prepare($obtener_barcos);
+    $result -> execute();
+    $resultado = $result-> fetchAll();
+
+    $id_buque = $resultado[0][0];
+    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $id_buque AND fecha_atraque >= '$fecha_1' AND fecha_atraque <= '$fecha_2';";
+    $result = $db_buques -> prepare($id_puerto);
+    $result -> execute();
+    $resultado = $result-> fetchAll();
+
+    foreach ($resultado as $resultado) {
+        echo $resultado[0];
+    }
+}
+
+elseif ($tipo == 'Jefe') {
+    $obtener_rut = "SELECT n_pasaporte, nombre FROM usuarios WHERE usuarios.uid = $id_usuario;";
+    $result = $db_puertos -> prepare($obtener_rut);
+    $result -> execute();
+    $resultado = $result-> fetchAll();
+    
+    $nombre = $resultado[1][0];
+    $lista_nombre = str_replace(' ', $nombre, '%20');
+    echo $lista_nombre;
+    $pasaporte = $resultado[0][0];
+    $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = '$pasaporte';";
+    $result = $db_puertos -> prepare($es_jefe);
+    $result -> execute();
+    $resultado = $result-> fetchAll();
+
+    $puertos = $resultado[0][0];
+    echo $puertos;
+};
+
+?>
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
@@ -33,7 +88,7 @@ $tipo = $resultado[0][0];
 
 
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=Garin Hills");
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=Garin%20Hills");
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
@@ -61,48 +116,3 @@ $data = json_decode(trim($result), TRUE);
     </div>
 </script>
 <?php
-if ($tipo == 'Capitan') {
-    $obtener_rut = "SELECT n_pasaporte, nombre FROM usuarios WHERE usuarios.uid = $id_usuario;";
-    $result = $db_puertos -> prepare($obtener_rut);
-    $result -> execute();
-    $resultado = $result-> fetchAll();
-    $pasaporte = $resultado[0][0];
-    $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
-    $result = $db_buques -> prepare($obtener_id);
-    $result -> execute();
-    $resultado = $result-> fetchAll();
-
-    $id_nuevo = $resultado[0][0];
-    $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;";
-    $result = $db_buques -> prepare($obtener_barcos);
-    $result -> execute();
-    $resultado = $result-> fetchAll();
-
-    $id_buque = $resultado[0][0];
-    $id_puerto = "SELECT id_puerto FROM atraques WHERE atraques.buque = $id_buque AND fecha_atraque >= '$fecha_1' AND fecha_atraque <= '$fecha_2';";
-    $result = $db_buques -> prepare($id_puerto);
-    $result -> execute();
-    $resultado = $result-> fetchAll();
-
-    foreach ($resultado as $resultado) {
-        echo $resultado[0];
-    }
-}
-
-elseif ($tipo == 'Jefe') {
-    $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
-    $result = $db_puertos -> prepare($obtener_rut);
-    $result -> execute();
-    $resultado = $result-> fetchAll();
-    
-    $pasaporte = $resultado[0][0];
-    $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = '$pasaporte';";
-    $result = $db_puertos -> prepare($es_jefe);
-    $result -> execute();
-    $resultado = $result-> fetchAll();
-
-    $puertos = $resultado[0][0];
-    echo $puertos;
-};
-
-?>
