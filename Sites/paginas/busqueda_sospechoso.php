@@ -22,7 +22,7 @@ $tipo = $resultado[0][0];
 
 
 
-$result = file_get_contents( 'https://miApi.herokuapp.com/messages/user?1', false);
+$result = file_get_contents( 'https://miApi.herokuapp.com/users/1', false);
 $response = json_decode($result, true);
 
 echo $response;
