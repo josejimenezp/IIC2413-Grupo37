@@ -13,12 +13,11 @@ if ($tipo == 'Capitan') {
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
-
     $nombre = $resultado[1][0];
-    $lista_nombre = split(' ', $nombre)
 
-    $nombre = $lista_nombre[0];
-    $apellido = $lista_nombre[1];
+    $lista_nombre = str_replace(' ', $nombre, '%20');
+    echo $lista_nombre;
+
     $pasaporte = $resultado[0][0];
     $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
     $result = $db_buques -> prepare($obtener_id);
