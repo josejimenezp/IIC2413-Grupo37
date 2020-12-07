@@ -112,12 +112,11 @@ $data = json_decode(trim($result), TRUE);
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(mymap);
             <?php foreach ($data as $punto) {
-                $long = $punto['long'];
+                $long = $punto['long'] + 10;
                 $lat  = $punto['lat'];
                 echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
 
                 foreach ($coordenadas as $coordenada) {
-
                     $lat = $coordenada[0];
                     $long = $coordenada[1];
                     echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
