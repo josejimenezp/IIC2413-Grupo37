@@ -9,6 +9,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <?php
+$curl = curl_init();
 $id_usuario = $_POST['id'];
 $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
@@ -22,10 +23,14 @@ $tipo = $resultado[0][0];
 
 
 
-$result = file_get_contents( 'https://miApi.herokuapp.com/users/1', false);
-$response = json_decode($result, true);
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/users/1");
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-echo $response;
+$result = curl_exec ($curl);
+
+$result = json_decode(trim($result), TRUE);
+
+echo $result;
 
 
 if ($tipo == 'Capitan') {
