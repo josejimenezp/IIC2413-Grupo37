@@ -61,7 +61,7 @@ elseif ($tipo == 'Jefe') {
     $resultado = $result-> fetchAll();
     
     $nombre = $resultado[0][1];
-    $lista_nombre = str_replace(' ', $nombre, '%20');
+    $lista_nombre = str_replace(' ', 'Garin Hills', '%20');
     echo $lista_nombre;
     $pasaporte = $resultado[0][0];
     $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = '$pasaporte';";
