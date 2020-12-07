@@ -56,7 +56,7 @@ $data = json_decode(trim($result), TRUE);
             <?php foreach ($data as $punto) {
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
-                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);';
+                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
             } ?>
         </script>
     </div>
