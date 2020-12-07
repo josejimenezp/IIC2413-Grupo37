@@ -28,7 +28,6 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
-    echo $lista_nombre;
 
     $pasaporte = $resultado[0][0];
     $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
@@ -61,7 +60,6 @@ elseif ($tipo == 'Jefe') {
     
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
-    echo $lista_nombre;
     $pasaporte = $resultado[0][0];
     $es_jefe = "SELECT puertos.nombre FROM usuarios, instalaciones, puertos WHERE usuarios.n_pasaporte = instalaciones.jefe_id AND instalaciones.puid = puertos.puid AND usuarios.n_pasaporte = '$pasaporte';";
     $result = $db_puertos -> prepare($es_jefe);
@@ -87,7 +85,7 @@ elseif ($tipo == 'Jefe') {
 <?php
 
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=Garin%20Hills");
+curl_setopt ($curl, CURLOPT_URL, 'http://young-ocean-30844.herokuapp.com/messages/user?name='. $lista_nombre .' ');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
