@@ -39,6 +39,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec ($curl);
 
 $data = json_decode(trim($result), TRUE);
+
 ?>
 <body>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
@@ -56,6 +57,7 @@ $data = json_decode(trim($result), TRUE);
             <?php foreach ($data as $punto) {
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
+                echo $long;
                 echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
             } ?>
         </script>
