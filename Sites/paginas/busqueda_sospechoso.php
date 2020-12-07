@@ -50,7 +50,7 @@ id: 'mapbox.streets',
 accessToken: 'your.mapbox.access.token'
 }).addTo(mymap);
 for (let markerData of $data) {
-    let [markerData['long'],markerData['lat'] ] = markerData;
+    let [name, lng, lat] = markerData;
     let marker = L.marker([lat, lng]).addTo(mymap);
     //marker.bindPopup(name);
 }
