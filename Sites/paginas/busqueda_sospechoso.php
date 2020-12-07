@@ -30,7 +30,7 @@ $result = curl_exec ($curl);
 
 $result = json_decode(trim($result), TRUE);
 
-echo $result;
+echo $result[0]['lat'];
 
 
 if ($tipo == 'Capitan') {
