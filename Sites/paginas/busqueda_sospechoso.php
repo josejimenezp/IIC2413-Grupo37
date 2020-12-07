@@ -75,7 +75,8 @@ elseif ($tipo == 'Jefe') {
     $query_puerto = "SELECT latidud, longitud FROM coordenadas_puertos WHERE coordenadas_puertos.puerto = '$puerto';";
     $result = $db_puertos -> prepare($query_puerto);
     $result -> execute();
-    $coordenadas = $result-> fetchAll();
+    $coordenadas_jefe = $result-> fetchAll();
+    $coordenadas ->append($coordenadas_jefe[0])
     
 };
 ?>
