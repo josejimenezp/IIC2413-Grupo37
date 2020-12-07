@@ -85,10 +85,10 @@ $data = json_decode(trim($result), TRUE);
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-    <div id="mapid" style="height: 600px">
+    <div id="mapid" style="height: 400px">
 
         <script> 
-            var mymap = L.map('mapid').setView([-33.499572, -70.615472], 10);
+            var mymap = L.map('mapid').setView([-33.499572, -70.615472], 5);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(mymap);
