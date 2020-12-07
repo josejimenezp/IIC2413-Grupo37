@@ -5,12 +5,12 @@ from pymongo import MongoClient
 # Local  ###  localhost:5000/
 app = Flask(__name__)
 
-# MONGODATABASE = "test"
-# MONGOSERVER = "localhost"
-# MONGOPORT = 27017
-# client = MongoClient(MONGOSERVER, MONGOPORT)
+#MONGODATABASE = "test"
+#MONGOSERVER = "localhost"
+#MONGOPORT = 27017
+#client = MongoClient(MONGOSERVER, MONGOPORT)
 
-# db = client[MONGODATABASE]
+#db = client[MONGODATABASE]
 
 USER = 'grupo37'
 PASS = 'grupo37'
@@ -39,26 +39,6 @@ def getUsers():
 	return json.jsonify(users)
 
 # ---------------------- Fin Users -------------------------------
-
-# ------------------- Get User By Data ---------------------------
-@app.route("/_info-users")
-def getUsersByData():
-    try:
-        content = json.loads(request.data)
-    except:
-        content = {}
-
-    nombre = content.get('nombre')
-    edad = content.get('edad')
-
-    resultados = list(db.usuarios.find({"name": nombre, "age": edad}, {"_id": 0}))
-
-
-    if resultados == []:
-        return 'No existe este usuario :('
-
-    return json.jsonify(resultados)
-# ----------------- Fin Get User By Data -------------------------
 
 # ----------------------- Get User -------------------------------
 @app.route("/users/<int:uid>")
@@ -103,7 +83,19 @@ def get_messages():
 # ---------------------- Fin Get Messages -------------------------------
 
 # ------------------------ Get Message ----------------------------------
-@app.route("/messages/<int:id1>")
+@app.route("/messages/user")
+def get_messages1():
+    name = request.args.get('name')
+    if not (name is None):
+        id_mongo = int(list(db.usuarios.find({'name':name},{'_id':0,'uid':1}))[0]['uid'])
+        mensajes_recibidos = list(db.mensajes.find({'receptant':id_mongo},{'_id':0, 'lat':1, 'long':1}))
+        mensajes_emitidos = list(db.mensajes.find({'sender':id_mongo},{'_id':0, 'lat':1,'long':1}))
+
+        mensajes = json.jsonify(mensajes_recibidos + mensajes_emitidos)
+        return mensajes
+
+
+@app.route("/messages/")
 def get_message(id1):
 
 	mensajes = list(db.mensajes.find({"mid": int(id1)}, {"_id": 0}))
@@ -113,6 +105,9 @@ def get_message(id1):
 
 	return json.jsonify(mensajes)
 # ---------------------- Fin Get Message -------------------------------
+
+# ---------------------- Get Message -----------------------------------
+
 
 user_keys_msg = ['message','sender','receptant','lat','long','date']
 
@@ -143,8 +138,7 @@ def post_messages():
         sender = db.usuarios.find({"uid":data['sender']},{"_id":0})
         receptant = db.usuarios.find({"uid":data['receptant']},{"_id":0})
 
-
-        if list(sender) != [] and list(receptant) != []:
+        if sender and receptant:
             result = db.mensajes.insert(data)
             mensaje = "Mensaje enviado"
             return {"message":data["message"], 'sender':data["sender"], 'receptant':data['receptant'],'lat':data['lat'],'long':data['long'],'date':data['date']}
