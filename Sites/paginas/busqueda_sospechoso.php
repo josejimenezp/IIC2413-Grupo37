@@ -82,7 +82,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec ($curl);
 
 $data = json_decode(trim($result), TRUE);
-echo $data;
+echo $data[0]['lat'];
 ?>
 <body>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
