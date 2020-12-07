@@ -54,6 +54,7 @@ if ($tipo == 'Capitan') {
         $coordenadas ->append($coordenadas_puertos);
         
     }
+    echo $coordenadas; 
 }
 
 elseif ($tipo == 'Jefe') {
