@@ -76,7 +76,7 @@ elseif ($tipo == 'Jefe') {
     $result = $db_puertos -> prepare($query_puerto);
     $result -> execute();
     $coordenadas_jefe = $result-> fetchAll();
-    $coordenadas ->append($coordenadas_jefe[0])
+    $coordenadas ->append($coordenadas_jefe[0]);
     
 };
 ?>
