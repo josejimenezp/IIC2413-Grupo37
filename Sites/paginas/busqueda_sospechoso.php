@@ -28,7 +28,7 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
-
+    echo "http://young-ocean-30844.herokuapp.com/messages/user?name='$lista_nombre'";
     $pasaporte = $resultado[0][0];
     $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
     $result = $db_buques -> prepare($obtener_id);
@@ -56,7 +56,7 @@ elseif ($tipo == 'Jefe') {
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    
+    echo "http://young-ocean-30844.herokuapp.com/messages/user?name='$lista_nombre'";
     $nombre = $resultado[0][1];
     $lista_nombre = str_replace(' ', '%20', $nombre);
     $pasaporte = $resultado[0][0];
