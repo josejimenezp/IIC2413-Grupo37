@@ -34,7 +34,7 @@ if ($tipo == 'Capitan') {
     $result = $db_buques -> prepare($obtener_id);
     $result -> execute();
     $resultado = $result-> fetchAll();
-
+    echo 'http://young-ocean-30844.herokuapp.com/messages/user?name='. $lista_nombre .' ';
     $id_nuevo = $resultado[0][0];
     $obtener_barcos = "SELECT bid FROM buques WHERE buques.id_capitan = $id_nuevo;";
     $result = $db_buques -> prepare($obtener_barcos);
