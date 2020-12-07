@@ -52,7 +52,7 @@ if ($tipo == 'Capitan') {
         $result = $db_puertos -> prepare($query_puerto);
         $result -> execute();
         $coordenadas_puertos = $result-> fetchAll();
-        echo $coordenadas_puertos;
+        echo $coordenadas_puertos[0];
         $coordenadas ->append($coordenadas_puertos[0]);
         
     }
