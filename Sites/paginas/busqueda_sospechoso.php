@@ -19,7 +19,7 @@ $result = $db_puertos -> prepare($query);
 $result -> execute();
 $resultado = $result-> fetchAll();
 $tipo = $resultado[0][0];
-
+$coordenadas =  new ArrayObject();
 
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte, nombre FROM usuarios WHERE usuarios.uid = $id_usuario;";
@@ -47,7 +47,12 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
 
     foreach ($resultado as $resultado) {
-        echo $resultado[0];
+        $query_puerto = "SELECT latidud, longitud FROM coordenadas_puertos WHERE coordenadas_puertos.puerto = '$resultado';";
+        $result = $db_puertos -> prepare($query_puerto);
+        $result -> execute();
+        $coordenadas_puertos = $result-> fetchAll();
+        $coordenadas ->append($coordenadas_puertos)
+        
     }
 }
 
@@ -65,8 +70,12 @@ elseif ($tipo == 'Jefe') {
     $result -> execute();
     $resultado = $result-> fetchAll();
 
-    $puertos = $resultado[0][0];
-    echo $puertos;
+    $puerto = $resultado[0][0];
+    $query_puerto = "SELECT latidud, longitud FROM coordenadas_puertos WHERE coordenadas_puertos.puerto = '$puerto';";
+    $result = $db_puertos -> prepare($query_puerto);
+    $result -> execute();
+    $coordenadas = $result-> fetchAll();
+    
 };
 
 ?>
@@ -106,6 +115,13 @@ $data = json_decode(trim($result), TRUE);
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
                 echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
+
+                foreach ($coordenadas as $coordenada) {
+
+                    $lat = $coordenada[0];
+                    $long = $coordenada[1];
+                    echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
+                }
             } ?>
         </script>
     </div>
