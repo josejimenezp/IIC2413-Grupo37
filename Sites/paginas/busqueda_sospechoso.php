@@ -48,7 +48,7 @@ $data = json_decode(trim($result), TRUE);
     <div id="mapid" style="height: 600px">
 
         <script> 
-            var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 10);
+            var map = L.map('mapid').setView([-33.499572, -70.615472], 10);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
