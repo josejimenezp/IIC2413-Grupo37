@@ -8,6 +8,19 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 <?php
+$curl = curl_init();
+$id_usuario = $_POST['id'];
+$fecha_1 = $_POST['fecha1'];
+$fecha_2 = $_POST['fecha2'];
+$palabras_clave = $_POST['palabras_clave'];
+
+$query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuario;";
+$result = $db_puertos -> prepare($query);
+$result -> execute();
+$resultado = $result-> fetchAll();
+$tipo = $resultado[0][0];
+
+
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte, nombre FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
@@ -73,18 +86,6 @@ elseif ($tipo == 'Jefe') {
     crossorigin=""/>
 </head>
 <?php
-$curl = curl_init();
-$id_usuario = $_POST['id'];
-$fecha_1 = $_POST['fecha1'];
-$fecha_2 = $_POST['fecha2'];
-$palabras_clave = $_POST['palabras_clave'];
-
-$query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuario;";
-$result = $db_puertos -> prepare($query);
-$result -> execute();
-$resultado = $result-> fetchAll();
-$tipo = $resultado[0][0];
-
 
 
 curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=Garin%20Hills");
