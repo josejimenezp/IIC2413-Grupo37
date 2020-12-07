@@ -28,7 +28,7 @@ if ($tipo == 'Capitan') {
     $resultado = $result-> fetchAll();
     $nombre = $resultado[0][1];
     echo $nombre;
-    $lista_nombre = str_replace(' ', $nombre, '%20');
+    $lista_nombre = str_replace(' ', 'Garin Hills', '%20');
     echo $lista_nombre;
 
     $pasaporte = $resultado[0][0];
