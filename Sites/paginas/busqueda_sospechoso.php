@@ -77,7 +77,7 @@ elseif ($tipo == 'Jefe') {
     $result -> execute();
     $coordenadas_jefe = $result-> fetchAll();
     $coordenadas ->append($coordenadas_jefe[0]);
-    echo $coordenadas_jefe[0];
+    echo $coordenadas_jefe[0][0];
 };
 ?>
 
