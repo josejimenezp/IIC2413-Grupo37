@@ -83,7 +83,18 @@ def get_messages():
 # ---------------------- Fin Get Messages -------------------------------
 
 # ------------------------ Get Message ----------------------------------
-@app.route("/messages/<int:id1>")
+@app.route("/messages/")
+def get_messages1():
+    name = request.args.get('name')
+
+    if not (name is None):
+        id_mongo = list(db.usuarios.find({'name':name},{'_id':0,'uid':1}))
+        return json.jsonify(id_mongo)
+        #mensajes_recibidos = list(db.usuarios.find({'name':name},{'_id':0}))
+
+
+
+
 def get_message(id1):
 
 	mensajes = list(db.mensajes.find({"mid": int(id1)}, {"_id": 0}))
@@ -93,6 +104,9 @@ def get_message(id1):
 
 	return json.jsonify(mensajes)
 # ---------------------- Fin Get Message -------------------------------
+
+# ---------------------- Get Message -----------------------------------
+@app.route("/messages/")
 
 user_keys_msg = ['message','sender','receptant','lat','long','date']
 
