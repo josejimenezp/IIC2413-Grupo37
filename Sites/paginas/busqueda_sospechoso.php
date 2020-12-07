@@ -66,7 +66,6 @@ if ($tipo == 'Capitan') {
     $result = $db_puertos -> prepare($obtener_rut);
     $result -> execute();
     $resultado = $result-> fetchAll();
-    $nombre 
     $pasaporte = $resultado[0][0];
     $obtener_id = "SELECT pid FROM personas WHERE pasaporte = '$pasaporte';";
     $result = $db_buques -> prepare($obtener_id);
