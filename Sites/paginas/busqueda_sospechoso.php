@@ -74,7 +74,7 @@ elseif ($tipo == 'Jefe') {
 <?php
 
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre");
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=Garin%20Hills");
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
