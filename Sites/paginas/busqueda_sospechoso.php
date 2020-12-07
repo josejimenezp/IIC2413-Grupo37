@@ -30,7 +30,7 @@ $result = curl_exec ($curl);
 
 $result = json_decode(trim($result), TRUE);
 
-echo $result[0];
+echo $result[0][0];
 
 
 if ($tipo == 'Capitan') {
