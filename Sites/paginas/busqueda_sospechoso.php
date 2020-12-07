@@ -7,6 +7,7 @@ if (isset($_SESSION['username'])) {
     header("location: ../index.php");
 }
 ?>
+<body>
 <?php
 $curl = curl_init();
 $id_usuario = $_POST['id'];
@@ -81,3 +82,4 @@ elseif ($tipo == 'Jefe') {
     
 };
 ?>
+</body>
