@@ -28,11 +28,24 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
 
-$result = json_decode(trim($result), TRUE);
-
-echo $result[0]['lat'];
-
-
+$data = json_decode(trim($result), TRUE);
+?>
+<script> 
+const data =
+let mymap = L.map('mapid').setView([-33.499572, -70.615472], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+maxZoom: 18,
+id: 'mapbox.streets',
+accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+for (let markerData of $data) {
+    let [markerData['long'],markerData['lat'] ] = markerData;
+    let marker = L.marker([lat, lng]).addTo(mymap);
+    //marker.bindPopup(name);
+}
+</script>
+<?php
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
