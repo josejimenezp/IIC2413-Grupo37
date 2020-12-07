@@ -47,18 +47,17 @@ $data = json_decode(trim($result), TRUE);
     <div id="mapid" style="height: 600px">
 
         <script> 
-            const data = <?php echo $data; ?>;
-            <?php echo $data ?>;
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
             id: 'mapbox.streets',
             accessToken: 'your.mapbox.access.token'
             }).addTo(mymap);
-            for (let markerData of data) {
-                let [markerData['long'], markerData['lat']] = markerData;
-                let marker = L.marker([lat, lng]).addTo(mymap);
-            }
+            <?php foreach ($data as $punto) {
+                $long = $punto['long'];
+                $lat  = $punto['lat'];
+                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);';
+            } ?>
         </script>
     </div>
 </script>
