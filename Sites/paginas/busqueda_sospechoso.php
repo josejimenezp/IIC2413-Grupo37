@@ -114,4 +114,3 @@ $data = json_decode(trim($result), TRUE);
         </script>
     </div>
 </script>
-<?php
