@@ -143,7 +143,8 @@ def post_messages():
         sender = db.usuarios.find({"uid":data['sender']},{"_id":0})
         receptant = db.usuarios.find({"uid":data['receptant']},{"_id":0})
 
-        if sender and receptant:
+
+        if list(sender) != [] and list(receptant) != []:
             result = db.mensajes.insert(data)
             mensaje = "Mensaje enviado"
             return {"message":data["message"], 'sender':data["sender"], 'receptant':data['receptant'],'lat':data['lat'],'long':data['long'],'date':data['date']}
