@@ -117,7 +117,7 @@ $data = json_decode(trim($result), TRUE);
                 echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
 
                 foreach ($coordenadas as $coordenada) {
-
+                    echo "Hola";
                     $lat = $coordenada[0];
                     $long = $coordenada[1];
                     echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
