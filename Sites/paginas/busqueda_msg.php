@@ -17,9 +17,11 @@
     return $result[0]['name'];
   }
 
-  $desired = array_map("trim", explode(",", $_GET['desired']));
-  $required = array_map("trim", explode(",",$_GET['required']));
-  $forbidden =  array_map("trim", explode(",", $_GET['forbidden']));
+  // Si la busqueda es vacía, las opciones son [].
+  $desired = $_GET['desired'] ? array_map("trim", explode(",", $_GET['desired'])) : [];
+  $required = $_GET['required'] ? array_map("trim", explode(",", $_GET['required'])) : [];
+  $forbidden = $_GET['forbidden'] ? array_map("trim", explode(",", $_GET['forbidden'])) : [];
+  
   $userId =  $_SESSION['uid'];
 
   $data = array(
