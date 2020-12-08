@@ -25,7 +25,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="buscador_msg.php">
           <p class='fs-16'>
             <i class="fa fa-search"></i>&nbsp; Buscar
           </p>

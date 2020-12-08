@@ -52,9 +52,9 @@ $result = json_decode(trim($result), TRUE);
                 <?php foreach ($result as $k => $res):?>
                   <?php if ($k < 1) continue; ?>
                   <tr>
-                    <td><?=get_user_name($res['receptant'], $curl)?></td>
-                    <td><?=$res['message']?></td>
-                    <td><?=date('j M, Y', strtotime($res['date']))?></td>
+                    <td><p><?=get_user_name($res['receptant'], $curl)?></p></td>
+                    <td><p><?=$res['message']?></p></td>
+                    <td><p><?=date('j M, Y', strtotime($res['date']))?></p></td>
                   </tr>
                   <?php endforeach; ?>
               </tbody>

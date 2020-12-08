@@ -52,17 +52,14 @@ $result = json_decode(trim($result), TRUE);
                 <?php foreach ($result as $k => $res):?>
                   <?php if ($res['receptant'] == $_SESSION['uid']): ?>
                     <tr>
-                      <td><?=get_user_name($res['sender'], $curl)?></td>
-                      <td><?=$res['message']?></td>
-                      <td><?=date('j M, Y', strtotime($res['date']))?></td>
+                      <td><p><?=get_user_name($res['sender'], $curl)?></p></td>
+                      <td><p><?=$res['message']?></p></td>
+                      <td><p><?=date('j M, Y', strtotime($res['date']))?></p></td>
                     </tr>
                   <?php endif ?>
                 <?php endforeach; ?>
               </tbody>
             </table>
-          </div>
-
-          <div class='container' style='height: 2px; border-style: solid; border-bottom: 2px'>
           </div>
         </main>
         
