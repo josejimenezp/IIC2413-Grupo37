@@ -17,19 +17,19 @@ if (isset($_SESSION['username'])) {
 	$mensaje = $_GET['mensaje'];
 
 	if ($latitud == NAN){
-		echo <<< END_OF_TEXT
+		echo <<< EOT
 			<h1>Error, latitud faltante</h1>
-		END_OF_TEXT;
+EOT;
 	}
 	elseif ($longitud == NAN){
-		echo <<< END_OF_TEXT
+		echo <<< EOT
 			<h1>Error, longitud faltante</h1>
-		END_OF_TEXT;
+EOT;
 	}
 	elseif ($nombre_receptant == ''){
-		echo <<< END_OF_TEXT
+		echo <<< EOT
 			<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>
-		END_OF_TEXT;
+EOT;
 	}
 	else{
 
@@ -50,9 +50,9 @@ if (isset($_SESSION['username'])) {
 
 		// Si el usuario no existe
 		if ($response_uid == 'No existe este usuario :('){
-			echo <<< END_OF_TEXT
+			echo <<< EOT
 				<h1>Error, el usuario ingresado no existe</h1>
-			END_OF_TEXT;
+EOT;
 		}
 		// Si es que existe el usuario
 		else{
