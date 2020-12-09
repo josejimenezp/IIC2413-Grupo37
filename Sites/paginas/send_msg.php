@@ -82,7 +82,7 @@ if (isset($_SESSION['username'])) {
     <div class="container-login100">
         <div class="row">
             <div class="mx-auto">
-                <div class="wrap-login100 p-t-50 p-b-20">
+                <div class="wrap-login100 p-t-10 p-b-20">
                     <div class="row ">
                         <span class="login100-form-title mx-auto" style="font-size: 40px">
                             Enviar mensaje
