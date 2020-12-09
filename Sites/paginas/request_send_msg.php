@@ -74,11 +74,14 @@ if (isset($_SESSION['username'])) {
 			$result_send = file_get_contents( "https://young-ocean-30844.herokuapp.com/messages", false, $context_send );
 			$response_send = json_decode($result_send, true);
 
+			echo '<h1>' . $response_send . '</h1>';
+
 			if ($response_send['receptant']){
 				require('template_mensaje_enviado.php');
+				echo '<h1></h1>'
 			}
 			elseif ($response_send['mensaje']){
-				echo '<h1><?php $response_send ?></h1>';
+				echo '<h1>' . $response_send . '</h1>';
 			}
 			else{
 				echo '<h1>WTF</h1>';
