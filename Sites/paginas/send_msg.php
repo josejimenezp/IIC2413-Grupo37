@@ -88,8 +88,8 @@ if (isset($_SESSION['username'])) {
             </div>
             <div class="row">
                 <div class="api-requester">
-                    <div class="col-3"></div>
-                    <div class="col-9">
+                    <div class="col-9"></div>
+                    <div class="col-3">
                         <form action="request_send_msg.php" method="get">
                             <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
                             <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
