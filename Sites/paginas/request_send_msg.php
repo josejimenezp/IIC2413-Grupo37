@@ -43,9 +43,6 @@ if (isset($_SESSION['username'])) {
 		$result_uid = file_get_contents( "https://young-ocean-30844.herokuapp.com/_info-users", false, $context_uid);
 		$response_uid = json_decode($result_uid, true);
 
-		echo '<h1>Response MONGO: ' . strval($response_uid[0]["uid"]) . '</h1>';
-		// echo '<h1>Name MONGO: ' . strval($response_uid['name']) . '</h1>';
-
 		// Si el usuario no existe
 		if ($response_uid == 'No existe este usuario :('){
 			echo '<h1>Error, el usuario ingresado no existe</h1>';
@@ -54,7 +51,7 @@ if (isset($_SESSION['username'])) {
 		else{
 
 			// ID del receptor
-			$receptant_uid = $response_uid['uid'];
+			$receptant_uid = $response_uid[0]['uid'];
 
 			$fecha = date('Y-m-d');
 
@@ -77,21 +74,14 @@ if (isset($_SESSION['username'])) {
 			$result_send = file_get_contents( "https://young-ocean-30844.herokuapp.com/messages", false, $context_send );
 			$response_send = json_decode($result_send, true);
 
-			echo '<h1>Receptant: ' . strval($data_send['receptant']) . '</h1>';
-			echo '<h1>Sender: ' . strval($data_send['sender']) . '</h1>';
-			echo '<h1>Message: ' . strval($data_send['message']) . '</h1>';
-			echo '<h1>Latitud: ' . strval($data_send['lat']) . '</h1>';
-			echo '<h1>Longitud: ' . strval($data_send['long']) . '</h1>';
-			echo '<h1>Fecha: ' . strval($data_send['date']) . '</h1>';
-
 			if ($response_send['receptant']){
 				require('template_mensaje_enviado.php');
 			}
 			elseif ($response_send['mensaje']){
-				echo '<h1>Flag2</h1>';
+				echo '<h1>Ha ocurrido un error</h1>';
 			}
 			else{
-				echo '<h1>WTF</h1>';
+				echo '<h1>No se pudo procesar tu solicitud</h1>';
 			};
 		};
 	};
