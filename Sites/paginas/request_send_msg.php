@@ -89,9 +89,9 @@ if (isset($_SESSION['username'])) {
 
 <body>
 	<div class="row">
-		<div class="col-5"></div>
-		<div class="col-5"></div>
-		<div class="col-2">
+		<div class="col-4"></div>
+		<div class="col-4"></div>
+		<div class="col-3">
 			<form action="send_msg.php" method="get">
 				<button class="myButton" type="submit" value="return_to_send_msg">
 					Volver a enviar un mensaje

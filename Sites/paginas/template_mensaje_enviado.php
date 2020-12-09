@@ -18,8 +18,8 @@
 				</div>
 				<div class="row align-items-end">
 					<div class="col-9"></div>
-					<div class="col-1">
-					<h5><?php echo $fecha ?></h5>
+					<div class="col-2">
+					<h6><?php echo $fecha ?></h6>
 					</div>
 				</div>
 			</div>
