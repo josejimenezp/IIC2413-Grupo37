@@ -75,9 +75,9 @@ if (isset($_SESSION['username'])) {
         };
     }
     else{
-        echo '<h1>Flag2</h1>';
         $latitud = $response[1]["latitud"];
         $longitud = $response[1]["longitud"];
+        echo '<h1>' . $latitud . '</h1>';
     };
 ?>
 <body>
