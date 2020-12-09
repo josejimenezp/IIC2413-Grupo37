@@ -80,15 +80,15 @@ if (isset($_SESSION['username'])) {
 ?>
 <body>
     <div class="container-login100">
-        <div class="container">
-            <div class="wrap-login100 p-t-85 p-b-20">
-                <div class="row ">
-                    <span class="login100-form-title mx-auto" style="font-size: 40px">
-                        Enviar mensaje
-                    </span>
-                </div>
-                <div class="row">
-                    <div class="api-requester mx-auto">
+        <div class="row">
+            <div class="mx-auto">
+                <div class="wrap-login100 p-t-85 p-b-20">
+                    <div class="row ">
+                        <span class="login100-form-title mx-auto" style="font-size: 40px">
+                            Enviar mensaje
+                        </span>
+                    </div>
+                    <div class="api-requester">
                         <form action="request_send_msg.php" method="get">
                             <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
                             <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
