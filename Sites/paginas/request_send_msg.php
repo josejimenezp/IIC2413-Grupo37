@@ -83,7 +83,12 @@ EOT;
 
 			if ($response_send['receptant']){
 				require('template_mensaje_enviado.php');
-			};
+			}
+			elseif ($response_send['mensaje']){
+				echo <<< EOT
+					<h1><?php $response_send ?></h1>
+EOT;
+			}
 		};
 	};
 ?>
