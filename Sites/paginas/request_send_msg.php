@@ -74,10 +74,12 @@ if (isset($_SESSION['username'])) {
 			$result_send = file_get_contents( "https://young-ocean-30844.herokuapp.com/messages", false, $context_send );
 			$response_send = json_decode($result_send, true);
 
-			echo '<h1>Receptant: ' . strval($response_send['receptant']) . '</h1>';
-			echo '<h1>Sender: ' . strval($response_send['sender']) . '</h1>';
-			echo '<h1>Message: ' . strval($response_send['message']) . '</h1>';
-			echo '<h1>Error: ' . strval($response_send['mensaje']) . '</h1>';
+			echo '<h1>Receptant: ' . strval($data_send['receptant']) . '</h1>';
+			echo '<h1>Sender: ' . strval($data_send['sender']) . '</h1>';
+			echo '<h1>Message: ' . strval($data_send['message']) . '</h1>';
+			echo '<h1>Latitud: ' . strval($data_send['lat']) . '</h1>';
+			echo '<h1>Longitud: ' . strval($data_send['long']) . '</h1>';
+			echo '<h1>Fecha: ' . strval($data_send['date']) . '</h1>';
 
 			if ($response_send['receptant']){
 				require('template_mensaje_enviado.php');
