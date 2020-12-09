@@ -89,6 +89,11 @@ EOT;
 					<h1><?php $response_send ?></h1>
 EOT;
 			}
+			else{
+				echo <<< EOT
+					<h1>WTF</h1>
+EOT;
+			};
 		};
 	};
 ?>
