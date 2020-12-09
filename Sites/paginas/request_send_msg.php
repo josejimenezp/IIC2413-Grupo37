@@ -94,4 +94,5 @@ EOT;
 			Volver a enviar un mensaje
 		</button>
 	</form>
+	<h2><?php $response_send ?></h2>
 </body>
