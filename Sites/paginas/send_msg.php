@@ -48,6 +48,7 @@ if (isset($_SESSION['username'])) {
     }
     // Si no ha enviado mensajes antes
     elseif(count($response) == 1){
+        echo '<h1>Flag1</h1>';
 
         // Si es Jefe de puerto
         if ($tipo_usuario == 'Jefe'){
@@ -74,6 +75,7 @@ if (isset($_SESSION['username'])) {
         };
     }
     else{
+        echo '<h1>Flag2</h1>';
         $latitud = $response[1]["latitud"];
         $longitud = $response[1]["longitud"];
     };
