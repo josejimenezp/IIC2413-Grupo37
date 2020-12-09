@@ -16,15 +16,12 @@ if (isset($_SESSION['username'])) {
 	$nombre_receptant = $_GET['nombre_receptant'];
 	$mensaje = $_GET['mensaje'];
 
-	if ($latitud == NAN){
-		echo <<< EOT
-			<h1>Error, latitud faltante</h1>
-EOT;
+	if ($latitud == ''){
+		echo '<h1>Error, latitud faltante</h1>';
 	}
-	elseif ($longitud == NAN){
-		echo <<< EOT
-			<h1>Error, longitud faltante</h1>
-EOT;
+	elseif ($longitud == ''){
+		echo '<h1>Error, longitud faltante</h1>';
+
 	}
 	elseif ($nombre_receptant == ''){
 		echo <<< EOT

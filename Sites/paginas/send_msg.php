@@ -45,8 +45,8 @@ if (isset($_SESSION['username'])) {
         echo <<< EOT
             <h1>Error, el usuario no existe en nuestra base de datos</h1>
 EOT;
-        $latitud = NAN;
-        $longitud = NAN;
+        $latitud = '';
+        $longitud = '';
     }
     // Si no ha enviado mensajes antes
     elseif(count($response) == 1){
