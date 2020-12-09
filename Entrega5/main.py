@@ -51,7 +51,11 @@ def getUsersByData():
     nombre = content.get('nombre')
     edad = content.get('edad')
 
-    resultados = list(db.usuarios.find({"name": nombre, "age": edad}, {"_id": 0}))
+    if nombre and not edad:
+        resultados = list(db.usuarios.find({"name": nombre}, {"_id": 0}))
+
+    elif edad and nombre:
+        resultados = list(db.usuarios.find({"name": nombre, "age": edad}, {"_id": 0}))
 
 
     if resultados == []:
