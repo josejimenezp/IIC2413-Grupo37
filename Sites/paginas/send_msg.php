@@ -80,7 +80,7 @@ if (isset($_SESSION['username'])) {
 ?>
 <body>
     <div class="container-login100">
-        <div class="wrap-login100 p-t-85 p-b-20">
+        <div class="wrap-login100 p-t-10 p-b-20">
             <div class="row">
                 <span class="login100-form-title" style="font-size: 40px">
                     Enviar mensaje
@@ -89,7 +89,7 @@ if (isset($_SESSION['username'])) {
             <div class="row">
                 <div class="api-requester">
                     <div class="col"></div>
-                    <div class="col">
+                    <div class="col-9">
                         <form action="request_send_msg.php" method="get">
                             <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
                             <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
