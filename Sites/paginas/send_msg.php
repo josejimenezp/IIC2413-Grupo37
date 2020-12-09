@@ -80,13 +80,13 @@ if (isset($_SESSION['username'])) {
 ?>
 <body>
     <div class="container-login100">
-        <div class="container">
-            <span class="login100-form-title" style="font-size: 40px">
-                Enviar mensaje
-            </span>
-        </div>
-        <div class="container">
-            <div class="wrap-login100 p-t-85 p-b-20">
+        <div class="wrap-login100 p-t-85 p-b-20">
+            <div class="row">
+                <span class="login100-form-title" style="font-size: 40px">
+                    Enviar mensaje
+                </span>
+            </div>
+            <div class="row">
                 <div class="api-requester">
                     <div class="col"></div>
                     <div class="col">
