@@ -17,14 +17,31 @@ if (isset($_SESSION['username'])) {
 	$mensaje = $_GET['mensaje'];
 
 	if ($latitud == ''){
-		echo '<h1>Error, latitud faltante</h1>';
+		echo <<< EOT
+			<div class="row p-t-100 p-b-50">
+				<div class="mx-auto">
+					<h1>Error, latitud faltante</h1>
+				</div>
+			</div>
+EOT;
 	}
 	elseif ($longitud == ''){
-		echo '<h1>Error, longitud faltante</h1>';
-
+		echo <<< EOT
+			<div class="row p-t-100 p-b-50">
+				<div class="mx-auto">
+					<h1>Error, longitud faltante</h1>
+				</div>
+			</div>
+EOT;
 	}
 	elseif ($nombre_receptant == ''){
-		echo '<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>';
+		echo <<< EOT
+			<div class="row p-t-100 p-b-50">
+				<div class="mx-auto">
+					<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>
+				</div>
+			</div>
+EOT;
 	}
 	else{
 
@@ -46,7 +63,7 @@ if (isset($_SESSION['username'])) {
 		// Si el usuario no existe
 		if ($response_uid == ''){
 			echo <<< EOT
-				<div class="row p-t-100">
+				<div class="row p-t-100 p-b-50">
 					<div class="mx-auto">
 						<h1>Error, el usuario ingresado no existe</h1>
 					</div>
@@ -84,10 +101,22 @@ EOT;
 				require('template_mensaje_enviado.php');
 			}
 			elseif ($response_send['mensaje']){
-				echo '<h1>Ha ocurrido un error</h1>';
+				echo <<< EOT
+					<div class="row p-t-100 p-b-50">
+						<div class="mx-auto">
+							<h1>Ha ocurrido un error</h1>
+						</div>
+					</div>
+EOT;
 			}
 			else{
-				echo '<h1>No se pudo procesar tu solicitud</h1>';
+				echo <<< EOT
+					<div class="row p-t-100 p-b-50">
+						<div class="mx-auto">
+							<h1>No se ha podido procesar tu solicitud</h1>
+						</div>
+					</div>
+EOT;
 			};
 		};
 	};

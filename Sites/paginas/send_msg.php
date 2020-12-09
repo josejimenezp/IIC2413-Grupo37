@@ -41,8 +41,14 @@ if (isset($_SESSION['username'])) {
     
 ?>
 <?php
-    if ($response == 'No existe este usuario :('){
-        echo '<h1>Error, el usuario no existe en nuestra base de datos</h1>';
+    if ($response == ''){
+        echo <<< EOT
+            <div class="row p-t-100 p-b-50">
+                <div class="mx-auto">
+                    <h1>Error, el usuario no existe en nuestra base de datos</h1>
+                </div>
+            </div>
+EOT;
         $latitud = '';
         $longitud = '';
     }
