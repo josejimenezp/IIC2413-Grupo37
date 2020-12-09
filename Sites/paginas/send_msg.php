@@ -93,11 +93,11 @@ if (isset($_SESSION['username'])) {
                         <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
                         <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
                         <label for="nombre_receptant">Nombre del receptor del mensaje:</label><br>
-                        <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
-                            <input id="nombre_receptant" class="input100" type="text" name="nombre_receptant">
+                        <div class="validate-input m-b-50" data-validate="Este campo es requerido">
+                            <input id="nombre_receptant" class="input-group-text" type="text" name="nombre_receptant">
                         </div>
                         <label for="mensaje">Mensaje:</label><br>
-                        <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+                        <div class="validate-input m-b-50" data-validate="Este campo es requerido">
                             <textarea id="mensaje" class="form-control" type="text" name="mensaje" rows="3"></textarea>
                         </div>
                         <div class="container-login100-form-btn">
