@@ -1,5 +1,5 @@
 <body>
-	<div class="container">
+	<div class="container p-t-15 m-b-15">
 		<h1>Mensaje Enviado!</h1>
 	</div>
 	<div class="container">

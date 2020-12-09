@@ -88,7 +88,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <body>
-	<div class="row">
+	<div class="row p-t-10">
 		<div class="col-4"></div>
 		<div class="col-4"></div>
 		<div class="col-3">
