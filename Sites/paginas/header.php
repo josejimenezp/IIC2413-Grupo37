@@ -69,6 +69,9 @@
                   <a class="nav-link" href="recibidos.php">Mensajes</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="send_msg.php">Enviar un mensaje</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="logout.php">Cerrar sesión</a>
                 </li>
               </ul>

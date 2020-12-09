@@ -43,32 +43,32 @@
 						<span class="focus-input100" data-placeholder="Nombre"></span>
 					</div>
                     
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+          <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
 						<input class="input100" type="number" name="edad">
 						<span class="focus-input100" data-placeholder="Edad"></span>
 					</div>
                     
 					<div>	
-                        <select name= "sexo" required>
-                            <option class="options100" value="">Sexo</option>
-                            <option class="options100" value="Hombre">Hombre</option>
-                            <option class="options100" value="Mujer">Mujer</option>
-                            <option class="options100" value="Otro">Otro</option>
-                        </select>
-                        <br></br>
+						<select name= "sexo" required>
+								<option class="options100" value="">Sexo</option>
+								<option class="options100" value="Hombre">Hombre</option>
+								<option class="options100" value="Mujer">Mujer</option>
+								<option class="options100" value="Otro">Otro</option>
+						</select>
+						<br></br>
 					</div>
                     
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+          <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
 						<input class="input100" type="text" name="n_pasaporte">
 						<span class="focus-input100" data-placeholder="N° pasaporte"></span>
-                    </div>
+          </div>
                     
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+          <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
 						<input class="input100" type="text" name="nacionalidad">
 						<span class="focus-input100" data-placeholder="Nacionalidad"></span>
-                    </div>
+          </div>
                     
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+          <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>

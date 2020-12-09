@@ -19,8 +19,30 @@ if (empty($resultado)) {
     window.location.href='../index.php'</script>";
 }
 else {
-    $UID = $resultado[0][7];
-    $_SESSION['uid'] = $UID;
+    $PUID = $resultado[0][7];
+    $_SESSION['postgres_uid'] = $PUID;
+
+    // Se realiza una request a la API para obtener su id en mongodb
+
+    // Nombre y edad del usuario
+    $data = array('nombre' => $resultado[0][0], 'edad' => $resultado[0][1]);
+
+    $options = array(
+        'http' => array(
+            'method' => 'GET',
+            'content' => json_encode($data),
+            'header' => "Content-Type: application/json\r\n" .
+                        "Accept: application/json\r\n"
+        )
+    );
+
+    $context = stream_context_create( $options );
+    $result = file_get_contents( 'https://young-ocean-30844.herokuapp.com/_info-users', false, $context );
+    $response = json_decode($result, true);
+
+    // Creamos una variable de entorno con el uid en mongodb que coincide con el primer usuario que retorne
+    $_SESSION['mongo_uid'] = $response[0]['uid'];
+
     header("location: ../paginas/perfil.php");
 };
 

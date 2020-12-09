@@ -10,62 +10,98 @@ if (isset($_SESSION['username'])) {
 <?php
     require("../config/conexion.php");
 
-    $query = "SELECT * FROM navieras;"; // nid, nombre, pais, descripcion
+    $postgres_uid = $_SESSION['postgres_uid'];
+    $mongo_uid = $_SESSION['mongo_uid'];
 
-    $result = $db_buques -> prepare($query);
+    // Obtengo información del usuario para insertar en el mensaje
+    $query_data_usuario = "SELECT * FROM usuarios WHERE uid = '$postgres_uid';";
+
+    $result = $db_puertos -> prepare($query_data_usuario);
     $result -> execute();
-    $resultados = $result -> fetchAll();
+    $data_usuario = $result -> fetchAll();
+
+    // Capitan o jefe y su pasaporte
+    $tipo_usuario = $data_usuario[0][4];
+    $pasaporte = $data_usuario[0][3];
+
+    // Necesitaremos la latitud y longitud del usuario que envía el mensaje
+
+    $options = array(
+        'http' => array(
+            'method' => 'GET',
+            'header' => "Content-Type: application/json\r\n" .
+                        "Accept: application/json\r\n"
+        )
+    );
+
+    $context = stream_context_create( $options );
+    $result = file_get_contents( "https://young-ocean-30844.herokuapp.com/users/$mongo_uid", false, $context );
+    $response = json_decode($result, true);
+
+    
 ?>
+<?php
+    if ($response == 'No existe este usuario :('){
+        echo '<h1>Error, el usuario no existe en nuestra base de datos</h1>';
+        $latitud = NAN;
+        $longitud = NAN;
+    }
+    // Si no ha enviado mensajes antes
+    elseif(count($response) == 1){
 
-<?php $uid = $_SESSION['uid']; ?>
-        <h1>Aquí hacemos Requests a la API</h1>
-        <h3>Ingrese los campos que desea</h3>
-        <div class="api-requester">
-            <form action="request_send_msg.php" method="get">
-                <input type="hidden" name="uid" value="<?php echo $uid ?>">
-                <label for="desired">Busqueda Simple:</label><br>
-                <input id="desired" type="text" name="desired">
-                <label for="required">Busqueda Exacta:</label><br>
-                <input id="required" type="text" name="required">
-                <label for="forbidden">No buscar:</label><br>
-                <input id="forbidden" type="text" name="forbidden">
-            <input type="submit" value="Buscar">
-            </form>
-        </div>
+        // Si es Jefe de puerto
+        if ($tipo_usuario == 'Jefe'){
+            // Obtenemos las coordenadas del puerto
+            $query_coor_puerto = "SELECT usuarios.n_pasaporte, puertos.nombre, coordenadas_puertos.latitud, 
+            coordenadas_puertos.longitud FROM usuarios, puertos, instalaciones, coordenadas_puertos WHERE 
+            usuarios.uid = $postgres_uid AND usuarios.n_pasaporte = instalaciones.jefe_id 
+            AND instalaciones.puid = puertos.puid AND puertos.nombre = coordenadas_puertos.puerto;";
 
+            $result = $db_puertos -> prepare($query_coor_puerto);
+            $result -> execute();
+            $coor_puerto = $result -> fetchAll();
+
+            // Latitud
+            $latitud = $coor_puerto[0][2];
+
+            // Longitud
+            $longitud = $coor_puerto[0][3];
+        }
+        // Si es Capitán
+        else{
+            $latitud = -1*(rand(27374641, 50291406)/1000000);
+            $longitud = -1*(rand(90276865, 90979990)/1000000);
+        };
+    }
+    else{
+        $latitud = $response[1]["latitud"];
+        $longitud = $response[1]["longitud"];
+    };
+?>
 <body>
-    <br><br>
-    <div class="container">
-        <h2>Navieras</h2>
-        <br>
-        <div class="container">
-            <form action="busqueda.php" method="post">
-                <div class="row">
-                    <div class="col-11 wrap-input100 validate-input m-b-50">
-                        <input class="input100" type="nombre_nav" name="busqueda">
-                        <span class="focus-input100" data-placeholder="Buscar"></span>
+    <h1>Enviar mensaje a usuario</h1>
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-85 p-b-20">
+            <div class="api-requester">
+                <form action="request_send_msg.php" method="get">
+                    <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
+                    <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
+                    <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
+                    <label for="nombre_receptant">Nombre del receptor del mensaje:</label><br>
+                    <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+                        <input id="nombre_receptant" class="input100" type="text" name="nombre_receptant">
                     </div>
-                    <div class="col-1 mt-2">
-                    <button type="submit" style="vertical-align:middle;"><i class="fas fa-search fs-30"></i></button>
+                    <label for="mensaje">Mensaje:</label><br>
+                    <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+                        <input id="mensaje" class="input100" type="text" name="mensaje">
                     </div>
-                </div>
-            </form>
-        </div>
-        <?php foreach ($resultados as $resultado): ?>
-            <?php echo "<a href='vista_naviera.php?nid=$resultado[0]'>"; ?>
-            <div class='card'>
-                <div class='card-body'>
-                    <div class='card-title'>
-                        <h3 > <?=$resultado[1]?> </h3>
-                    </div>
-                    <div class='card-text'>
-                        <p> <?=$resultado[3]?> </p>
-                    </div>
-                </div>
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Enviar
+						</button>
+					</div>
+                </form>
             </div>
-            </a>
-            <br>
-        <?php endforeach; ?>
-        <br>
+        </div>
     </div>
 </body>
