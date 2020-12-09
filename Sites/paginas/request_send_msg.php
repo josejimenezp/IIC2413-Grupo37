@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
 		echo '<h1>Error: ' . strval($response_uid) . '</h1>';
 
 		// Si el usuario no existe
-		if ($response_uid == 'No existe este usuario :('){
+		if ($response_uid == ''){
 			echo '<h1>Error, el usuario ingresado no existe</h1>';
 		}
 		// Si es que existe el usuario
