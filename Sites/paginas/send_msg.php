@@ -79,7 +79,7 @@ if (isset($_SESSION['username'])) {
     };
 ?>
 <body>
-    <div class="container-login100">
+    <div class="container">
         <div class="row">
             <div class="mx-auto">
                 <div class="wrap-login100 p-t-10 p-b-20">
