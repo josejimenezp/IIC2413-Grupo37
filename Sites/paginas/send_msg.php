@@ -79,33 +79,37 @@ if (isset($_SESSION['username'])) {
     };
 ?>
 <body>
-    <div class="container p-t-20">
-        <div class="p-t-20 p-b-20">
-            <div class="row">
-                <span class="login100-form-title mx-auto" style="font-size: 40px">
+    <div class="container-login100">
+        <div class="container">
+            <div class="wrap-login100 p-t-85 p-b-20">
+            <div class="container">
+                <span class="login100-form-title" style="font-size: 40px">
                     Enviar mensaje
                 </span>
             </div>
-            <div class="row">
-                <div class="api-requester mx-auto">
-                    <form action="request_send_msg.php" method="get">
-                        <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
-                        <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
-                        <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
-                        <label for="nombre_receptant">Nombre del receptor del mensaje:</label><br>
-                        <div class="validate-input m-b-50" data-validate="Este campo es requerido">
-                            <input id="nombre_receptant" class="input100" type="text" name="nombre_receptant">
-                        </div>
-                        <label for="mensaje">Mensaje:</label><br>
-                        <div class="validate-input m-b-50" data-validate="Este campo es requerido">
-                            <textarea id="mensaje" class="form-control" type="text" name="mensaje" rows="3"></textarea>
-                        </div>
-                        <div class="container-login100-form-btn">
-                            <button class="login100-form-btn" type="submit">
-                                Enviar
-                            </button>
-                        </div>
-                    </form>
+                <div class="api-requester">
+                    <div class="col"></div>
+                    <div class="col">
+                        <form action="request_send_msg.php" method="get">
+                            <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
+                            <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
+                            <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
+                            <label for="nombre_receptant">Nombre del receptor del mensaje:</label><br>
+                            <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+                                <input id="nombre_receptant" class="input100" type="text" name="nombre_receptant">
+                            </div>
+                            <label for="mensaje">Mensaje:</label><br>
+                            <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
+                                <textarea id="mensaje" class="form-control" type="text" name="mensaje" rows="3"></textarea>
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <button class="login100-form-btn" type="submit">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col"></div>
                 </div>
             </div>
         </div>
