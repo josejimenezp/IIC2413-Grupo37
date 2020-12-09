@@ -17,13 +17,19 @@ if (isset($_SESSION['username'])) {
 	$mensaje = $_GET['mensaje'];
 
 	if ($latitud == NAN){
-		echo '<h1>Error, latitud faltante</h1>';
+		echo <<< END_OF_TEXT
+			<h1>Error, latitud faltante</h1>
+		END_OF_TEXT;
 	}
 	elseif ($longitud == NAN){
-		echo '<h1>Error, longitud faltante</h1>';
+		echo <<< END_OF_TEXT
+			<h1>Error, longitud faltante</h1>
+		END_OF_TEXT;
 	}
 	elseif ($nombre_receptant == ''){
-		echo '<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>';
+		echo <<< END_OF_TEXT
+			<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>
+		END_OF_TEXT;
 	}
 	else{
 
@@ -44,7 +50,9 @@ if (isset($_SESSION['username'])) {
 
 		// Si el usuario no existe
 		if ($response_uid == 'No existe este usuario :('){
-			echo "<h1>Error, el usuario ingresado no existe</h1>";
+			echo <<< END_OF_TEXT
+				<h1>Error, el usuario ingresado no existe</h1>
+			END_OF_TEXT;
 		}
 		// Si es que existe el usuario
 		else{
@@ -72,16 +80,15 @@ if (isset($_SESSION['username'])) {
 			$context_send = stream_context_create( $options_send );
 			$result_send = file_get_contents( "https://young-ocean-30844.herokuapp.com/messages", false, $context_send );
 			$response_send = json_decode($result, true);
+
+			if ($response_send['receptant']){
+				require('template_mensaje_enviado.php');
+			};
 		};
 	};
 ?>
 
 <body>
-	<?php
-		if ($response_send['receptant']){
-			require('template_mensaje_enviado.php');
-		};
-	?>
 	<form action="send_msg.php" method="get">
 		<button class="myButton" type="submit" value="return_to_send_msg">
 			Volver a enviar un mensaje

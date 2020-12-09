@@ -42,7 +42,9 @@ if (isset($_SESSION['username'])) {
 ?>
 <?php
     if ($response == 'No existe este usuario :('){
-        echo '<h1>Error, el usuario no existe en nuestra base de datos</h1>';
+        echo <<< END_OF_TEXT
+            <h1>Error, el usuario no existe en nuestra base de datos</h1>
+        END_OF_TEXT;
         $latitud = NAN;
         $longitud = NAN;
     }
@@ -79,8 +81,10 @@ if (isset($_SESSION['username'])) {
     };
 ?>
 <body>
-    <h1>Enviar mensaje a usuario</h1>
     <div class="container-login100">
+        <span class="login100-form-title" style="font-size: 30px">
+            Enviar mensaje
+        </span>
         <div class="wrap-login100 p-t-85 p-b-20">
             <div class="api-requester">
                 <form action="request_send_msg.php" method="get">
@@ -93,7 +97,7 @@ if (isset($_SESSION['username'])) {
                     </div>
                     <label for="mensaje">Mensaje:</label><br>
                     <div class="wrap-input100 validate-input m-b-50" data-validate="Este campo es requerido">
-                        <input id="mensaje" class="input100" type="text" name="mensaje">
+                        <textarea id="mensaje" class="form-control" type="text" name="mensaje" rows="3"></textarea>
                     </div>
                     <div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">
