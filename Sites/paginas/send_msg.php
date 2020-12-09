@@ -82,14 +82,13 @@ if (isset($_SESSION['username'])) {
     <div class="container-login100">
         <div class="container">
             <div class="wrap-login100 p-t-85 p-b-20">
-            <div class="container">
-                <span class="login100-form-title" style="font-size: 40px">
-                    Enviar mensaje
-                </span>
-            </div>
-                <div class="api-requester">
-                    <div class="col"></div>
-                    <div class="col">
+                <div class="row ">
+                    <span class="login100-form-title mx-auto" style="font-size: 40px">
+                        Enviar mensaje
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="api-requester mx-auto">
                         <form action="request_send_msg.php" method="get">
                             <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
                             <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
@@ -109,7 +108,6 @@ if (isset($_SESSION['username'])) {
                             </div>
                         </form>
                     </div>
-                    <div class="col"></div>
                 </div>
             </div>
         </div>
