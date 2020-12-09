@@ -19,7 +19,7 @@
 				<div class="row">
 					<div class="col-9"></div>
 					<div class="col-3">
-					<h6><?php $fecha?></h6>
+					<h6><?php echo $fecha ?></h6>
 					</div>
 				</div>
 			</div>
