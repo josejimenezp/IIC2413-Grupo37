@@ -22,7 +22,7 @@
   $required = $_GET['required'] ? array_map("trim", explode(",", $_GET['required'])) : [];
   $forbidden = $_GET['forbidden'] ? array_map("trim", explode(",", $_GET['forbidden'])) : [];
   
-  $userId =  $_SESSION['uid'];
+  $userId =  $_SESSION['mongo_uid'];
 
   $data = array(
     'desired' => $desired,

@@ -50,7 +50,7 @@ $result = json_decode(trim($result), TRUE);
               </thead>
               <tbody>
                 <?php foreach ($result as $k => $res):?>
-                  <?php if ($res['receptant'] == $_SESSION['uid']): ?>
+                  <?php if ($res['receptant'] == $_SESSION['mongo_uid']): ?>
                     <tr>
                       <td><p><?=get_user_name($res['sender'], $curl)?></p></td>
                       <td><p><?=$res['message']?></p></td>

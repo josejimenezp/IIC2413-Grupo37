@@ -19,7 +19,7 @@ function get_user_name($id, $curl) {
 
 $curl = curl_init();
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/users/" . $_SESSION['uid']);
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/users/" . $_SESSION['mongo_uid']);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);

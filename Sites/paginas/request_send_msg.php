@@ -64,8 +64,8 @@ EOT;
 
 			// Se envía el mensaje
 			
-			$data_send = array('message' => $mensaje, 'sender' => $sender_uid,
-							   'receptant' => $receptant_uid, 'lat' => $latitud,
+			$data_send = array('message' => $mensaje, 'sender' => intval($sender_uid),
+							   'receptant' => intval($receptant_uid), 'lat' => $latitud,
 							   'long' => $longitud, 'date' => $fecha);
 
 			$options_send = array(
@@ -79,7 +79,7 @@ EOT;
 	
 			$context_send = stream_context_create( $options_send );
 			$result_send = file_get_contents( "https://young-ocean-30844.herokuapp.com/messages", false, $context_send );
-			$response_send = json_decode($result, true);
+			$response_send = json_decode($result_send, true);
 
 			if ($response_send['receptant']){
 				require('template_mensaje_enviado.php');
