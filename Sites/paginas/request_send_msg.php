@@ -43,6 +43,9 @@ if (isset($_SESSION['username'])) {
 		$result_uid = file_get_contents( "https://young-ocean-30844.herokuapp.com/_info-users", false, $context_uid);
 		$response_uid = json_decode($result_uid, true);
 
+		echo '<h1>UID MONGO: ' . strval($response_uid['uid']) . '</h1>';
+		echo '<h1>Name MONGO: ' . strval($response_uid['name']) . '</h1>';
+
 		// Si el usuario no existe
 		if ($response_uid == 'No existe este usuario :('){
 			echo '<h1>Error, el usuario ingresado no existe</h1>';
