@@ -75,9 +75,9 @@ if (isset($_SESSION['username'])) {
         };
     }
     else{
-        $latitud = $response[1]["latitud"];
-        $longitud = $response[1]["longitud"];
-        echo '<h1>' . strval(count($response)) . '</h1>';
+        $latitud = $response[1]["lat"];
+        $longitud = $response[1]["long"];
+        echo '<h1>' . strval($longitud) . '</h1>';
     };
 ?>
 <body>
