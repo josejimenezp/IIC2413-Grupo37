@@ -79,8 +79,8 @@ if (isset($_SESSION['username'])) {
     };
 ?>
 <body>
-    <div class="container-login100">
-        <div class="wrap-login100 p-t-10 p-b-20">
+    <div class="container">
+        <div class="p-t-5 p-b-20">
             <div class="row">
                 <span class="login100-form-title" style="font-size: 40px">
                     Enviar mensaje
