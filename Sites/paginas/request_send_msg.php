@@ -78,7 +78,6 @@ if (isset($_SESSION['username'])) {
 
 			if ($response_send['receptant']){
 				require('template_mensaje_enviado.php');
-				echo '<h1></h1>'
 			}
 			elseif ($response_send['mensaje']){
 				echo '<h1>' . $response_send . '</h1>';
