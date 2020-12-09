@@ -79,7 +79,7 @@ if (isset($_SESSION['username'])) {
     };
 ?>
 <body>
-    <div class="container">
+    <div class="container p-t-20">
         <div class="p-t-20 p-b-20">
             <div class="row">
                 <span class="login100-form-title mx-auto" style="font-size: 40px">
@@ -94,7 +94,7 @@ if (isset($_SESSION['username'])) {
                         <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
                         <label for="nombre_receptant">Nombre del receptor del mensaje:</label><br>
                         <div class="validate-input m-b-50" data-validate="Este campo es requerido">
-                            <input id="nombre_receptant" class="input-group-text" type="text" name="nombre_receptant">
+                            <input id="nombre_receptant" class="input100" type="text" name="nombre_receptant">
                         </div>
                         <label for="mensaje">Mensaje:</label><br>
                         <div class="validate-input m-b-50" data-validate="Este campo es requerido">
