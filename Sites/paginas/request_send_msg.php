@@ -88,10 +88,15 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <body>
-	<form action="send_msg.php" method="get">
-		<button class="myButton" type="submit" value="return_to_send_msg">
-			Volver a enviar un mensaje
-		</button>
-	</form>
-	<h2><?php $response_send ?></h2>
+	<div class="row">
+		<div class="col-5"></div>
+		<div class="col-5"></div>
+		<div class="col-2">
+			<form action="send_msg.php" method="get">
+				<button class="myButton" type="submit" value="return_to_send_msg">
+					Volver a enviar un mensaje
+				</button>
+			</form>
+		</div>
+	</div>
 </body>

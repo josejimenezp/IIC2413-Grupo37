@@ -16,10 +16,10 @@
 						<h4><?php echo $mensaje?></h4>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row align-items-end">
 					<div class="col-9"></div>
-					<div class="col-3">
-					<h6><?php echo $fecha ?></h6>
+					<div class="col-1">
+					<h5><?php echo $fecha ?></h5>
 					</div>
 				</div>
 			</div>
