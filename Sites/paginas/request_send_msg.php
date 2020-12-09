@@ -24,9 +24,7 @@ if (isset($_SESSION['username'])) {
 
 	}
 	elseif ($nombre_receptant == ''){
-		echo <<< EOT
-			<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>
-EOT;
+		echo '<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>';
 	}
 	else{
 
@@ -47,9 +45,7 @@ EOT;
 
 		// Si el usuario no existe
 		if ($response_uid == 'No existe este usuario :('){
-			echo <<< EOT
-				<h1>Error, el usuario ingresado no existe</h1>
-EOT;
+			echo '<h1>Error, el usuario ingresado no existe</h1>';
 		}
 		// Si es que existe el usuario
 		else{
@@ -82,14 +78,10 @@ EOT;
 				require('template_mensaje_enviado.php');
 			}
 			elseif ($response_send['mensaje']){
-				echo <<< EOT
-					<h1><?php $response_send ?></h1>
-EOT;
+				echo '<h1><?php $response_send ?></h1>';
 			}
 			else{
-				echo <<< EOT
-					<h1>WTF</h1>
-EOT;
+				echo '<h1>WTF</h1>';
 			};
 		};
 	};
