@@ -1,17 +1,14 @@
 # Entrega 5
 
-## Login:
+## Login
 
 Para iniciar sesión, se debe ingresar con el nombre de usuario y contraseña. El nombre de usuario corresponde al nombre y apellido de la persona. Algunos usuarios con mensajes enviados o recibidos:
 
-* Usuario: Ace Stephenson
-* Contraseña: hola123
-
-* Usuario: Rita Kouma
-* Contraseña: hola123
-
-* Manuel Frazier
-* Contraseña: hola123
+| Usuario         | Contraseña  |
+|-----------------|-------------|
+| Ace Stephenson  | hola123     |
+| Rita Kouma      | hola123     |
+| Manuel Frazier  | hola123     |
 
 
 ## Revisar mensajes
