@@ -18,7 +18,7 @@
       </li>
       <hr>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="send_msg.php">
           <p class='fs-16'>
             <i class="fas fa-pen"></i>&nbsp; Redactar
           </p>
