@@ -113,7 +113,7 @@ EOT;
                 </div>
                 <label for="mensaje">Mensaje:</label><br>
                 <div class="input-group">
-                    <textarea class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
+                    <textarea class="form-control" id='mensaje' name='mensaje' placeholder="Escribe aquí tu mensaje"></textarea>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Enviar</button>
