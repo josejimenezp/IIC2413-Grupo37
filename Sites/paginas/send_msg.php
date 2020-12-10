@@ -85,42 +85,38 @@ EOT;
     };
 ?>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="mx-auto p-t-150 p-b-20">
-                <div class="row">
-                    <div class="mx-auto">
-                        <h1>Enviar mensaje</h1>
+    <div class="row p-t-100 p-b-20">
+        <div class="mx-auto p-b-20">
+            <h1>Enviar mensaje</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mx-auto">
+            <form action="request_send_msg.php" method="get">
+                <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
+                <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
+                <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
+                <label for="nombre_receptant">Nombre y apellido del receptor del mensaje:</label><br>
+                <br>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-light" id="basic-addon1">Nombre</span>
                     </div>
+                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-describedby="basic-addon1">
                 </div>
-                <div class="row">
-                    <div class="mx-auto">
-                        <form action="request_send_msg.php" method="get">
-                            <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
-                            <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
-                            <input type="hidden" name="longitud" value="<?php echo $longitud ?>">
-                            <label for="nombre_receptant">Nombre y apellido del receptor del mensaje:</label><br>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nombre</span>
-                                </div>
-                                <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon2">Apellido</span>
-                                </div>
-                                <input id="apellido_receptant" name="apellido_receptant" type="text" class="form-control" aria-describedby="basic-addon2">
-                            </div>
-                            <label for="mensaje">Mensaje:</label><br>
-                            <div class="input-group">
-                                <textarea class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
-                            </div>
-                            <button type="button" class="btn btn-primary">Enviar</button>
-                        </form>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-light" id="basic-addon2">Apellido</span>
                     </div>
+                    <input id="apellido_receptant" name="apellido_receptant" type="text" class="form-control" aria-describedby="basic-addon2">
                 </div>
-            </div>
+                <label for="mensaje">Mensaje:</label><br>
+                <div class="input-group">
+                    <textarea class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary">Enviar</button>
+            </form>
         </div>
     </div>
 </body>
