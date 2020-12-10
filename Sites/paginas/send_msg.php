@@ -100,9 +100,9 @@ EOT;
                 <br>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-light" id="basic-addon1">Nombre</span>
+                        <span class="input-group-text">Nombre</span>
                     </div>
-                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-describedby="basic-addon1">
+                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
