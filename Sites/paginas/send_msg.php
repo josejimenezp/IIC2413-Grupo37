@@ -101,15 +101,15 @@ EOT;
                 <br>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Nombre</span>
+                        <span class="input-group-text" id="labelNombre">Nombre</span>
                     </div>
-                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control">
+                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-describedby="labelNombre">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-light" id="basic-addon2">Apellido</span>
+                        <span class="input-group-text" id="labelApellido">Apellido</span>
                     </div>
-                    <input id="apellido_receptant" name="apellido_receptant" type="text" class="form-control" aria-describedby="basic-addon2">
+                    <input id="apellido_receptant" name="apellido_receptant" type="text" class="form-control" aria-describedby="labelApellido">
                 </div>
                 <label for="mensaje">Mensaje:</label><br>
                 <div class="input-group">
