@@ -23,4 +23,6 @@ En el buscador se puede ingresar palabras claves: desired, required y forbidden.
 
 Para redactar un mensaje, se debe acceder mediante la barra superior o en la barra lateral de la sección "Mensajes". Para enviar un mensaje, se necesita el nombre y apellido del receptor.
 
+## PDI
 
+En la sección "Mi perfil" hay un botón donde se puede acceder a las funciones de la PDI. Para buscar la ubicación, se ingresa un ID de usuario, un rango de fechas y palabras clave.
