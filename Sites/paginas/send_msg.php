@@ -100,13 +100,13 @@ EOT;
                 <label for="nombre_receptant">Nombre y apellido del receptor del mensaje:</label><br>
                 <br>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">
+                    <div class="input-group-addon">
                         <span class="input-group-text" id="labelNombre">Nombre</span>
                     </div>
                     <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-label="Nombre" aria-describedby="labelNombre">
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">
+                    <div class="input-group-addon">
                         <span class="input-group-text" id="labelApellido">Apellido</span>
                     </div>
                     <input id="apellido_receptant" name="apellido_receptant" type="text" class="form-control" aria-describedby="labelApellido">
