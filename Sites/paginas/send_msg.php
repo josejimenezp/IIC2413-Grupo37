@@ -91,7 +91,8 @@ EOT;
         </div>
     </div>
     <div class="row">
-        <div class="mx-auto">
+        <div class="col-2"></div>
+        <div class="col-8 m-l-100 m-r-100">
             <form action="request_send_msg.php" method="get">
                 <input type="hidden" name="sender_uid" value="<?php echo $mongo_uid ?>">
                 <input type="hidden" name="latitud" value="<?php echo $latitud ?>">
@@ -118,5 +119,6 @@ EOT;
                 <button type="button" class="btn btn-primary">Enviar</button>
             </form>
         </div>
+        <div class="col-2"></div>
     </div>
 </body>
