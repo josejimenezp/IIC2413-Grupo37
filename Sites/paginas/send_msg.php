@@ -116,7 +116,7 @@ EOT;
                     <textarea class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
                 </div>
                 <br>
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
         <div class="col-2"></div>
