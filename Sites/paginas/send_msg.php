@@ -103,7 +103,7 @@ EOT;
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="labelNombre">Nombre</span>
                     </div>
-                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-describedby="labelNombre">
+                    <input id="nombre_receptant" name="nombre_receptant" type="text" class="form-control" aria-label="Nombre" aria-describedby="labelNombre">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
