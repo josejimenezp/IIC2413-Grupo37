@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<div class="card-title"><h2><?php echo $nombre_receptant?></h2></div>
+				<div class="card-title"><h2><?php echo $nombre_completo?></h2></div>
 				<div class="row">
 					<div class="col-3">
 						<span>

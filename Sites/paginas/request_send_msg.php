@@ -14,7 +14,10 @@ if (isset($_SESSION['username'])) {
 	$latitud = $_GET['latitud'];
 	$longitud = $_GET['longitud'];
 	$nombre_receptant = $_GET['nombre_receptant'];
+	$apellido_receptant = $_GET['apellido_receptant'];
 	$mensaje = $_GET['mensaje'];
+
+	$nombre_completo = $nombre_receptant . ' ' . $apellido_receptant;
 
 	if ($latitud == ''){
 		echo <<< EOT
@@ -34,11 +37,11 @@ EOT;
 			</div>
 EOT;
 	}
-	elseif ($nombre_receptant == ''){
+	elseif ($nombre_receptant == '' or $apellido_receptant == '' or $nombre_completo == ''){
 		echo <<< EOT
 			<div class="row p-t-100 p-b-50">
 				<div class="mx-auto">
-					<h1>Error, Debe ingresar el nombre de quién recibirá el mensaje</h1>
+					<h1>Error, Debe ingresar el nombre completo de quién recibirá el mensaje</h1>
 				</div>
 			</div>
 EOT;
@@ -46,7 +49,7 @@ EOT;
 	else{
 
 		// Primero obtenemos el uid del receptor en mongodb
-		$data_uid = array('nombre' => $nombre_receptant);
+		$data_uid = array('nombre' => $nombre_completo);
 		$options_uid = array(
 			'http' => array(
 				'method' => 'GET',
