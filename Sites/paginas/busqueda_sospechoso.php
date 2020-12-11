@@ -141,4 +141,4 @@ else{
 if ($result == NULL){
     $result = [];
 }
-echo $result;
+print_r($result);
