@@ -114,5 +114,27 @@ $context  = stream_context_create( $options );
 $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search2', false, $context );
 $result = json_decode($result, true);
 };
+else{
+    $id_mongo = NULL;
+    $data = array(
+        'desired' => [],
+        'required' => $required,
+        'forbidden' => [],
+        'userId' => intval($id_mongo)
+      );
+    
+    $options = array(
+        'http' => array(
+        'method'  => 'GET',
+        'content' => json_encode( $data ),
+        'header'=>  "Content-Type: application/json\r\n" .
+                    "Accept: application/json\r\n"
+        )
+      );
+    
+    $context  = stream_context_create( $options );
+    $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search2', false, $context );
+    $result = json_decode($result, true);
 
+}
 print_r( $result);
