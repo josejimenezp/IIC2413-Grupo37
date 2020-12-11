@@ -25,9 +25,8 @@ Para redactar un mensaje, se debe acceder mediante la barra superior o en la bar
 
 ## PDI
 
-En la sección "Mi perfil" hay un botón donde se puede acceder a las funciones de la PDI. Para buscar las ubicaciones de mensajes, se ingresa un ID de usuario, un rango de fechas y palabras clave. Entregando la información requerida en un mapa.
-Para distinguir las ubicaciones se generaron dos markers, uno azul y uno verde, los cuales muestran los mensajes y dependiendo si es capitán o jefe, los puertos correspondientes respectivamente
-
+En la sección "Mi perfil" hay un botón donde se puede acceder a las funciones de la PDI. Para buscar las ubicaciones de mensajes, se ingresa un ID de usuario, un rango de fechas y palabras clave, entregando la información requerida en un mapa.
+Para distinguir las ubicaciones se generaron dos markers, uno azul y uno verde, los cuales muestran los mensajes tanto enviados como recibidos y la información según el cargo de la persona respectivamente. Esta última depende de si es capitán o jefe, donde se mostrarán los puertos en los que ha estado el barco que capitanea o el puerto donde trabaja el jefe.
 
 ## Otros
 
