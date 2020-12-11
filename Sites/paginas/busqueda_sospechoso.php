@@ -126,7 +126,7 @@ else{
     $options = array(
         'http' => array(
         'method'  => 'GET',
-        'content' => json_encode( $data ),
+        'content' => json_encode($data),
         'header'=>  "Content-Type: application/json\r\n" .
                     "Accept: application/json\r\n"
         )
@@ -139,5 +139,5 @@ else{
         $result = [];
     }
 
-    echo $result;
 };
+echo $result;
