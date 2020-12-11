@@ -30,5 +30,5 @@ Para distinguir las ubicaciones se generaron dos markers, uno azul y uno verde, 
 
 ## Otros
 
-Se agregó la función ``get_messages_by_user`` en el archivo "main.py" la cual corresponde a una consulta de tipo GET que entrega todos los mensajes enviados y recibidos de un usuario. 
+Se agregó la función ``get_mongo_user`` en el archivo "main.py" la cual corresponde a una consulta de tipo GET que entrega el id de la base de mongoDB respecto a un id de la base PSQL dado. 
 

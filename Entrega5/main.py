@@ -108,7 +108,7 @@ def get_messages():
 
 # -------------------- Get Messages By User -----------------------------
 @app.route("/messages/user")
-def get_messages_by_user():
+def get_mongo_user():
     name = request.args.get('name')
     if not (name is None):
         id_mongo = int(list(db.usuarios.find({'name':name},{'_id':0,'uid':1}))[0]['uid'])
