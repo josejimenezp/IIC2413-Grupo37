@@ -137,6 +137,4 @@ else{
     $result = json_decode($result, true);
 
 };
-foreach ($result as $datazo){
-    print_r($datazo);
-};
+print_r($result);
