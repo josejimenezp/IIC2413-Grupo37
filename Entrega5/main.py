@@ -378,6 +378,132 @@ def text_search():
 
 # ---------------------- Fin Text-Search -------------------------------
 
+# -------------------------- Text-Search 2 -----------------------------
+@app.route("/text-search2")
+def text_search_2():
+    try:
+        content = json.loads(request.data)
+    except:
+        content = {}
+
+    desired = content.get('desired')
+    required = content.get('required')
+    forbidden = content.get('forbidden')
+    uid = content.get('userId')
+
+
+    search = ""
+    palabras_prohibidas = []
+    palabras_deseadas = []
+
+    if desired:
+        for d in desired:
+            search += f"{d} "
+            palabras_deseadas.append(f"\"{d}\"")
+    if required:
+        for r in required:
+            search += f"\"{r}\" "
+    if forbidden:
+        for f in forbidden:
+            
+            # Si se trata de una frase
+            if " " in f:
+                search += f"-\"{f}\" "
+                # palabras_prohibidas.append(f"\"{f}\"")
+            else:
+                search += f"-{f} "
+                # palabras_prohibidas.append(f"{f}")
+            palabras_prohibidas.append(f"\"{f}\"")
+
+    # Si recibo id de usuario y una búsqueda
+    if uid and search:
+        print("id y search")
+
+        # Si solo tiene criterios de exclusión
+        if forbidden and not(desired) and not(required):
+
+            # Busco los mensajes que si tengan las palabras no deseadas y extraigo sus mid's
+            mid_prohibidos = []
+
+            for frase in palabras_prohibidas:
+                mensajes_prohibidos = list(
+                    db.mensajes.find(
+                        {"$text": {"$search": frase}},
+                        {"_id": 0}
+                    )
+                )
+
+                json.jsonify(mensajes_prohibidos)
+
+                # Construyo una lista solo con los ids de los mensajes que quiero omitir
+                for mensaje in mensajes_prohibidos:
+
+                    # Si no se encuentra en la lista lo agrego
+                    if mensaje['mid'] not in mid_prohibidos:
+                        mid_prohibidos.append(mensaje['mid'])
+
+            # Busco los mensajes con 'sender' == uid y que no se encuentren dentro de los mensajes prohibidos
+            resultados = list(
+                db.mensajes.find(
+                    {"mid": {"$nin": mid_prohibidos}, "$or": [{'sender': uid}, {'receptant': uid}]},
+                    {"_id": 0}
+                ).sort( [("mid", 1)] )
+            )
+
+        # Si solo hay palabras deseadas
+        elif desired and not(forbidden) and not(required):
+            
+            # Busco los mensajes que tengan las palabras deseadas y extraigo sus mid's
+            mid_deseados = []
+
+            for palabra_d in palabras_deseadas:
+                mensajes_deseados = list(
+                    db.mensajes.find(
+                        {"$text": {"$search": palabra_d}},
+                        {"_id": 0}
+                    )
+                )
+
+                json.jsonify(mensajes_deseados)
+
+                # Construyo una lista solo con los ids de los mensajes
+                for mensaje in mensajes_deseados:
+                    # Si no se encuentra en la lista lo agrego
+                    if mensaje['mid'] not in mid_deseados:
+                        mid_deseados.append(mensaje['mid'])
+            
+            # Busco los mensajes con 'sender' == uid y que se encuentren dentro de los mensajes deseados
+            resultados = list(
+                db.mensajes.find(
+                    {"mid": {"$in": mid_deseados}, "$or": [{'sender': uid}, {'receptant': uid}]},
+                    {"_id": 0}
+                ).sort( [("mid", 1)] )
+            )
+
+        else:
+            resultados = list(
+                db.mensajes.find(
+                    {"$text": {"$search": search}, "$or": [{'sender': uid}, {'receptant': uid}]},
+                    {"_id": 0, "score": {"$meta": "textScore"}}
+                )
+                .sort( [ ("score", {"$meta": "textScore"}), ("mid", 1) ] )
+            )
+    
+    # Si solo recibo un id de usuario
+    elif uid:
+        print("solo id")
+        resultados = list(
+            db.mensajes.find(
+                { "$or": [{'sender': uid}, {'receptant': uid}]},
+                {"_id": 0}
+            ).sort( [("mid", 1)] )
+        )
+
+    if resultados == []:
+        return 'No hay conincidencias!'
+
+    return json.jsonify(resultados)
+# -------------------------- Fin Text-Search 2 -----------------------------
 
 if __name__ == "__main__":
     app.run(debug=True)
