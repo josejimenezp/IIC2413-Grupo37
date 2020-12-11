@@ -115,4 +115,4 @@ $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search'
 $result = json_decode($result, true);
 };
 
-echo $lista_nombre;
+echo $id_mongo;
