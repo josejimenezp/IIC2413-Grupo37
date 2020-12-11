@@ -25,4 +25,10 @@ Para redactar un mensaje, se debe acceder mediante la barra superior o en la bar
 
 ## PDI
 
-En la sección "Mi perfil" hay un botón donde se puede acceder a las funciones de la PDI. Para buscar la ubicación, se ingresa un ID de usuario, un rango de fechas y palabras clave.
+En la sección "Mi perfil" hay un botón donde se puede acceder a las funciones de la PDI. Para buscar las ubicaciones de mensajes, se ingresa un ID de usuario, un rango de fechas y palabras clave. Entregando la información requerida en un mapa
+
+
+## Otros
+
+Se agregó la función ``get_messages_by_user`` en el archivo "main.py" la cual corresponde a una consulta de tipo GET que entrega todos los mensajes enviados y recibidos de un usuario.
+
