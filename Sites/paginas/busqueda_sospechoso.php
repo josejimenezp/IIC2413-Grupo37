@@ -115,6 +115,5 @@ $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search'
 $result = json_decode($result, true);
 };
 
-foreach ($required as $result){
-    echo $result[0];
+echo $required;
 };
