@@ -138,5 +138,5 @@ else{
 
 };
 foreach ($result as $datazo){
-    print_r($datazo)
+    print_r($datazo);
 };
