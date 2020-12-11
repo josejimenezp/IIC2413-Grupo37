@@ -15,6 +15,11 @@ $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
 $palabras_clave = $_POST['palabras_clave'];
 
+$required = $palabras_clave.explode(',', $palabras_clave)
+if ($palabras_clave == NULL){
+    $required = [];
+};
+
 $query = "SELECT tipo FROM usuarios WHERE usuarios.uid = $id_usuario;";
 $result = $db_puertos -> prepare($query);
 $result -> execute();
@@ -78,7 +83,37 @@ elseif ($tipo == 'Jefe') {
     $result -> execute();
     $coordenadas_jefe = $result-> fetchAll();
     $coordenadas ->append($coordenadas_jefe[0]);
-};};
+
+
+
+};
+
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre"); 
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+$result = curl_exec ($curl);
+
+$id_mongo = json_decode(trim($result), TRUE);
+$data = array(
+    'desired' => [],
+    'required' => $required,
+    'forbidden' => [],
+    'userId' => intval($id_mongo)
+  );
+
+$options = array(
+    'http' => array(
+    'method'  => 'GET',
+    'content' => json_encode( $data ),
+    'header'=>  "Content-Type: application/json\r\n" .
+                "Accept: application/json\r\n"
+    )
+  );
+
+$context  = stream_context_create( $options );
+$result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search', false, $context );
+$result = json_decode($result, true);
+};
 ?>
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
@@ -89,17 +124,6 @@ elseif ($tipo == 'Jefe') {
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin=""/>
 </head>
-<?php
-
-
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre"); #HACER TEXT SEARCH
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-$result = curl_exec ($curl);
-
-$data = json_decode(trim($result), TRUE);
-
-?>
 <body>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
@@ -119,7 +143,7 @@ $data = json_decode(trim($result), TRUE);
             popupAnchor: [1, -34],
             shadowSize: [41, 41]
 });
-            <?php foreach ($data as $punto) {
+            <?php foreach ($result as $punto) {
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
                 echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 

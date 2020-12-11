@@ -112,11 +112,7 @@ def get_messages_by_user():
     name = request.args.get('name')
     if not (name is None):
         id_mongo = int(list(db.usuarios.find({'name':name},{'_id':0,'uid':1}))[0]['uid'])
-        mensajes_recibidos = list(db.mensajes.find({'receptant':id_mongo},{'_id':0, 'lat':1, 'long':1}))
-        mensajes_emitidos = list(db.mensajes.find({'sender':id_mongo},{'_id':0, 'lat':1,'long':1}))
-
-        mensajes = json.jsonify(mensajes_recibidos + mensajes_emitidos)
-        return mensajes
+        return id_mongo
 # ------------------ Fin Get Message by User ----------------------------
 
 # ------------------------ Get Message ----------------------------------
