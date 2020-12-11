@@ -133,7 +133,7 @@ else{
       );
     
     $context  = stream_context_create( $options );
-    $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search2', false, $context );
+    $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search', false, $context );
     $result = json_decode($result, true);
 
 };
