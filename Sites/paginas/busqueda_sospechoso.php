@@ -15,7 +15,7 @@ $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
 $palabras_clave = $_POST['palabras_clave'];
 
-$required = $palabras_clave.explode(',', $palabras_clave);
+$required = explode(',', $palabras_clave);
 if ($palabras_clave == NULL){
     $required = [];
 };
@@ -115,4 +115,4 @@ $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search'
 $result = json_decode($result, true);
 };
 
-echo $palabras_clave;
+print_r( $palabras_clave);
