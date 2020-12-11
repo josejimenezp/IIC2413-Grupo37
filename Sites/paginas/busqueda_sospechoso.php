@@ -114,9 +114,7 @@ $data = json_decode(trim($result), TRUE);
             <?php foreach ($data as $punto) {
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
-                $marker = L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);
-                $marker.valueOf()._icon.style.backgroundColor = 'green';
-                echo $marker; 
+                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap).valueOf()._icon.style.backgroundColor = "green";'; 
 
                 foreach ($coordenadas as $coordenada) {
                     $lat = $coordenada[0];
