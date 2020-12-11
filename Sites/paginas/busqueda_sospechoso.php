@@ -135,7 +135,9 @@ else{
     $context  = stream_context_create( $options );
     $result = file_get_contents('http://young-ocean-30844.herokuapp.com/text-search', false, $context );
     $result = json_decode($result, true);
-
+    if $result == NULL{
+        $result = []
+    }
 };
 ?>
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
@@ -166,7 +168,17 @@ else{
             popupAnchor: [1, -34],
             shadowSize: [41, 41]
 });
-            
+<?php foreach ($result as $punto) {
+                $long = $punto['long'];
+                $lat  = $punto['lat'];
+                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
+
+                foreach ($coordenadas as $coordenada) {
+                    $lat = $coordenada[0];
+                    $long = $coordenada[1];
+                    echo 'L.marker(['. $lat . ', ' . $long . '],{icon: greenIcon}).addTo(mymap);'; 
+                }
+            } ?>
         </script>
     </div>
 </script>
