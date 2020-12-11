@@ -22,6 +22,7 @@ $resultado = $result-> fetchAll();
 $tipo = $resultado[0][0];
 $coordenadas =  new ArrayObject();
 
+if ($id_usuario){
 if ($tipo == 'Capitan') {
     $obtener_rut = "SELECT n_pasaporte, nombre FROM usuarios WHERE usuarios.uid = $id_usuario;";
     $result = $db_puertos -> prepare($obtener_rut);
@@ -77,12 +78,11 @@ elseif ($tipo == 'Jefe') {
     $result -> execute();
     $coordenadas_jefe = $result-> fetchAll();
     $coordenadas ->append($coordenadas_jefe[0]);
-};
+};};
 ?>
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-
     <head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
@@ -92,7 +92,7 @@ elseif ($tipo == 'Jefe') {
 <?php
 
 
-curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre");
+curl_setopt ($curl, CURLOPT_URL, "http://young-ocean-30844.herokuapp.com/messages/user?name=$lista_nombre"); #HACER TEXT SEARCH
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec ($curl);
@@ -111,6 +111,14 @@ $data = json_decode(trim($result), TRUE);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(mymap);
+        var greenIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+});
             <?php foreach ($data as $punto) {
                 $long = $punto['long'];
                 $lat  = $punto['lat'];
@@ -119,7 +127,7 @@ $data = json_decode(trim($result), TRUE);
                 foreach ($coordenadas as $coordenada) {
                     $lat = $coordenada[0];
                     $long = $coordenada[1];
-                    echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
+                    echo 'L.marker(['. $lat . ', ' . $long . '],{icon: greenIcon}).addTo(mymap);'; 
                 }
             } ?>
         </script>
