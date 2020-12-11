@@ -137,4 +137,4 @@ else{
     $result = json_decode($result, true);
 
 };
-print_r($result);
+print_r($id_mongo);
