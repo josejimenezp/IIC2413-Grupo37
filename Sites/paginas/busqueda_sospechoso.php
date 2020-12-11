@@ -137,47 +137,6 @@ else{
     $result = json_decode($result, true);
 
 };
-?>
-<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
-    <head>
-    <meta charset='utf-8'>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin=""/>
-</head>
-<body>
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
-    <div id="mapid" style="height: 600px">
-
-        <script> 
-            var mymap = L.map('mapid').setView([-33.499572, -70.615472], 10);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(mymap);
-        var greenIcon = new L.Icon({
-            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-});
-            <?php foreach ($result as $punto) {
-                $long = $punto['long'];
-                $lat  = $punto['lat'];
-                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
-
-                foreach ($coordenadas as $coordenada) {
-                    $lat = $coordenada[0];
-                    $long = $coordenada[1];
-                    echo 'L.marker(['. $lat . ', ' . $long . '],{icon: greenIcon}).addTo(mymap);'; 
-                }
-            } ?>
-        </script>
-    </div>
-</script>
-</body>
+foreach ($result as $datazo){
+    print_r($datazo)
+};
