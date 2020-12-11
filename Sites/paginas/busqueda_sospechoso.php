@@ -116,4 +116,3 @@ $result = json_decode($result, true);
 };
 
 echo $id_mongo[0];
-}
