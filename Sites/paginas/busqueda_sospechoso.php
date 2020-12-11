@@ -15,7 +15,7 @@ $fecha_1 = $_POST['fecha1'];
 $fecha_2 = $_POST['fecha2'];
 $palabras_clave = $_POST['palabras_clave'];
 
-$required = $palabras_clave.explode(',', $palabras_clave)
+$required = $palabras_clave.explode(',', $palabras_clave);
 if ($palabras_clave == NULL){
     $required = [];
 };
