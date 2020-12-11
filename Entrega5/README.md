@@ -21,7 +21,7 @@ En el buscador se puede ingresar palabras claves: desired, required y forbidden.
 
 ## Redactar un mensaje
 
-Para redactar un mensaje, se debe acceder mediante la barra superior o en la barra lateral de la sección "Mensajes". Para enviar un mensaje, se necesita el nombre y apellido del receptor.
+Para redactar un mensaje, se debe acceder mediante la barra superior o en la barra lateral de la sección "Mensajes". Para enviar un mensaje, se necesita el nombre y apellido del receptor. Es importante mencionar que tanto el nombre como el apellido deben ser exactamente igual al del usuario que se quiere enviar (incluyendo mayusculas). Se asume que todos los usuarios tienen nombre y apellido.
 
 ## PDI
 
