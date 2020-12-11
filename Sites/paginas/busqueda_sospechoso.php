@@ -166,17 +166,7 @@ else{
             popupAnchor: [1, -34],
             shadowSize: [41, 41]
 });
-            <?php foreach ($result as $punto) {
-                $long = $punto['long'];
-                $lat  = $punto['lat'];
-                echo 'L.marker(['. $lat . ', ' . $long . ']).addTo(mymap);'; 
-
-                foreach ($coordenadas as $coordenada) {
-                    $lat = $coordenada[0];
-                    $long = $coordenada[1];
-                    echo 'L.marker(['. $lat . ', ' . $long . '],{icon: greenIcon}).addTo(mymap);'; 
-                }
-            } ?>
+            
         </script>
     </div>
 </script>
